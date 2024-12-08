@@ -1,0 +1,46 @@
+question,dataset_id,answer
+Is the person with the highest net worth self-made?,001_Forbes,"finalWorth; float64, selfMade; bool"
+Does the youngest billionaire identify as male?,001_Forbes,df[(df['finalWorth'] == 'billionaire') & (df['gender'] == 'male') & (df['age'] == df['age'].min())]['gender'].mode()[0]
+Is the city with the most billionaires in the United States?,001_Forbes,df[(df['country'] == 'United States') & (df['finalWorth'] > 0)].city.value_counts().idxmax()
+Is there a non-self-made billionaire in the top 5 ranks?,001_Forbes,df[(df['rank'] <= 5) & (~df['selfMade'])]
+Does the oldest billionaire have a philanthropy score of 5?,001_Forbes,df[(df['finalWorth'] == 'billionaire') & (df['age'] == df['age'].max()) & (df['philanthropyScore'] == 5)].shape[0]
+What is the age of the youngest billionaire?,001_Forbes,df[(df['finalWorth'] > 0) & (df['age'].notna()) & (df['age'] > 0)].sort_values('age').head(1)['age']
+How many billionaires are there from the 'Technology' category?,001_Forbes,df[(df['finalWorth'] >= 1000000000) & (df['organization'] == 'Technology')].shape[0]
+What's the total worth of billionaires in the 'Automotive' category?,001_Forbes,finalWorth[df['title'] == 'Billionaire' & 'organization' == 'Automotive']
+How many billionaires have a philanthropy score above 3?,001_Forbes,df[df['philanthropyScore'] > 3].shape[0]
+What's the rank of the wealthiest non-self-made billionaire?,001_Forbes,"df[(df['finalWorth'] > df['selfMade']) & (df['selfMade'] == False)].sort_values('finalWorth', ascending=False).head(1)['rank'].item()"
+Which category does the richest billionaire belong to?,001_Forbes,"finalWorth; uint32, about; object, title; category, organization; category, personName; category, bio; object, gender; category, selfMade; bool -> title; category"
+What's the country of origin of the oldest billionaire?,001_Forbes,df[(df['finalWorth'] == df['finalWorth'].max()) & (~df['selfMade'] == True)][country]
+What's the gender of the billionaire with the highest philanthropy score?,001_Forbes,df[(df['finalWorth'] == df['finalWorth'].max()) & (df['philanthropyScore'] == df['philanthropyScore'].max())]['gender']
+What's the source of wealth for the youngest billionaire?,001_Forbes,df[(df['finalWorth'] > df['finalWorth'].max() * 0.9) & (df['age'] == df['age'].min())]['organization']
+What is the title of the billionaire with the lowest rank?,001_Forbes,title[df['finalWorth'].max()].loc[df['rank'].idxmin()]
+List the top 3 countries with the most billionaires.,001_Forbes,df[df['organization'] == 'billionaire']['country'].value_counts().head(3)
+List the top 5 sources of wealth for billionaires.,001_Forbes,"df[df['finalWorth'] > 0].groupby('source').count().sort_values('finalWorth', ascending=False).head(5)['finalWorth']"
+List the top 4 cities where the youngest billionaires live.,001_Forbes,"df[df['finalWorth'] > 0].groupby(df['age'].rank(method='min', kind=None, ascending=True).bfill()[df['age'].rank(method='min', kind=None, ascending=True).bfill() == "
+List the bottom 3 categories with the fewest billionaires.,001_Forbes,"df.groupby('organization')['selfMade'].count().nlargest(3, 'selfMade').index"
+List the bottom 2 countries with the least number of billionaires.,001_Forbes,df.groupby('country')['selfMade'].count().nsmallest(2)
+List the top 5 ranks of billionaires who are not self-made.,001_Forbes,"df[(df['finalWorth'] > 0) & (df['selfMade'] == False)][['rank', 'philanthropyScore']].sort_values('philanthropyScore', ascending=False).head(5)"
+List the bottom 3 ages of billionaires who have a philanthropy score of 5.,001_Forbes,df[(df['finalWorth'] > 0) & (df['philanthropyScore'] == 5)]['age'].nlargest(3)
+List the top 6 final worth values of billionaires in the 'Technology' category.,001_Forbes,"df[(df['finalWorth'] > 0) & (df['organization'] == 'Technology')].sort_values('finalWorth', ascending=False).head(6)['finalWorth']"
+List the top 4 ranks of female billionaires.,001_Forbes,df[(df['gender'] == 'Female') & (df['rank'].rank(ascending=False) < 5)].['rank'].values
+List the top 2 final worth values of billionaires in the 'Automotive' category.,001_Forbes,"df[(df['organization'] == 'Automotive') & df['finalWorth'] != 0].sort_values('finalWorth', ascending=False).head(2)['finalWorth']"
+Did any children below the age of 18 survive?,002_Titanic,df[(df['Age'] < 18) & df['Survived'] == True].shape[0]
+Were there any passengers who paid a fare of more than $500?,002_Titanic,df[df['Fare'] > 500].shape[0]
+Is every passenger's name unique?,002_Titanic,df['Name'].nunique() == df['Name'].shape[0]
+Were there any female passengers in the 3rd class who survived?,002_Titanic,(df['Survived'] == True) & (df['Pclass'] == 3) & (df['Sex'] == 'female').shape[0]
+How many unique passenger classes are present in the dataset?,002_Titanic,df['Pclass'].nunique()
+What's the maximum age of the passengers?,002_Titanic,df['Age'].max()
+How many passengers boarded without any siblings or spouses?,002_Titanic,df[df['Siblings_Spouses Aboard'] == 0].shape[0]
+"On average, how much fare did the passengers pay?",002_Titanic,df['Fare'].mean()
+Which passenger class has the highest number of survivors?,002_Titanic,df[df['Survived'] == True].groupby(df['Pclass']).size().idxmax()
+What's the most common gender among the survivors?,002_Titanic,df[df['Survived'] == True]['Sex'].value_counts().index[0]
+"Among those who survived, which fare range was the most common: (0-50, 50-100, 100-150, 150+)?",002_Titanic,df[(df['Survived'] == True) & (df['Fare'] < 150)].Fare.apply(lambda x: 100*x/50).value_counts().idxmax()
+"What's the most common age range among passengers: (0-18, 18-30, 30-50, 50+)?",002_Titanic,df['Age'].apply(lambda x: 0 if x<18 else 2 if x>=50 else 1 if x>=30 else 2).mode()[0]
+Name the top 3 passenger classes by survival rate.,002_Titanic,df[df['Survived'] == True].groupby('Pclass').size().sort_values(ascending=True).head(3)
+"Could you list the lower 3 fare ranges by number of survivors: (0-50, 50-100, 100-150, 150+)?",002_Titanic,"df[df['Survived'] == True].groupby(df['Fare'], by=lambda x: (100*x//25).astype(str)).size().sort_values(ascending=False)[:3]"
+"What are the top 4 age ranges('30-50', '18-30', '0-18', '50+') with the highest number of survivors?",002_Titanic,"```df[df['Survived'] == True]['Age'].apply(lambda x: pd.cut(x, bins=[0,18,30,50,100], labels=['0-18','18-30','30-50','50+'], right=False).value_counts().index[:4]```"
+What are the top 2 genders by average fare paid?,002_Titanic,"df.groupby('Sex', observed=False)['Fare'].mean().sort_values(ascending=False).head(2)"
+What are the oldest 3 ages among the survivors?,002_Titanic,"df[(df['Survived'] == True) & (df['Age'] == df['Age'].max()) | (df['Survived'] == True) & (df['Age'] == df['Age'].fmax(-1, df['Survived'])) | (df['Survived'] == True) & (df['Age'] == df['Age'].fmax(-1, df['Survived']))][['"
+Which are the top 4 fares paid by survivors?,002_Titanic,"df[df['Survived'] == True].sort_values('Fare', ascending=False).head(4)['Fare']"
+Could you list the youngest 3 ages among the survivors?,002_Titanic,df[(df['Survived'] == True) & (df['Age'] == df['Age'].nsmallest(3).min())]['Age']
+Which are the lowest 4 fares among those who didn't survive?,002_Titanic,"df[(~df['Survived']) & (~df['Survived'].map(True)) & (~df['Survived'].map(True))]['Fare'].nlargest(4, 'Fare')"

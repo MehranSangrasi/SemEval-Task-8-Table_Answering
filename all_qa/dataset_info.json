@@ -1,0 +1,318 @@
+{
+  "builder_name": "parquet",
+  "citation": "",
+  "config_name": "qa",
+  "dataset_name": "databench",
+  "dataset_size": 244421,
+  "description": "",
+  "download_checksums": {
+    "hf://datasets/cardiffnlp/databench@73bf4891dd817df1fdb59591b132d1952e6325fe/data/001_Forbes/qa.parquet": {
+      "num_bytes": 7291,
+      "checksum": null
+    },
+    "hf://datasets/cardiffnlp/databench@73bf4891dd817df1fdb59591b132d1952e6325fe/data/002_Titanic/qa.parquet": {
+      "num_bytes": 6902,
+      "checksum": null
+    },
+    "hf://datasets/cardiffnlp/databench@73bf4891dd817df1fdb59591b132d1952e6325fe/data/003_Love/qa.parquet": {
+      "num_bytes": 7448,
+      "checksum": null
+    },
+    "hf://datasets/cardiffnlp/databench@73bf4891dd817df1fdb59591b132d1952e6325fe/data/004_Taxi/qa.parquet": {
+      "num_bytes": 6735,
+      "checksum": null
+    },
+    "hf://datasets/cardiffnlp/databench@73bf4891dd817df1fdb59591b132d1952e6325fe/data/005_NYC/qa.parquet": {
+      "num_bytes": 6799,
+      "checksum": null
+    },
+    "hf://datasets/cardiffnlp/databench@73bf4891dd817df1fdb59591b132d1952e6325fe/data/006_London/qa.parquet": {
+      "num_bytes": 6819,
+      "checksum": null
+    },
+    "hf://datasets/cardiffnlp/databench@73bf4891dd817df1fdb59591b132d1952e6325fe/data/007_Fifa/qa.parquet": {
+      "num_bytes": 7356,
+      "checksum": null
+    },
+    "hf://datasets/cardiffnlp/databench@73bf4891dd817df1fdb59591b132d1952e6325fe/data/008_Tornados/qa.parquet": {
+      "num_bytes": 6705,
+      "checksum": null
+    },
+    "hf://datasets/cardiffnlp/databench@73bf4891dd817df1fdb59591b132d1952e6325fe/data/009_Central/qa.parquet": {
+      "num_bytes": 6580,
+      "checksum": null
+    },
+    "hf://datasets/cardiffnlp/databench@73bf4891dd817df1fdb59591b132d1952e6325fe/data/010_ECommerce/qa.parquet": {
+      "num_bytes": 6646,
+      "checksum": null
+    },
+    "hf://datasets/cardiffnlp/databench@73bf4891dd817df1fdb59591b132d1952e6325fe/data/011_SF/qa.parquet": {
+      "num_bytes": 7547,
+      "checksum": null
+    },
+    "hf://datasets/cardiffnlp/databench@73bf4891dd817df1fdb59591b132d1952e6325fe/data/012_Heart/qa.parquet": {
+      "num_bytes": 6665,
+      "checksum": null
+    },
+    "hf://datasets/cardiffnlp/databench@73bf4891dd817df1fdb59591b132d1952e6325fe/data/013_Roller/qa.parquet": {
+      "num_bytes": 7755,
+      "checksum": null
+    },
+    "hf://datasets/cardiffnlp/databench@73bf4891dd817df1fdb59591b132d1952e6325fe/data/014_Airbnb/qa.parquet": {
+      "num_bytes": 6910,
+      "checksum": null
+    },
+    "hf://datasets/cardiffnlp/databench@73bf4891dd817df1fdb59591b132d1952e6325fe/data/015_Food/qa.parquet": {
+      "num_bytes": 6558,
+      "checksum": null
+    },
+    "hf://datasets/cardiffnlp/databench@73bf4891dd817df1fdb59591b132d1952e6325fe/data/016_Holiday/qa.parquet": {
+      "num_bytes": 6420,
+      "checksum": null
+    },
+    "hf://datasets/cardiffnlp/databench@73bf4891dd817df1fdb59591b132d1952e6325fe/data/017_Hacker/qa.parquet": {
+      "num_bytes": 6903,
+      "checksum": null
+    },
+    "hf://datasets/cardiffnlp/databench@73bf4891dd817df1fdb59591b132d1952e6325fe/data/018_Staff/qa.parquet": {
+      "num_bytes": 6865,
+      "checksum": null
+    },
+    "hf://datasets/cardiffnlp/databench@73bf4891dd817df1fdb59591b132d1952e6325fe/data/019_Aircraft/qa.parquet": {
+      "num_bytes": 7548,
+      "checksum": null
+    },
+    "hf://datasets/cardiffnlp/databench@73bf4891dd817df1fdb59591b132d1952e6325fe/data/020_Real/qa.parquet": {
+      "num_bytes": 6653,
+      "checksum": null
+    },
+    "hf://datasets/cardiffnlp/databench@73bf4891dd817df1fdb59591b132d1952e6325fe/data/021_Telco/qa.parquet": {
+      "num_bytes": 6949,
+      "checksum": null
+    },
+    "hf://datasets/cardiffnlp/databench@73bf4891dd817df1fdb59591b132d1952e6325fe/data/022_Airbnbs/qa.parquet": {
+      "num_bytes": 6831,
+      "checksum": null
+    },
+    "hf://datasets/cardiffnlp/databench@73bf4891dd817df1fdb59591b132d1952e6325fe/data/023_Climate/qa.parquet": {
+      "num_bytes": 7377,
+      "checksum": null
+    },
+    "hf://datasets/cardiffnlp/databench@73bf4891dd817df1fdb59591b132d1952e6325fe/data/024_Salary/qa.parquet": {
+      "num_bytes": 7278,
+      "checksum": null
+    },
+    "hf://datasets/cardiffnlp/databench@73bf4891dd817df1fdb59591b132d1952e6325fe/data/025_Data/qa.parquet": {
+      "num_bytes": 7297,
+      "checksum": null
+    },
+    "hf://datasets/cardiffnlp/databench@73bf4891dd817df1fdb59591b132d1952e6325fe/data/026_Predicting/qa.parquet": {
+      "num_bytes": 6789,
+      "checksum": null
+    },
+    "hf://datasets/cardiffnlp/databench@73bf4891dd817df1fdb59591b132d1952e6325fe/data/027_Supermarket/qa.parquet": {
+      "num_bytes": 6947,
+      "checksum": null
+    },
+    "hf://datasets/cardiffnlp/databench@73bf4891dd817df1fdb59591b132d1952e6325fe/data/028_Predict/qa.parquet": {
+      "num_bytes": 6670,
+      "checksum": null
+    },
+    "hf://datasets/cardiffnlp/databench@73bf4891dd817df1fdb59591b132d1952e6325fe/data/029_NYTimes/qa.parquet": {
+      "num_bytes": 6448,
+      "checksum": null
+    },
+    "hf://datasets/cardiffnlp/databench@73bf4891dd817df1fdb59591b132d1952e6325fe/data/030_Professionals/qa.parquet": {
+      "num_bytes": 8292,
+      "checksum": null
+    },
+    "hf://datasets/cardiffnlp/databench@73bf4891dd817df1fdb59591b132d1952e6325fe/data/031_Trustpilot/qa.parquet": {
+      "num_bytes": 6645,
+      "checksum": null
+    },
+    "hf://datasets/cardiffnlp/databench@73bf4891dd817df1fdb59591b132d1952e6325fe/data/032_Delicatessen/qa.parquet": {
+      "num_bytes": 6437,
+      "checksum": null
+    },
+    "hf://datasets/cardiffnlp/databench@73bf4891dd817df1fdb59591b132d1952e6325fe/data/033_Employee/qa.parquet": {
+      "num_bytes": 6978,
+      "checksum": null
+    },
+    "hf://datasets/cardiffnlp/databench@73bf4891dd817df1fdb59591b132d1952e6325fe/data/034_World/qa.parquet": {
+      "num_bytes": 7934,
+      "checksum": null
+    },
+    "hf://datasets/cardiffnlp/databench@73bf4891dd817df1fdb59591b132d1952e6325fe/data/035_Billboard/qa.parquet": {
+      "num_bytes": 7212,
+      "checksum": null
+    },
+    "hf://datasets/cardiffnlp/databench@73bf4891dd817df1fdb59591b132d1952e6325fe/data/036_US/qa.parquet": {
+      "num_bytes": 7035,
+      "checksum": null
+    },
+    "hf://datasets/cardiffnlp/databench@73bf4891dd817df1fdb59591b132d1952e6325fe/data/037_Ted/qa.parquet": {
+      "num_bytes": 7277,
+      "checksum": null
+    },
+    "hf://datasets/cardiffnlp/databench@73bf4891dd817df1fdb59591b132d1952e6325fe/data/038_Stroke/qa.parquet": {
+      "num_bytes": 6992,
+      "checksum": null
+    },
+    "hf://datasets/cardiffnlp/databench@73bf4891dd817df1fdb59591b132d1952e6325fe/data/039_Happy/qa.parquet": {
+      "num_bytes": 6721,
+      "checksum": null
+    },
+    "hf://datasets/cardiffnlp/databench@73bf4891dd817df1fdb59591b132d1952e6325fe/data/040_Speed/qa.parquet": {
+      "num_bytes": 6771,
+      "checksum": null
+    },
+    "hf://datasets/cardiffnlp/databench@73bf4891dd817df1fdb59591b132d1952e6325fe/data/041_Airline/qa.parquet": {
+      "num_bytes": 7605,
+      "checksum": null
+    },
+    "hf://datasets/cardiffnlp/databench@73bf4891dd817df1fdb59591b132d1952e6325fe/data/042_Predict/qa.parquet": {
+      "num_bytes": 6978,
+      "checksum": null
+    },
+    "hf://datasets/cardiffnlp/databench@73bf4891dd817df1fdb59591b132d1952e6325fe/data/043_Predict/qa.parquet": {
+      "num_bytes": 7526,
+      "checksum": null
+    },
+    "hf://datasets/cardiffnlp/databench@73bf4891dd817df1fdb59591b132d1952e6325fe/data/044_IMDb/qa.parquet": {
+      "num_bytes": 7552,
+      "checksum": null
+    },
+    "hf://datasets/cardiffnlp/databench@73bf4891dd817df1fdb59591b132d1952e6325fe/data/045_Predict/qa.parquet": {
+      "num_bytes": 7580,
+      "checksum": null
+    },
+    "hf://datasets/cardiffnlp/databench@73bf4891dd817df1fdb59591b132d1952e6325fe/data/046_120/qa.parquet": {
+      "num_bytes": 7203,
+      "checksum": null
+    },
+    "hf://datasets/cardiffnlp/databench@73bf4891dd817df1fdb59591b132d1952e6325fe/data/047_Bank/qa.parquet": {
+      "num_bytes": 6901,
+      "checksum": null
+    },
+    "hf://datasets/cardiffnlp/databench@73bf4891dd817df1fdb59591b132d1952e6325fe/data/048_Data/qa.parquet": {
+      "num_bytes": 7272,
+      "checksum": null
+    },
+    "hf://datasets/cardiffnlp/databench@73bf4891dd817df1fdb59591b132d1952e6325fe/data/049_Boris/qa.parquet": {
+      "num_bytes": 7423,
+      "checksum": null
+    },
+    "hf://datasets/cardiffnlp/databench@73bf4891dd817df1fdb59591b132d1952e6325fe/data/050_ING/qa.parquet": {
+      "num_bytes": 6904,
+      "checksum": null
+    },
+    "hf://datasets/cardiffnlp/databench@73bf4891dd817df1fdb59591b132d1952e6325fe/data/051_Pokemon/qa.parquet": {
+      "num_bytes": 6917,
+      "checksum": null
+    },
+    "hf://datasets/cardiffnlp/databench@73bf4891dd817df1fdb59591b132d1952e6325fe/data/052_Professional/qa.parquet": {
+      "num_bytes": 8730,
+      "checksum": null
+    },
+    "hf://datasets/cardiffnlp/databench@73bf4891dd817df1fdb59591b132d1952e6325fe/data/053_Patents/qa.parquet": {
+      "num_bytes": 7201,
+      "checksum": null
+    },
+    "hf://datasets/cardiffnlp/databench@73bf4891dd817df1fdb59591b132d1952e6325fe/data/054_Joe/qa.parquet": {
+      "num_bytes": 7156,
+      "checksum": null
+    },
+    "hf://datasets/cardiffnlp/databench@73bf4891dd817df1fdb59591b132d1952e6325fe/data/055_German/qa.parquet": {
+      "num_bytes": 6893,
+      "checksum": null
+    },
+    "hf://datasets/cardiffnlp/databench@73bf4891dd817df1fdb59591b132d1952e6325fe/data/056_Emoji/qa.parquet": {
+      "num_bytes": 6683,
+      "checksum": null
+    },
+    "hf://datasets/cardiffnlp/databench@73bf4891dd817df1fdb59591b132d1952e6325fe/data/057_Spain/qa.parquet": {
+      "num_bytes": 7465,
+      "checksum": null
+    },
+    "hf://datasets/cardiffnlp/databench@73bf4891dd817df1fdb59591b132d1952e6325fe/data/058_US/qa.parquet": {
+      "num_bytes": 8250,
+      "checksum": null
+    },
+    "hf://datasets/cardiffnlp/databench@73bf4891dd817df1fdb59591b132d1952e6325fe/data/059_Second/qa.parquet": {
+      "num_bytes": 7109,
+      "checksum": null
+    },
+    "hf://datasets/cardiffnlp/databench@73bf4891dd817df1fdb59591b132d1952e6325fe/data/060_Bakery/qa.parquet": {
+      "num_bytes": 6668,
+      "checksum": null
+    },
+    "hf://datasets/cardiffnlp/databench@73bf4891dd817df1fdb59591b132d1952e6325fe/data/061_Disneyland/qa.parquet": {
+      "num_bytes": 7411,
+      "checksum": null
+    },
+    "hf://datasets/cardiffnlp/databench@73bf4891dd817df1fdb59591b132d1952e6325fe/data/062_Trump/qa.parquet": {
+      "num_bytes": 7184,
+      "checksum": null
+    },
+    "hf://datasets/cardiffnlp/databench@73bf4891dd817df1fdb59591b132d1952e6325fe/data/063_Influencers/qa.parquet": {
+      "num_bytes": 8083,
+      "checksum": null
+    },
+    "hf://datasets/cardiffnlp/databench@73bf4891dd817df1fdb59591b132d1952e6325fe/data/064_Clustering/qa.parquet": {
+      "num_bytes": 6402,
+      "checksum": null
+    },
+    "hf://datasets/cardiffnlp/databench@73bf4891dd817df1fdb59591b132d1952e6325fe/data/065_RFM/qa.parquet": {
+      "num_bytes": 7028,
+      "checksum": null
+    }
+  },
+  "download_size": 462109,
+  "features": {
+    "question": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "answer": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "type": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "columns_used": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "column_types": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "sample_answer": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "dataset": {
+      "dtype": "string",
+      "_type": "Value"
+    }
+  },
+  "homepage": "",
+  "license": "",
+  "size_in_bytes": 706530,
+  "splits": {
+    "train": {
+      "name": "train",
+      "num_bytes": 244421,
+      "num_examples": 1308,
+      "dataset_name": "databench"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}

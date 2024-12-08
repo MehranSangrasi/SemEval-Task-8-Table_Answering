@@ -1,0 +1,1617 @@
+Dataset_ID,Column_Name,Data_Type
+057_Spain,Vote Intention,object
+057_Spain,Age,float64
+057_Spain,const,category
+057_Spain,edu,category
+057_Spain,gender,category
+057_Spain,lang,category
+057_Spain,partyId,category
+057_Spain,polInterest,category
+057_Spain,prevVote,category
+057_Spain,prevVoteCat,category
+057_Spain,prov,category
+057_Spain,Austerity politics are needed in order to overcome the crisis,float64
+057_Spain,The growth of Islam is a threat to the security of Spain,float64
+057_Spain,The church must pay the IBI,float64
+057_Spain,The fact that gay couples can adopt children is positive for society,float64
+057_Spain,Women should choose freely on issues of abortion,float64
+057_Spain,The immigration detention centres (CIES) should be closed,float64
+057_Spain,Schools segregated by sex should also be subsidized by the state,float64
+057_Spain,Spain must tighten its immigration policy,float64
+057_Spain,Bullfights in Spain should be banned,float64
+057_Spain,The 'gag law' is necessary to avoid social unrest,float64
+057_Spain,"In order to fight organized crime, restrictions on civil rights and liberties must be accepted",float64
+057_Spain,Efficiency in the delivery of public services will be improved with private sector participation,float64
+057_Spain,Negotiations with ETA weaken the state,float64
+057_Spain,The political party that receives the most votes should govern,float64
+057_Spain,Decentralizati on in Spain is inadequate and should continue to expand,float64
+057_Spain,Linguistic policy in the autonomous regions discriminates against Spanish language,float64
+057_Spain,The central government should control the spending of regional governments to limit their indebtedness,float64
+057_Spain,The possibility of a referendum on self- determination of any Autonomous Community must be recognized by the Constitution,float64
+057_Spain,The 1978 Constitution is the appropriate framework for our society,float64
+057_Spain,Navarra and the Basque Country should retain their tax system,float64
+057_Spain,Catalonia must be recognized as a nation,float64
+057_Spain,The government should take a tougher line against the persecution of opposition leaders in Venezuela,float64
+057_Spain,The number of public sector workers should be increased,float64
+057_Spain,The European Union must do more to support the Greek economy,float64
+057_Spain,It should be more difficult for companies to lay off workers,float64
+057_Spain,Bailing out banks is needed in order to restore economic stability,float64
+057_Spain,Increasing university fees is necessary for the sustainability of the university system,float64
+057_Spain,The government should subsidize clean energy in order to encourage its use,float64
+057_Spain,The subject of religion should be part of the curriculum,float64
+057_Spain,The decriminalizati on of soft drugs for personal use is a positive measure,float64
+057_Spain,User self-placement on Left-Right economic values axis,float64
+057_Spain,User self- placement on Progressive-Conservative economic values axis,float64
+057_Spain,Constitutional organisation of the country (More Descentralization),float64
+057_Spain,voteReason,category
+025_Data,URLs,category
+025_Data,Ranking,uint8
+025_Data,Keyword,category
+025_Data,Avg. monthly searches,uint8
+025_Data,Competition,category
+039_Happy,wid,uint16
+039_Happy,reflection_period,category
+039_Happy,cleaned_hm,object
+039_Happy,num_sentence,uint8
+039_Happy,ground_truth_category,category
+039_Happy,predicted_category,category
+039_Happy,age,float64
+039_Happy,country,category
+039_Happy,gender,category
+039_Happy,marital,category
+039_Happy,parenthood,category
+001_Forbes,rank,uint16
+001_Forbes,personName,category
+001_Forbes,age,float64
+001_Forbes,finalWorth,uint32
+001_Forbes,category,category
+001_Forbes,source,category
+001_Forbes,country,category
+001_Forbes,state,category
+001_Forbes,city,category
+001_Forbes,organization,category
+001_Forbes,selfMade,bool
+001_Forbes,gender,category
+001_Forbes,birthDate,"datetime64[us, UTC]"
+001_Forbes,title,category
+001_Forbes,philanthropyScore,float64
+001_Forbes,bio,object
+001_Forbes,about,object
+005_NYC,segmentation_1,object
+005_NYC,descriptor,category
+005_NYC,complaint_type,category
+005_NYC,created_date,"datetime64[us, UTC]"
+005_NYC,borough,category
+005_NYC,hour,uint8
+005_NYC,month_name,category
+005_NYC,weekday_name,category
+005_NYC,agency,category
+005_NYC,resolution_description,category
+005_NYC,agency_name,category
+005_NYC,city,category
+005_NYC,location_type,category
+005_NYC,incident_zip,float64
+005_NYC,incident_address,object
+005_NYC,street_name,category
+005_NYC,cross_street_1,category
+005_NYC,cross_street_2,category
+005_NYC,intersection_street_1,category
+005_NYC,intersection_street_2,category
+005_NYC,address_type,category
+005_NYC,landmark,category
+005_NYC,facility_type,category
+005_NYC,status,category
+005_NYC,due_date,"datetime64[us, UTC]"
+005_NYC,resolution_action_updated_date,"datetime64[us, UTC]"
+005_NYC,community_board,category
+005_NYC,x_coordinate,float64
+005_NYC,y_coordinate,float64
+005_NYC,park_facility_name,category
+005_NYC,park_borough,category
+005_NYC,bbl,float64
+005_NYC,open_data_channel_type,category
+005_NYC,vehicle_type,category
+005_NYC,taxi_company_borough,category
+005_NYC,taxi_pickup_location,category
+005_NYC,bridge_highway_name,category
+005_NYC,bridge_highway_direction,category
+005_NYC,road_ramp,category
+005_NYC,bridge_highway_segment,category
+005_NYC,latitude,float64
+005_NYC,longitude,float64
+005_NYC,location,object
+005_NYC,unique_key,uint32
+005_NYC,Unnamed_0,uint32
+005_NYC,closed_date,"datetime64[us, UTC]"
+011_SF,Incident Datetime,object
+011_SF,Incident Date,"datetime64[us, UTC]"
+011_SF,Incident Time,category
+011_SF,Incident Year,uint16
+011_SF,Incident Day of Week,category
+011_SF,Report Datetime,object
+011_SF,Row ID,int64
+011_SF,Incident ID,uint32
+011_SF,Incident Number,uint32
+011_SF,CAD Number,float64
+011_SF,Report Type Code,category
+011_SF,Report Type Description,category
+011_SF,Filed Online,object
+011_SF,Incident Code,uint32
+011_SF,Incident Category,category
+011_SF,Incident Subcategory,category
+011_SF,Incident Description,category
+011_SF,Resolution,category
+011_SF,Intersection,category
+011_SF,CNN,float64
+011_SF,Police District,category
+011_SF,Analysis Neighborhood,category
+011_SF,Supervisor District,float64
+011_SF,Supervisor District 2012,float64
+011_SF,Latitude,float64
+011_SF,Longitude,float64
+011_SF,Point,category
+011_SF,Neighborhoods,float64
+011_SF,ESNCAG - Boundary File,float64
+011_SF,Central Market/Tenderloin Boundary Polygon - Updated,float64
+011_SF,Civic Center Harm Reduction Project Boundary,float64
+011_SF,HSOC Zones as of 2018-06-05,float64
+011_SF,Invest In Neighborhoods (IIN) Areas,category
+011_SF,Current Supervisor Districts,float64
+011_SF,Current Police Districts,float64
+059_Second,url,category
+059_Second,company,category
+059_Second,make,category
+059_Second,model,category
+059_Second,version,object
+059_Second,price,uint32
+059_Second,price_financed,float64
+059_Second,fuel,category
+059_Second,year,float64
+059_Second,kms,uint32
+059_Second,power,float64
+059_Second,doors,uint8
+059_Second,shift,category
+059_Second,color,category
+059_Second,photos,uint8
+059_Second,is_professional,bool
+059_Second,dealer,category
+059_Second,province,category
+059_Second,country,category
+059_Second,publish_date,"datetime64[us, UTC]"
+059_Second,insert_date,"datetime64[us, UTC]"
+052_Professional,Profession,category
+052_Professional,Openness,float64
+052_Professional,Conscientousness,float64
+052_Professional,Extraversion,float64
+052_Professional,Agreeableness,float64
+052_Professional,Emotional_Range,float64
+052_Professional,Conversation,float64
+052_Professional,Openness to Change,float64
+052_Professional,Hedonism,float64
+052_Professional,Self-enhancement,float64
+052_Professional,Self-transcendence,float64
+052_Professional,n,uint16
+003_Love,Submitted at,"datetime64[us, UTC]"
+003_Love,What is your age? 👶🏻👵🏻,uint8
+003_Love,What's your nationality?,category
+003_Love,What is your civil status? 💍,category
+003_Love,What's your sexual orientation?,category
+003_Love,Do you have children? 🍼,category
+003_Love,What is the maximum level of studies you have achieved? 🎓,category
+003_Love,Gross annual salary (in euros) 💸,float64
+003_Love,What's your height? in cm 📏,uint8
+003_Love,What's your weight? in Kg ⚖️,float64
+003_Love,What is your body complexity? 🏋️,category
+003_Love,What is your eye color? 👁️,category
+003_Love,What is your hair color? 👩🦰👱🏽,category
+003_Love,What is your skin tone?,uint8
+003_Love,How long is your hair? 💇🏻♀️💇🏽♂️,category
+003_Love,How long is your facial hair? 🧔🏻,category
+003_Love,How often do you wear glasses? 👓,category
+003_Love,How attractive do you consider yourself?,uint8
+003_Love,Have you ever use an oline dating app?,category
+003_Love,Where have you met your sexual partners? (In a Bar or Restaurant),bool
+003_Love,Where have you met your sexual partners? (Through Friends),bool
+003_Love,Where have you met your sexual partners? (Through Work or as Co-Workers),bool
+003_Love,Where have you met your sexual partners? (Through Family),bool
+003_Love,Where have you met your sexual partners? (in University),bool
+003_Love,Where have you met your sexual partners? (in Primary or Secondary School),bool
+003_Love,Where have you met your sexual partners? (Neighbors),bool
+003_Love,Where have you met your sexual partners? (in Church),bool
+003_Love,Where have you met your sexual partners? (Other),bool
+003_Love,How many people have you kissed?,uint16
+003_Love,How many sexual partners have you had?,uint16
+003_Love,How many people have you considered as your boyfriend_girlfriend?,uint8
+003_Love,How many times per month did you practice sex lately?,float64
+003_Love,Happiness scale,uint8
+003_Love,What area of knowledge is closer to you?,object
+003_Love,"If you are in a relationship, how long have you been with your partner?",float64
+042_Predict,school,category
+042_Predict,sex,category
+042_Predict,age,uint8
+042_Predict,address,category
+042_Predict,famsize,category
+042_Predict,Pstatus,category
+042_Predict,Medu,uint8
+042_Predict,Fedu,uint8
+042_Predict,Mjob,category
+042_Predict,Fjob,category
+042_Predict,reason,category
+042_Predict,guardian,category
+042_Predict,traveltime,uint8
+042_Predict,studytime,uint8
+042_Predict,failures,uint8
+042_Predict,schoolsup,category
+042_Predict,famsup,category
+042_Predict,paid,category
+042_Predict,activities,category
+042_Predict,nursery,category
+042_Predict,higher,category
+042_Predict,internet,category
+042_Predict,romantic,category
+042_Predict,famrel,uint8
+042_Predict,freetime,uint8
+042_Predict,goout,uint8
+042_Predict,Dalc,uint8
+042_Predict,Walc,uint8
+042_Predict,health,uint8
+042_Predict,absences,uint8
+042_Predict,G1,uint8
+042_Predict,G2,uint8
+042_Predict,G3,uint8
+054_Joe,id<gx:category>,int64
+054_Joe,author_id<gx:category>,uint32
+054_Joe,author_name<gx:category>,category
+054_Joe,author_handler<gx:category>,category
+054_Joe,author_avatar<gx:url>,category
+054_Joe,user_created_at<gx:date>,"datetime64[us, UTC]"
+054_Joe,user_description<gx:text>,category
+054_Joe,user_favourites_count<gx:number>,uint8
+054_Joe,user_followers_count<gx:number>,uint32
+054_Joe,user_following_count<gx:number>,uint8
+054_Joe,user_listed_count<gx:number>,uint16
+054_Joe,user_tweets_count<gx:number>,uint16
+054_Joe,user_verified<gx:boolean>,bool
+054_Joe,user_location<gx:text>,category
+054_Joe,lang<gx:category>,category
+054_Joe,type<gx:category>,category
+054_Joe,text<gx:text>,object
+054_Joe,date<gx:date>,"datetime64[us, UTC]"
+054_Joe,mention_ids<gx:list[category]>,object
+054_Joe,mention_names<gx:list[category]>,object
+054_Joe,retweets<gx:number>,uint32
+054_Joe,favorites<gx:number>,uint32
+054_Joe,replies<gx:number>,uint16
+054_Joe,quotes<gx:number>,uint16
+054_Joe,links<gx:list[url]>,object
+054_Joe,links_first<gx:url>,category
+054_Joe,image_links<gx:list[url]>,object
+054_Joe,image_links_first<gx:url>,category
+054_Joe,rp_user_id<gx:category>,category
+054_Joe,rp_user_name<gx:category>,category
+054_Joe,location<gx:text>,category
+054_Joe,tweet_link<gx:url>,category
+054_Joe,source<gx:text>,category
+054_Joe,search<gx:category>,category
+015_Food,FOOD NAME,category
+015_Food,SCIENTIFIC NAME,category
+015_Food,GROUP,category
+015_Food,SUB GROUP,category
+055_German,Loan Duration - Months,uint8
+055_German,Credit History,category
+055_German,Purpose of Loan,category
+055_German,Loan Amount,uint16
+055_German,Savings Account,category
+055_German,Length of Current Employment,category
+055_German,Installment Rate as % of Income,uint8
+055_German,Guarantors,category
+055_German,Length of Current Property Residence,uint8
+055_German,Age,uint8
+055_German,Housing,category
+055_German,Number of Existing Loans,uint8
+055_German,Job,category
+055_German,Number of Dependants,uint8
+055_German,Foreign Worker,category
+055_German,Risk,category
+055_German,Sex,category
+055_German,Status,category
+017_Hacker,clusters_3,object
+017_Hacker,test,object
+017_Hacker,gx_cluster,category
+017_Hacker,Clusters II,category
+017_Hacker,timestamp,"datetime64[us, UTC]"
+017_Hacker,title_gx_ngrams,object
+017_Hacker,title,object
+017_Hacker,hour,uint8
+017_Hacker,weekday_name,category
+017_Hacker,month_name,category
+017_Hacker,title_gx_cardiff_nlp_sentiment,category
+017_Hacker,title_gx_hashtags,object
+017_Hacker,url,category
+017_Hacker,by,category
+017_Hacker,score,uint16
+017_Hacker,descendants,float64
+017_Hacker,partofday,category
+017_Hacker,season,category
+017_Hacker,title_gx_lang,category
+017_Hacker,title_gx_text_length,float64
+051_Pokemon,number,uint16
+051_Pokemon,name,category
+051_Pokemon,type1,category
+051_Pokemon,type2,category
+051_Pokemon,total,uint16
+051_Pokemon,hp,uint8
+051_Pokemon,attack,uint8
+051_Pokemon,defense,uint8
+051_Pokemon,sp_attack,uint8
+051_Pokemon,sp_defense,uint8
+051_Pokemon,speed,uint8
+051_Pokemon,generation,uint8
+051_Pokemon,legendary,bool
+065_RFM,InvoiceNo,float64
+065_RFM,StockCode,category
+065_RFM,Description,category
+065_RFM,Quantity,int32
+065_RFM,InvoiceDate,category
+065_RFM,UnitPrice,float64
+065_RFM,CustomerID,float64
+065_RFM,Country,category
+061_Disneyland,Review_ID,uint32
+061_Disneyland,Rating,uint8
+061_Disneyland,Year_Month,category
+061_Disneyland,Reviewer_Location,category
+061_Disneyland,Review_Text,object
+061_Disneyland,Branch,category
+032_Delicatessen,ID,uint16
+032_Delicatessen,Year_Birth,uint16
+032_Delicatessen,Education,category
+032_Delicatessen,Marital_Status,category
+032_Delicatessen,Income,float64
+032_Delicatessen,Kidhome,uint8
+032_Delicatessen,Teenhome,uint8
+032_Delicatessen,Dt_Customer,"datetime64[us, UTC]"
+032_Delicatessen,Recency,uint8
+032_Delicatessen,MntWines,uint16
+032_Delicatessen,MntFruits,uint8
+032_Delicatessen,MntMeatProducts,uint16
+032_Delicatessen,MntFishProducts,uint16
+032_Delicatessen,MntSweetProducts,uint16
+032_Delicatessen,MntGoldProds,uint16
+032_Delicatessen,NumDealsPurchases,uint8
+032_Delicatessen,NumWebPurchases,uint8
+032_Delicatessen,NumCatalogPurchases,uint8
+032_Delicatessen,NumStorePurchases,uint8
+032_Delicatessen,NumWebVisitsMonth,uint8
+032_Delicatessen,AcceptedCmp3,uint8
+032_Delicatessen,AcceptedCmp4,uint8
+032_Delicatessen,AcceptedCmp5,uint8
+032_Delicatessen,AcceptedCmp1,uint8
+032_Delicatessen,AcceptedCmp2,uint8
+032_Delicatessen,Complain,uint8
+032_Delicatessen,Z_CostContact,uint8
+032_Delicatessen,Z_Revenue,uint8
+032_Delicatessen,Response,uint8
+004_Taxi,VendorID,uint8
+004_Taxi,tpep_pickup_datetime,"datetime64[us, UTC]"
+004_Taxi,tpep_dropoff_datetime,"datetime64[us, UTC]"
+004_Taxi,passenger_count,uint8
+004_Taxi,trip_distance,float64
+004_Taxi,RatecodeID,uint8
+004_Taxi,store_and_fwd_flag,category
+004_Taxi,PULocationID,uint16
+004_Taxi,DOLocationID,uint16
+004_Taxi,payment_type,uint8
+004_Taxi,fare_amount,float64
+004_Taxi,extra,float64
+004_Taxi,mta_tax,float64
+004_Taxi,tip_amount,float64
+004_Taxi,tolls_amount,uint8
+004_Taxi,improvement_surcharge,float64
+004_Taxi,total_amount,float64
+004_Taxi,congestion_surcharge,float64
+004_Taxi,Airport_fee,float64
+004_Taxi,airport_fee,category
+012_Heart,Age,uint8
+012_Heart,Sex,category
+012_Heart,ChestPainType,category
+012_Heart,RestingBP,uint8
+012_Heart,Cholesterol,uint16
+012_Heart,FastingBS,uint8
+012_Heart,RestingECG,category
+012_Heart,MaxHR,uint8
+012_Heart,ExerciseAngina,category
+012_Heart,Oldpeak,float64
+012_Heart,ST_Slope,category
+012_Heart,HeartDisease,uint8
+027_Supermarket,Invoice ID,category
+027_Supermarket,Branch,category
+027_Supermarket,City,category
+027_Supermarket,Customer type,category
+027_Supermarket,Gender,category
+027_Supermarket,Product line,category
+027_Supermarket,Unit price,float64
+027_Supermarket,Quantity,uint8
+027_Supermarket,Tax 5%,float64
+027_Supermarket,Total,float64
+027_Supermarket,Date,"datetime64[us, UTC]"
+027_Supermarket,Time,category
+027_Supermarket,Payment,category
+027_Supermarket,cogs,float64
+027_Supermarket,gross margin percentage,float64
+027_Supermarket,gross income,float64
+027_Supermarket,Rating,float64
+009_Central,DATE,"datetime64[us, UTC]"
+009_Central,PRCP,float64
+009_Central,SNOW,float64
+009_Central,SNWD,float64
+009_Central,TMIN,float64
+009_Central,TMAX,float64
+024_Salary,clusters_2,category
+024_Salary,RETRINOIN_xRZI,float64
+024_Salary,CNO1,category
+024_Salary,CNACE,category
+024_Salary,ESTU,category
+024_Salary,SEXO,category
+024_Salary,ANOS2,category
+024_Salary,NUTS1,category
+024_Salary,ESTRATO2,category
+024_Salary,CONTROL,category
+024_Salary,MERCADO,category
+024_Salary,REGULACION,category
+024_Salary,TIPOPAIS,category
+024_Salary,RESPONSA,category
+024_Salary,ANOANTI,uint8
+024_Salary,TIPOJOR,category
+024_Salary,TIPOCON,category
+024_Salary,RETRINOIN,float64
+024_Salary,RETRINOIN_WwQk,float64
+024_Salary,Quantiles_target,category
+024_Salary,_gx_link_targets_,object
+024_Salary,_gx_link_weights_,object
+024_Salary,umap_cluster,category
+024_Salary,x,float64
+024_Salary,y,float64
+024_Salary,RETRINOIN_ac1q,float64
+024_Salary,RETRINOIN_QSbS,float64
+024_Salary,RETRINOIN_stfU,float64
+024_Salary,RETRINOIN_RxV1,float64
+030_Professionals,Geographies,object
+030_Professionals,Labeled Clusters,category
+030_Professionals,General Segments,object
+030_Professionals,Select the title most similar to your current role (or most recent title if retired),category
+030_Professionals,In which country do you currently reside?,category
+030_Professionals,(Average) For how many years have you used machine learning methods?,float64
+030_Professionals,(Average) What is your current yearly compensation (approximate $USD)?_rx_K,float64
+030_Professionals,(Average) What is the size of the company where you are employed?,float64
+030_Professionals,(Average) For how many years have you been writing code and_or programming?,float64
+030_Professionals,Which of the following natural language processing (NLP) methods do you use on a regular basis?,object
+030_Professionals,Which of the following integrated development environments (IDE's) do you use on a regular basis?,object
+030_Professionals,What is your current yearly compensation (approximate $USD)?,category
+030_Professionals,Which of the following cloud computing platforms do you use on a regular basis?,object
+030_Professionals,Which of the following business intelligence tools do you hope to become more familiar with in the next 2 years?,object
+030_Professionals,"Which of the following big data products (relational databases, data warehouses, data lakes, or similar) do you use on a regular basis?",object
+030_Professionals,"Which of the following ML algorithms do you use on a regular basis?,Which of the following ML algorithms do you use on a regular basis?",object
+030_Professionals,For how many years have you been writing code and_or programming?,category
+030_Professionals,What is the size of the company where you are employed?,category
+030_Professionals,(Average) Approximately how much money have you (or your team) spent on machine,float64
+030_Professionals,(Average) What is your current yearly compensation (approximate $USD)?,float64
+030_Professionals,Which types of specialized hardware do you use on a regular basis?,object
+030_Professionals,(Average) Approximately how many individuals are responsible for data science wo,float64
+030_Professionals,Which of the following business intelligence tools do you use on a regular basis?,object
+030_Professionals,Do you use any automated machine learning tools (or partial AutoML tools) on a regular basis?,object
+030_Professionals,(Average) Approximately how many times have you used a TPU (tensor processing unit)?,float64
+030_Professionals,Do you use any of the following data storage products on a regular basis?,object
+030_Professionals,Approximately how many individuals are responsible for data science workloads at your place of business?,category
+030_Professionals,"Of the cloud platforms that you are familiar with, which has the best developer experience (most enjoyable to use)?",category
+030_Professionals,On which platforms have you begun or completed data science courses?,object
+030_Professionals,Which categories of automated machine learning tools (or partial AutoML tools) do you hope to become more familiar with in the next 2 years?,object
+030_Professionals,Do you use any of the following managed machine learning products on a regular basis?,object
+030_Professionals,Who_what are your favorite media sources that report on data science topics?,object
+030_Professionals,"In the next 2 years, do you hope to become more familiar with any of these specific cloud computing products?",object
+030_Professionals,Do you use any tools to help manage machine learning experiments?,object
+030_Professionals,Where do you publicly share your data analysis or machine learning applications?,object
+030_Professionals,Do you use any of the following cloud computing products on a regular basis?,object
+030_Professionals,"In the next 2 years, do you hope to become more familiar with any of these tools for managing ML experiments?",object
+030_Professionals,What is your gender?,category
+030_Professionals,Which specific automated machine learning tools (or partial AutoML tools) do you hope to become more familiar with in the next 2 years?,object
+030_Professionals,Which categories of computer vision methods do you use on a regular basis?,object
+030_Professionals,For how many years have you used machine learning methods?,category
+030_Professionals,"Which of the following machine learning frameworks do you use on a regular basis?,Which of the following machine learning frameworks do you use on a regular basis?",object
+030_Professionals,(Average) What is your age (years)?,float64
+030_Professionals,"Which of the following big data products (relational database, data warehouse, data lake, or similar) do you use most often?",category
+030_Professionals,Which of the following business intelligence tools do you use most often?,category
+030_Professionals,What is the primary tool that you use at work or school to analyze data?,category
+030_Professionals,Does your current employer incorporate machine learning methods into their business?,category
+030_Professionals,Approximately how many times have you used a TPU (tensor processing unit)?,category
+030_Professionals,Which of the following hosted notebook products do you use on a regular basis?,object
+030_Professionals,What is the highest level of formal education that you have attained or plan to attain within the next 2 years?,category
+030_Professionals,In what industry is your current employer_contract (or your most recent employer if retired)?,category
+030_Professionals,"Which of the following big data products (relational databases, data warehouses, data lakes, or similar) do you hope to become more familiar with in the next 2 years?",object
+030_Professionals,Time from Start to finish (seconds),uint32
+030_Professionals,ID,uint16
+030_Professionals,Approximately how much money have you (or your team) spent on machine learning and_or cloud computing services at home (or at work) in the past 5 years (approximate $USD)?,category
+030_Professionals,"In the next 2 years, do you hope to become more familiar with any of these managed machine learning products?",object
+030_Professionals,Select any activities that make up an important part of your role at work,object
+030_Professionals,What data visualization libraries or tools do you use on a regular basis?,object
+030_Professionals,Which of the following automated machine learning tools (or partial AutoML tools) do you use on a regular basis?,object
+030_Professionals,What is your age (years)?,category
+030_Professionals,What programming language would you recommend an aspiring data scientist to learn first?,category
+030_Professionals,Which of the following cloud computing platforms do you hope to become more familiar with in the next 2 years?,object
+030_Professionals,What programming languages do you use on a regular basis?,object
+030_Professionals,What type of computing platform do you use most often for your data science projects?,category
+047_Bank,id,uint16
+047_Bank,attrition_flag,uint8
+047_Bank,customer_age,uint8
+047_Bank,gender,category
+047_Bank,education_level,category
+047_Bank,income_category,category
+047_Bank,total_relationship_count,uint8
+047_Bank,months_inactive_12_mon,uint8
+047_Bank,credit_limit,float64
+047_Bank,total_revolving_bal,uint16
+047_Bank,total_amt_chng_q4_q1,float64
+047_Bank,total_trans_amt,uint16
+047_Bank,total_trans_ct,uint8
+047_Bank,total_ct_chng_q4_q1,float64
+047_Bank,avg_utilization_ratio,float64
+013_Roller,coaster_name,category
+013_Roller,Length,category
+013_Roller,Speed,object
+013_Roller,Location,category
+013_Roller,Status,category
+013_Roller,Opening date,category
+013_Roller,Type,category
+013_Roller,Manufacturer,category
+013_Roller,Height restriction,category
+013_Roller,Model,category
+013_Roller,Height,category
+013_Roller,Inversions,float64
+013_Roller,Lift/launch system,category
+013_Roller,Cost,category
+013_Roller,Trains,object
+013_Roller,Park section,category
+013_Roller,Duration,category
+013_Roller,Capacity,object
+013_Roller,G-force,category
+013_Roller,Designer,category
+013_Roller,Max vertical angle,category
+013_Roller,Drop,category
+013_Roller,Soft opening date,category
+013_Roller,Fast Lane available,category
+013_Roller,Replaced,category
+013_Roller,Track layout,category
+013_Roller,Fastrack available,category
+013_Roller,Soft opening date.1,category
+013_Roller,Closing date,category
+013_Roller,Opened,category
+013_Roller,Replaced by,category
+013_Roller,Website,category
+013_Roller,Flash Pass Available,category
+013_Roller,Must transfer from wheelchair,category
+013_Roller,Theme,category
+013_Roller,Single rider line available,category
+013_Roller,Restraint Style,category
+013_Roller,Flash Pass available,category
+013_Roller,Acceleration,object
+013_Roller,Restraints,category
+013_Roller,Name,category
+013_Roller,year_introduced,uint16
+013_Roller,latitude,float64
+013_Roller,longitude,float64
+013_Roller,Type_Main,category
+013_Roller,opening_date_clean,"datetime64[us, UTC]"
+013_Roller,speed1,category
+013_Roller,speed2,category
+013_Roller,speed1_value,float64
+013_Roller,speed1_unit,category
+013_Roller,speed_mph,float64
+013_Roller,height_value,float64
+013_Roller,height_unit,category
+013_Roller,height_ft,float64
+013_Roller,Inversions_clean,uint8
+013_Roller,Gforce_clean,float64
+040_Speed,has_null,uint8
+040_Speed,wave,uint8
+040_Speed,gender,category
+040_Speed,age,float64
+040_Speed,age_o,float64
+040_Speed,d_age,uint8
+040_Speed,d_d_age,object
+040_Speed,race,category
+040_Speed,race_o,category
+040_Speed,samerace,uint8
+040_Speed,importance_same_race,float64
+040_Speed,importance_same_religion,float64
+040_Speed,d_importance_same_race,object
+040_Speed,d_importance_same_religion,object
+040_Speed,field,category
+040_Speed,pref_o_attractive,float64
+040_Speed,pref_o_sincere,float64
+040_Speed,pref_o_intelligence,float64
+040_Speed,pref_o_funny,float64
+040_Speed,pref_o_ambitious,float64
+040_Speed,pref_o_shared_interests,float64
+040_Speed,d_pref_o_attractive,object
+040_Speed,d_pref_o_sincere,object
+040_Speed,d_pref_o_intelligence,object
+040_Speed,d_pref_o_funny,object
+040_Speed,d_pref_o_ambitious,object
+040_Speed,d_pref_o_shared_interests,object
+040_Speed,attractive_o,float64
+040_Speed,sinsere_o,float64
+040_Speed,intelligence_o,float64
+040_Speed,funny_o,float64
+040_Speed,ambitous_o,float64
+040_Speed,shared_interests_o,float64
+040_Speed,d_attractive_o,object
+040_Speed,d_sinsere_o,object
+040_Speed,d_intelligence_o,object
+040_Speed,d_funny_o,object
+040_Speed,d_ambitous_o,object
+040_Speed,d_shared_interests_o,object
+040_Speed,attractive_important,float64
+040_Speed,sincere_important,float64
+040_Speed,intellicence_important,float64
+040_Speed,funny_important,float64
+040_Speed,ambtition_important,float64
+040_Speed,shared_interests_important,float64
+040_Speed,d_attractive_important,object
+040_Speed,d_sincere_important,object
+040_Speed,d_intellicence_important,object
+040_Speed,d_funny_important,object
+040_Speed,d_ambtition_important,object
+040_Speed,d_shared_interests_important,object
+040_Speed,attractive,float64
+040_Speed,sincere,float64
+040_Speed,intelligence,float64
+040_Speed,funny,float64
+040_Speed,ambition,float64
+040_Speed,d_attractive,object
+040_Speed,d_sincere,object
+040_Speed,d_intelligence,object
+040_Speed,d_funny,object
+040_Speed,d_ambition,object
+040_Speed,attractive_partner,float64
+040_Speed,sincere_partner,float64
+040_Speed,intelligence_partner,float64
+040_Speed,funny_partner,float64
+040_Speed,ambition_partner,float64
+040_Speed,shared_interests_partner,float64
+040_Speed,d_attractive_partner,object
+040_Speed,d_sincere_partner,object
+040_Speed,d_intelligence_partner,object
+040_Speed,d_funny_partner,object
+040_Speed,d_ambition_partner,object
+040_Speed,d_shared_interests_partner,object
+040_Speed,sports,float64
+040_Speed,tvsports,float64
+040_Speed,exercise,float64
+040_Speed,dining,float64
+040_Speed,museums,float64
+040_Speed,art,float64
+040_Speed,hiking,float64
+040_Speed,gaming,float64
+040_Speed,clubbing,float64
+040_Speed,reading,float64
+040_Speed,tv,float64
+040_Speed,theater,float64
+040_Speed,movies,float64
+040_Speed,concerts,float64
+040_Speed,music,float64
+040_Speed,shopping,float64
+040_Speed,yoga,float64
+040_Speed,d_sports,object
+040_Speed,d_tvsports,object
+040_Speed,d_exercise,object
+040_Speed,d_dining,object
+040_Speed,d_museums,object
+040_Speed,d_art,object
+040_Speed,d_hiking,object
+040_Speed,d_gaming,object
+040_Speed,d_clubbing,object
+040_Speed,d_reading,object
+040_Speed,d_tv,object
+040_Speed,d_theater,object
+040_Speed,d_movies,object
+040_Speed,d_concerts,object
+040_Speed,d_music,object
+040_Speed,d_shopping,object
+040_Speed,d_yoga,object
+040_Speed,interests_correlate,float64
+040_Speed,d_interests_correlate,object
+040_Speed,expected_happy_with_sd_people,float64
+040_Speed,expected_num_interested_in_me,float64
+040_Speed,expected_num_matches,float64
+040_Speed,d_expected_happy_with_sd_people,object
+040_Speed,d_expected_num_interested_in_me,object
+040_Speed,d_expected_num_matches,object
+040_Speed,like,float64
+040_Speed,guess_prob_liked,float64
+040_Speed,d_like,object
+040_Speed,d_guess_prob_liked,object
+040_Speed,met,float64
+040_Speed,decision,uint8
+040_Speed,decision_o,uint8
+040_Speed,match,uint8
+016_Holiday,CustomerID,uint32
+016_Holiday,ProdTaken,uint8
+016_Holiday,Age,float64
+016_Holiday,TypeofContact,category
+016_Holiday,CityTier,uint8
+016_Holiday,DurationOfPitch,float64
+016_Holiday,Occupation,category
+016_Holiday,Gender,category
+016_Holiday,NumberOfPersonVisiting,uint8
+016_Holiday,NumberOfFollowups,float64
+016_Holiday,ProductPitched,category
+016_Holiday,PreferredPropertyStar,float64
+016_Holiday,MaritalStatus,category
+016_Holiday,NumberOfTrips,float64
+016_Holiday,Passport,uint8
+016_Holiday,PitchSatisfactionScore,uint8
+016_Holiday,OwnCar,uint8
+016_Holiday,NumberOfChildrenVisiting,float64
+016_Holiday,Designation,category
+016_Holiday,MonthlyIncome,float64
+014_Airbnb,id,int64
+014_Airbnb,listing_url,category
+014_Airbnb,scrape_id,int64
+014_Airbnb,last_scraped,"datetime64[us, UTC]"
+014_Airbnb,source,category
+014_Airbnb,name,object
+014_Airbnb,description,object
+014_Airbnb,neighborhood_overview,object
+014_Airbnb,picture_url,category
+014_Airbnb,host_id,uint32
+014_Airbnb,host_url,category
+014_Airbnb,host_name,category
+014_Airbnb,host_since,"datetime64[us, UTC]"
+014_Airbnb,host_location,category
+014_Airbnb,host_about,object
+014_Airbnb,host_response_time,category
+014_Airbnb,host_response_rate,category
+014_Airbnb,host_acceptance_rate,category
+014_Airbnb,host_is_superhost,category
+014_Airbnb,host_thumbnail_url,category
+014_Airbnb,host_picture_url,category
+014_Airbnb,host_neighbourhood,category
+014_Airbnb,host_listings_count,float64
+014_Airbnb,host_total_listings_count,float64
+014_Airbnb,host_verifications,object
+014_Airbnb,host_has_profile_pic,category
+014_Airbnb,host_identity_verified,category
+014_Airbnb,neighbourhood,category
+014_Airbnb,neighbourhood_cleansed,category
+014_Airbnb,neighbourhood_group_cleansed,category
+014_Airbnb,latitude,float64
+014_Airbnb,longitude,float64
+014_Airbnb,property_type,category
+014_Airbnb,room_type,category
+014_Airbnb,accommodates,uint8
+014_Airbnb,bathrooms,category
+014_Airbnb,bathrooms_text,category
+014_Airbnb,bedrooms,float64
+014_Airbnb,beds,float64
+014_Airbnb,amenities,object
+014_Airbnb,price,category
+014_Airbnb,minimum_nights,uint16
+014_Airbnb,maximum_nights,uint32
+014_Airbnb,minimum_minimum_nights,float64
+014_Airbnb,maximum_minimum_nights,float64
+014_Airbnb,minimum_maximum_nights,float64
+014_Airbnb,maximum_maximum_nights,float64
+014_Airbnb,minimum_nights_avg_ntm,float64
+014_Airbnb,maximum_nights_avg_ntm,float64
+014_Airbnb,calendar_updated,category
+014_Airbnb,has_availability,category
+014_Airbnb,availability_30,uint8
+014_Airbnb,availability_60,uint8
+014_Airbnb,availability_90,uint8
+014_Airbnb,availability_365,uint16
+014_Airbnb,calendar_last_scraped,"datetime64[us, UTC]"
+014_Airbnb,number_of_reviews,uint16
+014_Airbnb,number_of_reviews_ltm,uint16
+014_Airbnb,number_of_reviews_l30d,uint8
+014_Airbnb,first_review,"datetime64[us, UTC]"
+014_Airbnb,last_review,"datetime64[us, UTC]"
+014_Airbnb,review_scores_rating,float64
+014_Airbnb,review_scores_accuracy,float64
+014_Airbnb,review_scores_cleanliness,float64
+014_Airbnb,review_scores_checkin,float64
+014_Airbnb,review_scores_communication,float64
+014_Airbnb,review_scores_location,float64
+014_Airbnb,review_scores_value,float64
+014_Airbnb,license,category
+014_Airbnb,instant_bookable,category
+014_Airbnb,calculated_host_listings_count,uint8
+014_Airbnb,calculated_host_listings_count_entire_homes,uint8
+014_Airbnb,calculated_host_listings_count_private_rooms,uint8
+014_Airbnb,calculated_host_listings_count_shared_rooms,uint8
+014_Airbnb,reviews_per_month,float64
+048_Data,Job Title,category
+048_Data,Salary Estimate,object
+048_Data,Job Description,object
+048_Data,Rating,float64
+048_Data,Company Name,category
+048_Data,Location,category
+048_Data,Headquarters,category
+048_Data,Size,category
+048_Data,Founded,int16
+048_Data,Type of ownership,category
+048_Data,Industry,category
+048_Data,Sector,category
+048_Data,Revenue,category
+048_Data,Competitors,category
+048_Data,hourly,uint8
+048_Data,employer_provided,uint8
+048_Data,min_salary,uint8
+048_Data,max_salary,uint16
+048_Data,avg_salary,float64
+048_Data,company_txt,category
+048_Data,job_state,category
+048_Data,same_state,uint8
+048_Data,age,int16
+048_Data,python_yn,uint8
+048_Data,R_yn,uint8
+048_Data,spark,uint8
+048_Data,aws,uint8
+048_Data,excel,uint8
+062_Trump,id,int64
+062_Trump,author_id,uint32
+062_Trump,author_name,category
+062_Trump,author_handler,category
+062_Trump,author_avatar,category
+062_Trump,lang,category
+062_Trump,text,object
+062_Trump,date,"datetime64[us, UTC]"
+062_Trump,mention_ids,object
+062_Trump,mention_names,object
+062_Trump,retweets,uint32
+062_Trump,favorites,uint32
+062_Trump,links,object
+062_Trump,links_first,category
+062_Trump,image_links,object
+062_Trump,image_links_first,category
+062_Trump,tweet_link,category
+062_Trump,rp_user_id,float64
+062_Trump,rp_user_name,category
+062_Trump,location,category
+045_Predict,id,uint16
+045_Predict,name,category
+045_Predict,popularity,uint8
+045_Predict,duration_ms,float64
+045_Predict,artists,object
+045_Predict,id_artists,object
+045_Predict,danceability,float64
+045_Predict,energy,float64
+045_Predict,key,uint8
+045_Predict,loudness,float64
+045_Predict,speechiness,float64
+045_Predict,acousticness,float64
+045_Predict,instrumentalness,float64
+045_Predict,liveness,float64
+045_Predict,valence,float64
+045_Predict,tempo,float64
+045_Predict,release_year,uint16
+045_Predict,release_month,float64
+045_Predict,release_day,float64
+018_Staff,Left,category
+018_Staff,Satisfaction Level,float64
+018_Staff,Work Accident,category
+018_Staff,Average Monthly Hours,uint16
+018_Staff,Last Evaluation,float64
+018_Staff,Years in the Company,uint8
+018_Staff,salary,category
+018_Staff,Department,category
+018_Staff,Number of Projects,uint8
+018_Staff,Promoted in the last 5 years?,category
+018_Staff,Date Hired,"datetime64[us, UTC]"
+006_London,neighbourhood_cleansed,category
+006_London,host_neighbourhood,category
+006_London,price,category
+006_London,room_type,category
+006_London,reviews_per_month,float64
+006_London,property_type,category
+006_London,bedrooms,float64
+006_London,host_verifications,object
+006_London,host_acceptance_rate,category
+006_London,host_identity_verified,category
+006_London,beds,float64
+006_London,amenities,object
+006_London,minimum_nights,uint16
+006_London,last_review,"datetime64[us, UTC]"
+006_London,review_scores_rating,float64
+006_London,instant_bookable,category
+006_London,calculated_host_listings_count,uint16
+006_London,first_review,"datetime64[us, UTC]"
+006_London,number_of_reviews,uint16
+006_London,accommodates,uint8
+006_London,listing_url,category
+006_London,last_scraped,"datetime64[us, UTC]"
+006_London,source,category
+006_London,name,object
+006_London,description,object
+006_London,neighborhood_overview,object
+006_London,picture_url,category
+006_London,host_id,uint32
+006_London,host_name,category
+006_London,host_since,"datetime64[us, UTC]"
+006_London,host_location,category
+006_London,host_about,object
+006_London,host_response_time,category
+006_London,host_response_rate,category
+006_London,host_is_superhost,category
+006_London,host_thumbnail_url,category
+006_London,host_picture_url,category
+006_London,host_listings_count,float64
+006_London,host_total_listings_count,float64
+006_London,host_has_profile_pic,category
+006_London,neighbourhood,category
+006_London,latitude,float64
+006_London,longitude,float64
+006_London,bathrooms,category
+006_London,bathrooms_text,category
+006_London,maximum_nights,uint32
+006_London,minimum_minimum_nights,float64
+006_London,maximum_minimum_nights,float64
+006_London,minimum_maximum_nights,float64
+006_London,maximum_maximum_nights,float64
+006_London,minimum_nights_avg_ntm,float64
+006_London,maximum_nights_avg_ntm,float64
+006_London,calendar_updated,category
+006_London,has_availability,category
+006_London,availability_30,uint8
+006_London,availability_60,uint8
+006_London,availability_90,uint8
+006_London,availability_365,uint16
+006_London,calendar_last_scraped,"datetime64[us, UTC]"
+006_London,number_of_reviews_ltm,uint16
+006_London,number_of_reviews_l30d,uint8
+006_London,review_scores_accuracy,float64
+006_London,review_scores_cleanliness,float64
+006_London,review_scores_checkin,float64
+006_London,review_scores_communication,float64
+006_London,review_scores_location,float64
+006_London,review_scores_value,float64
+006_London,license,category
+006_London,calculated_host_listings_count_entire_homes,uint16
+006_London,calculated_host_listings_count_private_rooms,uint8
+006_London,calculated_host_listings_count_shared_rooms,uint8
+006_London,x,float64
+006_London,y,float64
+006_London,price_M0jI,category
+036_US,dest,uint32
+036_US,origin,float64
+036_US,count,uint16
+036_US,name_dest,category
+036_US,name_origin,category
+036_US,lat_dest,float64
+036_US,lon_dest,float64
+036_US,lat_origin,float64
+036_US,lon_origin,float64
+028_Predict,Pregnancies,uint8
+028_Predict,Glucose,uint8
+028_Predict,BloodPressure,uint8
+028_Predict,SkinThickness,uint8
+028_Predict,Insulin,uint16
+028_Predict,BMI,float64
+028_Predict,DiabetesPedigreeFunction,float64
+028_Predict,Age,uint8
+028_Predict,Outcome,uint8
+044_IMDb,imdb_title_id,category
+044_IMDb,title,category
+044_IMDb,original_title,category
+044_IMDb,year,float64
+044_IMDb,date_published,category
+044_IMDb,genre,category
+044_IMDb,duration,uint16
+044_IMDb,country,category
+044_IMDb,language,category
+044_IMDb,director,category
+044_IMDb,writer,category
+044_IMDb,production_company,category
+044_IMDb,actors,object
+044_IMDb,description,object
+044_IMDb,avg_vote,float64
+044_IMDb,votes,uint32
+044_IMDb,budget,category
+044_IMDb,usa_gross_income,category
+044_IMDb,worlwide_gross_income,category
+044_IMDb,metascore,float64
+044_IMDb,reviews_from_users,float64
+044_IMDb,reviews_from_critics,float64
+063_Influencers,id,uint32
+063_Influencers,name,category
+063_Influencers,pic,category
+063_Influencers,is_organization,bool
+063_Influencers,community,uint32
+063_Influencers,page_rank_norm,float64
+063_Influencers,weight,float64
+063_Influencers,x,float64
+063_Influencers,y,float64
+063_Influencers,twitter_profile_id,int64
+063_Influencers,gx_link_target,object
+063_Influencers,gx_link_weight,object
+063_Influencers,gx_link_reciprocal,object
+063_Influencers,gx_link_should,object
+050_ING,id,int64
+050_ING,author_id,int64
+050_ING,author_name,category
+050_ING,author_handler,category
+050_ING,author_avatar,category
+050_ING,lang,category
+050_ING,type,category
+050_ING,text,object
+050_ING,date,"datetime64[us, UTC]"
+050_ING,mention_ids,object
+050_ING,mention_names,object
+050_ING,retweets,uint8
+050_ING,favorites,uint8
+050_ING,links,object
+050_ING,links_first,category
+050_ING,image_links,object
+050_ING,image_links_first,category
+050_ING,rp_user_id,float64
+050_ING,rp_user_name,category
+050_ING,location,category
+050_ING,tweet_link,category
+050_ING,search,category
+056_Emoji,name,category
+056_Emoji,emoji,category
+056_Emoji,Calories (kcal),float64
+056_Emoji,Carbohydrates (g),float64
+056_Emoji,Total Sugar (g),float64
+056_Emoji,Protein (g),float64
+056_Emoji,Total Fat (g),float64
+056_Emoji,Saturated Fat (g),float64
+056_Emoji,Monounsaturated Fat (g),float64
+056_Emoji,Polyunsaturated Fat (g),float64
+056_Emoji,Total Fiber (g),float64
+056_Emoji,Cholesterol (mg),float64
+056_Emoji,Vitamin B6 (mg),float64
+056_Emoji,Vitamin A (IU),float64
+056_Emoji,Vitamin B12 (ug),float64
+056_Emoji,Vitamin C (mg),float64
+056_Emoji,Vitamin D (IU),float64
+056_Emoji,Vitamin E (IU),float64
+056_Emoji,Vitamin K (ug),float64
+056_Emoji,Thiamin (mg),float64
+056_Emoji,Riboflavin (mg),float64
+056_Emoji,Niacin (mg),float64
+056_Emoji,Folate (ug),float64
+056_Emoji,Pantothenic Acid (mg),float64
+056_Emoji,Choline (mg),float64
+056_Emoji,Calcium (g),float64
+056_Emoji,Copper (mg),float64
+056_Emoji,Iron (mg),float64
+056_Emoji,Magnesium (mg),float64
+056_Emoji,Manganese (mg),float64
+056_Emoji,Phosphorus (g),float64
+056_Emoji,Potassium (g),float64
+056_Emoji,Selenium (ug),float64
+056_Emoji,Sodium (g),float64
+056_Emoji,Zinc (mg),float64
+034_World,Country name,category
+034_World,Regional indicator,category
+034_World,Ladder score,float64
+034_World,Standard error of ladder score,float64
+034_World,upperwhisker,float64
+034_World,lowerwhisker,float64
+034_World,Logged GDP per capita,float64
+034_World,Social support,float64
+034_World,Healthy life expectancy,float64
+034_World,Freedom to make life choices,float64
+034_World,Generosity,float64
+034_World,Perceptions of corruption,float64
+034_World,Ladder score in Dystopia,float64
+034_World,Explained by: Log GDP per capita,float64
+034_World,Explained by: Social support,float64
+034_World,Explained by: Healthy life expectancy,float64
+034_World,Explained by: Freedom to make life choices,float64
+034_World,Explained by: Generosity,float64
+034_World,Explained by: Perceptions of corruption,float64
+034_World,Dystopia + residual,float64
+060_Bakery,Transaction,uint16
+060_Bakery,Item,category
+060_Bakery,date_time,category
+060_Bakery,period_day,category
+060_Bakery,weekday_weekend,category
+031_Trustpilot,published_date,"datetime64[us, UTC]"
+031_Trustpilot,country_code,category
+031_Trustpilot,title,category
+031_Trustpilot,body,object
+031_Trustpilot,rating,uint8
+031_Trustpilot,Company,category
+041_Airline,tweet_id,int64
+041_Airline,airline_sentiment,category
+041_Airline,airline_sentiment_confidence,float64
+041_Airline,negativereason,category
+041_Airline,negativereason_confidence,float64
+041_Airline,airline,category
+041_Airline,airline_sentiment_gold,category
+041_Airline,name,category
+041_Airline,negativereason_gold,category
+041_Airline,retweet_count,uint8
+041_Airline,text,object
+041_Airline,tweet_coord,object
+041_Airline,tweet_created,"datetime64[us, UTC]"
+041_Airline,tweet_location,category
+041_Airline,user_timezone,category
+029_NYTimes,headline,object
+029_NYTimes,date,"datetime64[us, UTC]"
+029_NYTimes,material_type,category
+029_NYTimes,web_url,category
+029_NYTimes,keywords,object
+043_Predict,LoanNr_ChkDgt,int64
+043_Predict,Name,category
+043_Predict,Sector,category
+043_Predict,City,category
+043_Predict,State,category
+043_Predict,Zip,uint32
+043_Predict,Bank,category
+043_Predict,BankState,category
+043_Predict,NAICS,uint32
+043_Predict,ApprovalFY,uint16
+043_Predict,NoEmp,uint16
+043_Predict,NewExist,float64
+043_Predict,CreateJob,uint16
+043_Predict,RetainedJob,uint16
+043_Predict,FranchiseCode,uint32
+043_Predict,UrbanRural,uint8
+043_Predict,DisbursementGross,uint32
+043_Predict,GrAppv,uint32
+043_Predict,SBA_Appv,uint32
+043_Predict,default_amount,uint32
+023_Climate,fecha,"datetime64[us, UTC]"
+023_Climate,season,category
+023_Climate,month_name,category
+023_Climate,tmin,float64
+023_Climate,tmax,float64
+023_Climate,sol,float64
+023_Climate,presMax,float64
+023_Climate,presMin,float64
+023_Climate,prec,float64
+023_Climate,velmedia,float64
+023_Climate,racha,float64
+023_Climate,dir,float64
+023_Climate,tmed,float64
+023_Climate,horatmax,"datetime64[us, UTC]"
+023_Climate,horatmin,"datetime64[us, UTC]"
+023_Climate,horaPresMax,float64
+023_Climate,horaPresMin,float64
+023_Climate,horaracha,"datetime64[us, UTC]"
+023_Climate,weekday_name,category
+023_Climate,dayofyear,uint16
+023_Climate,quarter,uint8
+023_Climate,year,uint16
+023_Climate,altitud,uint16
+023_Climate,nombre,category
+023_Climate,provincia,category
+023_Climate,indicativo,uint16
+033_Employee,Left,category
+033_Employee,Satisfaction Level,float64
+033_Employee,Work Accident,category
+033_Employee,Average Monthly Hours,uint16
+033_Employee,Last Evaluation,float64
+033_Employee,Years in the Company,uint8
+033_Employee,salary,category
+033_Employee,Department,category
+033_Employee,Number of Projects,uint8
+033_Employee,Promoted in the last 5 years?,category
+033_Employee,Date Hired,"datetime64[ns, UTC]"
+033_Employee,Marital_Status,category
+064_Clustering,animal_name,category
+064_Clustering,hair,uint8
+064_Clustering,feathers,uint8
+064_Clustering,eggs,uint8
+064_Clustering,milk,uint8
+064_Clustering,airborne,uint8
+064_Clustering,aquatic,uint8
+064_Clustering,predator,uint8
+064_Clustering,toothed,uint8
+064_Clustering,backbone,uint8
+064_Clustering,breathes,uint8
+064_Clustering,venomous,uint8
+064_Clustering,fins,uint8
+064_Clustering,legs,uint8
+064_Clustering,tail,uint8
+064_Clustering,domestic,uint8
+064_Clustering,catsize,uint8
+064_Clustering,class_type,uint8
+022_Airbnbs,listing_id,uint32
+022_Airbnbs,name,object
+022_Airbnbs,host_id,uint32
+022_Airbnbs,host_since,"datetime64[us, UTC]"
+022_Airbnbs,host_location,category
+022_Airbnbs,host_response_time,category
+022_Airbnbs,host_response_rate,float64
+022_Airbnbs,host_acceptance_rate,float64
+022_Airbnbs,host_is_superhost,category
+022_Airbnbs,host_total_listings_count,float64
+022_Airbnbs,host_has_profile_pic,category
+022_Airbnbs,host_identity_verified,category
+022_Airbnbs,neighbourhood,category
+022_Airbnbs,district,category
+022_Airbnbs,city,category
+022_Airbnbs,latitude,float64
+022_Airbnbs,longitude,float64
+022_Airbnbs,property_type,category
+022_Airbnbs,room_type,category
+022_Airbnbs,accommodates,uint8
+022_Airbnbs,bedrooms,float64
+022_Airbnbs,amenities,object
+022_Airbnbs,price,uint16
+022_Airbnbs,minimum_nights,uint16
+022_Airbnbs,maximum_nights,uint32
+022_Airbnbs,review_scores_rating,float64
+022_Airbnbs,review_scores_accuracy,float64
+022_Airbnbs,review_scores_cleanliness,float64
+022_Airbnbs,review_scores_checkin,float64
+022_Airbnbs,review_scores_communication,float64
+022_Airbnbs,review_scores_location,float64
+022_Airbnbs,review_scores_value,float64
+022_Airbnbs,instant_bookable,category
+038_Stroke,id,uint32
+038_Stroke,gender,category
+038_Stroke,age,float64
+038_Stroke,hypertension,uint8
+038_Stroke,heart_disease,uint8
+038_Stroke,ever_married,category
+038_Stroke,work_type,category
+038_Stroke,Residence_type,category
+038_Stroke,avg_glucose_level,float64
+038_Stroke,bmi,float64
+038_Stroke,smoking_status,category
+038_Stroke,stroke,uint8
+037_Ted,talk_id,uint16
+037_Ted,title,object
+037_Ted,speaker_1,category
+037_Ted,all_speakers,object
+037_Ted,occupations,category
+037_Ted,about_speakers,object
+037_Ted,views,uint32
+037_Ted,recorded_date,"datetime64[us, UTC]"
+037_Ted,published_date,"datetime64[us, UTC]"
+037_Ted,event,category
+037_Ted,native_lang,category
+037_Ted,available_lang,object
+037_Ted,comments,float64
+037_Ted,duration,uint16
+037_Ted,topics,object
+037_Ted,related_talks,object
+037_Ted,url,category
+037_Ted,description,object
+037_Ted,transcript,object
+058_US,id,uint16
+058_US,Weight,float64
+058_US,NCHS Urban/rural,uint8
+058_US,Division,category
+058_US,Wave,category
+058_US,Start time,"datetime64[us, UTC]"
+058_US,County FIPS,uint16
+058_US,How old are you?,category
+058_US,Are you,category
+058_US,Would you say you follow what's going on in government and public affairs,category
+058_US,Are you registered to vote?,category
+058_US,Are you registered to vote? Not open to vote,category
+058_US,How likely are you to vote in the forthcoming US Presidential election? Early Voting Open,category
+058_US,Headline vote share (intention and already voted combined),category
+058_US,Who did you vote for?,category
+058_US,Who are you most likely to vote for on election day?,category
+058_US,Did you vote in the 2016 Presidential election? (Four years ago),category
+058_US,Who did you vote for in the 2016 Presidential election? (Four years ago),category
+058_US,Which of the following best describes your ethnic heritage?,category
+058_US,What is the highest degree or level of school you have *completed* ?,category
+058_US,Which of the following best describes your current employment status?,category
+058_US,What was your yearly household income at the end of last year (before tax)?,category
+058_US,"If you had to choose a candidate today, who would you vote for?",category
+058_US,"Again, for statistical purposes only, what is your age?",category
+058_US,State,category
+058_US,Region,category
+058_US,"To what extent do you agree or disagree that the election will be fair, and you will trust the result?",category
+058_US,How confident are you in the security and effectiveness of mail-in ballots when voting for president?,category
+058_US,"In the event of being declared the loser, should {answer:Candidate} accept or challenge the result?",category
+058_US,"If you have any concerns about the US election, what are they? - Contracting Covid-19 at a polling station",category
+058_US,"If you have any concerns about the US election, what are they? - Mail-in or in-person voter fraud",category
+058_US,"If you have any concerns about the US election, what are they? - Polling place reduction and changes",category
+058_US,"If you have any concerns about the US election, what are they? - Long wait times at polling place",category
+058_US,"If you have any concerns about the US election, what are they? - Voter intimidation at polling place",category
+058_US,"If you have any concerns about the US election, what are they? - Foreign interference/influence on the election",category
+058_US,"If you have any concerns about the US election, what are they? - The losing candidate not accepting the result",category
+058_US,"If you have any concerns about the US election, what are they? - Fake news/ disinformation",category
+058_US,"If you have any concerns about the US election, what are they? - Other",category
+058_US,"If you have any concerns about the US election, what are they? - I don’t have any specific concerns about the election",category
+058_US,Which of these best describes the kind of work you do?,category
+058_US,likelihood,float64
+058_US,NCHS Urban/rural (long form),category
+058_US,Local time,"datetime64[us, UTC]"
+058_US,race_ethnicity_grouped,category
+058_US,education_grouped_by_gender,category
+058_US,weight_by_2016_vote,category
+058_US,vote_choice,category
+058_US,age_by_gender,category
+058_US,region_x_gender,category
+058_US,simple_2016_vote,category
+058_US,likely_voter,category
+058_US,likely_decided_voter,category
+019_Aircraft,Incident_Date,category
+019_Aircraft,Aircaft_Model,category
+019_Aircraft,Aircaft_Registration,category
+019_Aircraft,Aircaft_Operator,category
+019_Aircraft,Aircaft_Nature,category
+019_Aircraft,Incident_Category,category
+019_Aircraft,Incident_Cause(es),category
+019_Aircraft,Incident_Location,category
+019_Aircraft,Aircaft_Damage_Type,category
+019_Aircraft,Date,"datetime64[us, UTC]"
+019_Aircraft,Time,category
+019_Aircraft,Arit,category
+019_Aircraft,Aircaft_Engines,category
+019_Aircraft,Onboard_Crew,category
+019_Aircraft,Onboard_Passengers,category
+019_Aircraft,Onboard_Total,category
+019_Aircraft,Fatalities,uint16
+019_Aircraft,Aircaft_First_Flight,category
+019_Aircraft,Aircraft_Phase,category
+019_Aircraft,Departure_Airport,category
+019_Aircraft,Destination_Airport,category
+019_Aircraft,Ground_Casualties,category
+019_Aircraft,Collision_Casualties,category
+046_120,ID,uint32
+046_120,Name,category
+046_120,Sex,category
+046_120,Age,float64
+046_120,Height,float64
+046_120,Weight,float64
+046_120,Team,category
+046_120,NOC,category
+046_120,Games,category
+046_120,Year,uint16
+046_120,Season,category
+046_120,City,category
+046_120,Sport,category
+046_120,Event,category
+046_120,Medal,category
+053_Patents,num_claims,uint8
+053_Patents,organization,category
+053_Patents,kind,category
+053_Patents,type,category
+053_Patents,graphext_cluster,category
+053_Patents,date,"datetime64[us, UTC]"
+053_Patents,abstract,object
+053_Patents,title,object
+053_Patents,lang,category
+053_Patents,abstract_gx_ADJ,object
+053_Patents,grp_title,object
+053_Patents,abstract_gx_products,object
+053_Patents,abstract_gx_organizations,object
+053_Patents,abstract_gx_NOUN,object
+053_Patents,abstract_gx_ngrams,object
+053_Patents,id,float64
+053_Patents,target,object
+053_Patents,weight,object
+053_Patents,x,float64
+053_Patents,y,float64
+035_Billboard,Rank,uint8
+035_Billboard,Song,category
+035_Billboard,Artist,category
+035_Billboard,Year,uint16
+035_Billboard,Lyrics,object
+035_Billboard,Source,float64
+049_Boris,id<gx:category>,int64
+049_Boris,author_id<gx:category>,uint32
+049_Boris,author_name<gx:category>,category
+049_Boris,author_handler<gx:category>,category
+049_Boris,author_avatar<gx:url>,category
+049_Boris,user_created_at<gx:date>,"datetime64[us, UTC]"
+049_Boris,user_description<gx:text>,category
+049_Boris,user_favourites_count<gx:number>,uint16
+049_Boris,user_followers_count<gx:number>,uint32
+049_Boris,user_following_count<gx:number>,uint16
+049_Boris,user_listed_count<gx:number>,uint16
+049_Boris,user_tweets_count<gx:number>,uint16
+049_Boris,user_verified<gx:boolean>,bool
+049_Boris,user_location<gx:text>,category
+049_Boris,lang<gx:category>,category
+049_Boris,type<gx:category>,category
+049_Boris,text<gx:text>,object
+049_Boris,date<gx:date>,"datetime64[us, UTC]"
+049_Boris,mention_ids<gx:list[category]>,object
+049_Boris,mention_names<gx:list[category]>,object
+049_Boris,retweets<gx:number>,uint32
+049_Boris,favorites<gx:number>,uint32
+049_Boris,replies<gx:number>,uint16
+049_Boris,quotes<gx:number>,uint16
+049_Boris,links<gx:list[url]>,object
+049_Boris,links_first<gx:url>,category
+049_Boris,image_links<gx:list[url]>,object
+049_Boris,image_links_first<gx:url>,category
+049_Boris,rp_user_id<gx:category>,category
+049_Boris,rp_user_name<gx:category>,category
+049_Boris,location<gx:text>,category
+049_Boris,tweet_link<gx:url>,category
+049_Boris,source<gx:text>,category
+049_Boris,search<gx:category>,category
+020_Real,Id,category
+020_Real,Referencia,category
+020_Real,Precio,uint32
+020_Real,Tipo,category
+020_Real,Anunciante,category
+020_Real,Actualización,"datetime64[us, UTC]"
+020_Real,Duración,uint16
+020_Real,Superficie,uint16
+020_Real,Superficie útil,uint16
+020_Real,Superficie solar,uint32
+020_Real,Habitaciones,uint8
+020_Real,Baños,uint8
+020_Real,Planta,int8
+020_Real,Antigüedad,uint8
+020_Real,Clasificación,uint8
+020_Real,Calle,category
+020_Real,Barrio,category
+020_Real,Distrito,category
+020_Real,Localidad,category
+020_Real,Código postal,float64
+020_Real,Latitud,float64
+020_Real,Longitud,float64
+020_Real,Nuevo,uint8
+020_Real,Reformado,uint8
+020_Real,Conservado,uint8
+020_Real,Exterior,uint8
+020_Real,Orientación sur,uint8
+020_Real,Soleado,uint8
+020_Real,Amueblado,uint8
+020_Real,Negociar muebles,uint8
+020_Real,Cocina equipada,uint8
+020_Real,Cocina independiente,uint8
+020_Real,Armarios empotrados,uint8
+020_Real,Garaje,uint8
+020_Real,Terraza,uint8
+020_Real,Ascensor,uint8
+020_Real,Aire acondicionado,uint8
+020_Real,Trastero,uint8
+020_Real,Puerta blindada,uint8
+020_Real,Piscina,uint8
+020_Real,Jardín,uint8
+020_Real,Comedor,uint8
+020_Real,Balcón,uint8
+020_Real,Lavadero,uint8
+020_Real,Chimenea,uint8
+020_Real,Portero automático,uint8
+020_Real,Sistema de seguridad,uint8
+020_Real,Calefacción central,uint8
+020_Real,Calefacción eléctrica,uint8
+020_Real,Gas natural,uint8
+020_Real,Gasoil,uint8
+020_Real,Aluminio,uint8
+020_Real,PVC,uint8
+020_Real,Climalit,uint8
+020_Real,Madera,uint8
+020_Real,Parquet,uint8
+020_Real,Gres,uint8
+020_Real,Tarima,uint8
+020_Real,Mármol,uint8
+008_Tornados,yr,uint16
+008_Tornados,mo,uint8
+008_Tornados,dy,uint8
+008_Tornados,date,"datetime64[us, UTC]"
+008_Tornados,st,category
+008_Tornados,mag,int8
+008_Tornados,inj,uint16
+008_Tornados,fat,uint8
+008_Tornados,slat,float64
+008_Tornados,slon,float64
+008_Tornados,elat,float64
+008_Tornados,elon,float64
+008_Tornados,len,float64
+008_Tornados,wid,uint16
+010_ECommerce,Clothing ID,uint16
+010_ECommerce,Age,uint8
+010_ECommerce,Title,category
+010_ECommerce,Review Text,object
+010_ECommerce,Rating,uint8
+010_ECommerce,Recommended IND,uint8
+010_ECommerce,Positive Feedback Count,uint8
+010_ECommerce,Division Name,category
+010_ECommerce,Department Name,category
+010_ECommerce,Class Name,category
+021_Telco,customerID,category
+021_Telco,gender,category
+021_Telco,SeniorCitizen,uint8
+021_Telco,Partner,category
+021_Telco,Dependents,category
+021_Telco,tenure,uint8
+021_Telco,PhoneService,category
+021_Telco,MultipleLines,category
+021_Telco,InternetService,category
+021_Telco,OnlineSecurity,category
+021_Telco,OnlineBackup,category
+021_Telco,DeviceProtection,category
+021_Telco,TechSupport,category
+021_Telco,StreamingTV,category
+021_Telco,StreamingMovies,category
+021_Telco,Contract,category
+021_Telco,PaperlessBilling,category
+021_Telco,PaymentMethod,category
+021_Telco,MonthlyCharges,float64
+021_Telco,TotalCharges,float64
+021_Telco,Churn,category
+026_Predicting,fixed acidity,float64
+026_Predicting,volatile acidity,float64
+026_Predicting,citric acid,float64
+026_Predicting,residual sugar,float64
+026_Predicting,chlorides,float64
+026_Predicting,free sulfur dioxide,float64
+026_Predicting,total sulfur dioxide,float64
+026_Predicting,density,float64
+026_Predicting,pH,float64
+026_Predicting,sulphates,float64
+026_Predicting,alcohol,float64
+026_Predicting,quality,uint8
+002_Titanic,Survived,bool
+002_Titanic,Pclass,uint8
+002_Titanic,Name,object
+002_Titanic,Sex,category
+002_Titanic,Age,float64
+002_Titanic,Siblings_Spouses Aboard,uint8
+002_Titanic,Parents_Children Aboard,uint8
+002_Titanic,Fare,float64
+007_Fifa,ID<gx:number>,uint32
+007_Fifa,Name<gx:text>,category
+007_Fifa,Age<gx:number>,uint8
+007_Fifa,Photo<gx:url>,category
+007_Fifa,Nationality<gx:category>,category
+007_Fifa,Overall<gx:number>,uint8
+007_Fifa,Potential<gx:number>,uint8
+007_Fifa,Club<gx:category>,category
+007_Fifa,Value_€<gx:currency>,uint32
+007_Fifa,Wage_€<gx:currency>,uint32
+007_Fifa,Preferred Foot<gx:category>,category
+007_Fifa,International Reputation<gx:number>,uint8
+007_Fifa,Weak Foot<gx:number>,uint8
+007_Fifa,Skill Moves<gx:number>,uint8
+007_Fifa,Work Rate<gx:category>,category
+007_Fifa,Position<gx:category>,category
+007_Fifa,Joined<gx:date>,category
+007_Fifa,Contract Valid Until<gx:date>,category
+007_Fifa,Height_ft<gx:number>,float64
+007_Fifa,Weight_lbs<gx:number>,uint8
+007_Fifa,Crossing<gx:number>,uint8
+007_Fifa,Finishing<gx:number>,uint8
+007_Fifa,HeadingAccuracy<gx:number>,uint8
+007_Fifa,ShortPassing<gx:number>,uint8
+007_Fifa,Volleys<gx:number>,uint8
+007_Fifa,Dribbling<gx:number>,uint8
+007_Fifa,Curve<gx:number>,uint8
+007_Fifa,FKAccuracy<gx:number>,uint8
+007_Fifa,LongPassing<gx:number>,uint8
+007_Fifa,BallControl<gx:number>,uint8
+007_Fifa,Acceleration<gx:number>,uint8
+007_Fifa,SprintSpeed<gx:number>,uint8
+007_Fifa,Agility<gx:number>,uint8
+007_Fifa,Reactions<gx:number>,uint8
+007_Fifa,Balance<gx:number>,uint8
+007_Fifa,ShotPower<gx:number>,uint8
+007_Fifa,Jumping<gx:number>,uint8
+007_Fifa,Stamina<gx:number>,uint8
+007_Fifa,Strength<gx:number>,uint8
+007_Fifa,LongShots<gx:number>,uint8
+007_Fifa,Aggression<gx:number>,uint8
+007_Fifa,Interceptions<gx:number>,uint8
+007_Fifa,Positioning<gx:number>,uint8
+007_Fifa,Vision<gx:number>,uint8
+007_Fifa,Penalties<gx:number>,uint8
+007_Fifa,Composure<gx:number>,uint8
+007_Fifa,Marking<gx:number>,category
+007_Fifa,StandingTackle<gx:number>,uint8
+007_Fifa,SlidingTackle<gx:number>,uint8
+007_Fifa,GKDiving<gx:number>,uint8
+007_Fifa,GKHandling<gx:number>,uint8
+007_Fifa,GKKicking<gx:number>,uint8
+007_Fifa,GKPositioning<gx:number>,uint8
+007_Fifa,GKReflexes<gx:number>,uint8
+007_Fifa,Best Position<gx:category>,category
+007_Fifa,Best Overall Rating<gx:number>,uint8
+007_Fifa,DefensiveAwareness<gx:number>,uint8
+007_Fifa,General Postion<gx:category>,category
+007_Fifa,Legend,bool
