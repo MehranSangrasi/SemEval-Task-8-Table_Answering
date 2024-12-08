@@ -1,29 +1,45 @@
 import pandas as pd
+from datasets import load_dataset
 # import numpy as np
 # Load the dataset
-df = pd.read_csv("Forbes.csv")
+# df = 
+# df = pd.read_parquet(f"hf://datasets/cardiffnlp/databench/data/{dataset}/all.parquet")
+# print(df.info())
 
-# print(len(df))
+queries = pd.read_csv("data/queries_final.csv")
 
+answer_list = []
 
-# answer =df.loc[(df['Survived'] == 1) & (df['Age'].notnull())].sort_values('Age', ascending=False).head(3)
-# Were there any passengers who paid a fare of more than $500?
-
-# fare_bins = [0, 50, 100, 150, float('inf')]
-# fare_labels = ['0-50', '50-100', '100-150', '150+']
-# df['Fare Range'] = pd.cut(df['Fare'], bins=fare_bins, labels=fare_labels)
-exists = df[(df['gender'] == 'Female') & (df['rank'].rank(ascending=False) < 5)]['rank'].values
-
-# For example,  "What's the most common gender among the survivors?":
-# ```
-# df[df['Survived'] == True]['Sex'].mode()[0]
-# ```
-# another Example: "Were there any female passengers in the 2nd class who survived?":
-# ```
-# ((df['Sex'] == 'female') & (df['Pclass'] == 2) & (df['Survived'] == True)).any()
-# ```
-
-print(exists)
-
+for index, row in queries.iterrows():
+    dataset = row['dataset_id']
+    df = pd.read_parquet(f"hf://datasets/cardiffnlp/databench/data/{dataset}/all.parquet")
+    
+    question = row['question']
+    print(question)
+    
+    
+    if isinstance(row['answer'], str):
+        query = row['answer'].strip('"')
+    else:
+        query = row['answer']
+        
+        
+    
+    try:
+        # Evaluate the query and append the result to the answers list
+        answer = eval(query, {'df': df})
+        print(answer)
+    except Exception as e:
+        # If an error occurs during evaluation, store the error message
+        answer = "ERROR"
+    
+    answer_list.append(answer)
+    
+    
+    
+    
+    
+queries['answers'] = answer_list
+queries.to_csv("data/queries_with_answers.csv", index=False)
 
 
