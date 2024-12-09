@@ -1,8 +1,8 @@
 import pandas as pd
 
 # Define your DataFrames (example data)
-titanic = pd.read_csv("titanic.csv")
-forbes = pd.read_csv("Forbes.csv")
+titanic = pd.read_csv("..\\data\\pointless\\titanic.csv")
+forbes = pd.read_csv("..\\data\pointless\Forbes.csv")
 
 titanic_df = pd.DataFrame(titanic)
 forbes_df = pd.DataFrame(forbes)
@@ -13,17 +13,18 @@ dataframes = {
 }
 
 # Load the CSV file containing queries and DataFrame names
-queries_csv_path = 'queries_1.csv'
+queries_csv_path = '..\\data\queries_final_4.csv'
 queries_df = pd.read_csv(queries_csv_path)
 
 # Assume the columns are 'dataframe_name' and 'query'
-if 'dataset_id' not in queries_df.columns or 'answer' not in queries_df.columns:
+if 'dataset_id' not in queries_df.columns or 'query' not in queries_df.columns:
     raise ValueError("The CSV file must contain 'dataframe_name' and 'query' columns.")
 
 # Execute each query on the specified DataFrame
 for idx, row in queries_df.iterrows():
+    import pdb; pdb.set_trace()
     dataframe_name = row['dataset_id']
-    query = row['answer']
+    query = row['query']
 
     # Check if the DataFrame exists
     if dataframe_name not in dataframes:

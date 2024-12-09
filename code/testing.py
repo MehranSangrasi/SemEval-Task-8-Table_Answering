@@ -1,10 +1,10 @@
 import pandas as pd
 
 # Load the queries CSV file
-queries = pd.read_csv("data/queries_final.csv")
+queries = pd.read_csv("data/queries_final_4.csv")
 
 # Dictionary to cache loaded datasets
-dataset_cache = {}
+# dataset_cache = {}
 
 # List to store the answers
 answer_list = []
@@ -13,21 +13,21 @@ answer_list = []
 for index, row in queries.iterrows():
     dataset = row['dataset_id']
     
+    df = pd.read_csv(f"data/datasets/{dataset}.csv")
+    
     # Check if the dataset is already loaded
-    if dataset not in dataset_cache:
-        # Load the dataset and store it in the cache
-        dataset_cache[dataset] = pd.read_csv(f"data/datasets/{dataset}.csv")
+    # if dataset not in dataset_cache:
+    #     # Load the dataset and store it in the cache
+    #     dataset_cache[dataset] = pd.read_csv(f"data/datasets/{dataset}.csv")
     
     # Get the DataFrame for the current dataset_id
-    df = dataset_cache[dataset]
+    # df = dataset_cache[dataset]
     
     question = row['question']
     print(f"Processing question: {question}")
     
-    if isinstance(row['answer'], str):
-        query = row['answer'].strip('"')
-    else:
-        query = row['answer']
+    query = row['query']
+    
     try:
         # Evaluate the query and append the result to the answers list
         
@@ -43,7 +43,7 @@ for index, row in queries.iterrows():
 queries['answers'] = answer_list
 
 # Save the updated DataFrame back to a CSV file
-queries.to_csv("data/queries_with_answers.csv", index=False)
+queries.to_csv("data/queries_with_answers_final_4.csv", index=False)
 
 # Display the updated DataFrame
 print(queries.head())

@@ -6,10 +6,15 @@ predictions = []
 answers = []
 score = 0
 
-data = pd.read_csv('./data/queries_with_answers.csv')
+df = pd.read_csv('data/queries_with_answers_final_4.csv')
 
-predictions.append(data['answers'].tolist())
-answers.append(data['actual_answer'].tolist())
+# predictions.append(actual_answer['actual_answer'].tolist())
+# answers.append(predicted_answer['answers'].tolist())
+
+predictions.append(df['answers'].tolist())
+answers.append(df['actual_answer'].tolist())
+
+print(len(answers[0]))
 
 for i in range(len(answers[0])):
     # import pdb; pdb.set_trace()
