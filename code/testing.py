@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Load the queries CSV file
-queries = pd.read_csv("data/queries_final_4.csv")
+queries = pd.read_csv("data/queries_new.csv")
 
 # Dictionary to cache loaded datasets
 # dataset_cache = {}

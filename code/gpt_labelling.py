@@ -56,11 +56,11 @@ def query_gpt4(dataset_id, question, sample_answer, answer_type,columns_used, co
     # Prepare the prompt
     prompt = f"""
     I will provide a dataset columns and their data types as well, and you need to generate a python code as a dataframe query based on the question. Provide nothing else but the dataframe query python code only.
-    Do not use more columns than needed to give the answer - give optimized query. Use the question and find the similarity of the column with it to infer which columns will be used to answer it. Do not use any more columns than necessary. You can use the examples below to understand the output data types. You need to provide the query to get the answer from the dataset, also make sure that the columns you use are present in the dataset columns that I provide. Strictly make sure to use as optimal columns as possible and give an optimized correct query that will answer the question by inferring from the question and the dataset columns. You have been provided the columns that have been used to answer the question and their data types. You need to provide the query to get the answer from the dataset. Do not add any additional explanations or output, just the query in the JSON key. Make sure that the output that the query gives is the same as the actual answer provided to you.
+    Do not use more columns than needed to give the answer - give optimized query. Use the questions and the columns used provided to you to generate the query. Do not use any more columns than necessary as I have provided you which columns have been used to give actual answer. Strictly make sure to use as optimal columns as possible and give an optimized correct query that will answer the question by inferring from the question and the dataset columns. You have been provided the columns that have been used to answer the question and their data types. You need to provide the query to get the answer from the dataset. Do not add any additional explanations or output, just the query. Make sure that the output that the query gives is the same as the actual answer provided to you by using the columns_used and columns_used_types.
     
-    **Note**: I am giving you the dataset columns, their data types, the question, the actual answer, answer type, columns_used and columns_used_types. You need to provide the query to get the answer from the dataset.
+    **Note**: I am giving you the dataset columns, their data types, the question, the actual answer, answer type, columns_used and columns_used_types. You need to provide the query to get the answer from the dataset. Do not use any ```python ``` or ```pandas``` code, just the query to get the answer from the dataset.
     
-    The response must be a JSON object that have these keys: question, dataset_id, columns, actual_answer, query of that question, answer type of that question, columns_used to generate the query, column_used data type.. Do not add any additional explanations or output.
+    Generate a query ONLY to get the answer after reading the question, dataset columns, and the actual answer provided to you. Do not use any additional columns than the ones provided to you. You need to provide the query to get the answer from the dataset. Make sure that the output that the query gives is the same as the actual answer provided to you.
 
     All output data types:
     1. list[number]
@@ -104,8 +104,8 @@ def query_gpt4(dataset_id, question, sample_answer, answer_type,columns_used, co
         "actual_answer": True,
         "answer_type": boolean,
         "columns_used": ['What's your height? in cm 📏'],
-        "columns_used_types": ['number[UInt8]'],
-        "query": df['What's your height? in cm 📏'] > 170).mean() > 0.5,
+        "columns_used_types": "['number[UInt8]']",
+        "query": "df['What's your height? in cm 📏'] > 170).mean() > 0.5",
     
     "question": "Which are the top 5 nationalities in terms of the average overall score of their players?",
         "dataset_id": "007_FIFA",
@@ -135,7 +135,7 @@ def query_gpt4(dataset_id, question, sample_answer, answer_type,columns_used, co
 
     **Now for the question with the actual answer, generate the query that provides this answer with respect to decimal places in numbers. The query should give the same answer as provided to you in actual_answer:**
 
-    Dataset columns:
+    Total dataset columns:
     {columns}
 
     Question: {question}
@@ -213,12 +213,13 @@ for index, row in aq.iterrows():
     
     try:
         answer = query_gpt4(dataset_id, question, sample_answer, answer_type,columns_used, column_types)
-        # print(answer)
+        print(answer)
         # print(f"Answer: {answer}\n")
-        answer_dict = json.loads(answer)
+        # answer_dict = json.loads(answer)
+        
 
 # Now you can access the query like this:
-        query = answer_dict['query']
+        query = answer
         
         results.append({'question': question, 'dataset_id': dataset_id, 'columns': columns, 'query': query})
 
@@ -228,7 +229,7 @@ for index, row in aq.iterrows():
 
 # Save results to a CSV file
 results_df = pd.DataFrame(results)
-output_file = "data/queries_final_4.csv"
+output_file = "data/queries_new.csv"
 results_df.to_csv(output_file, index=False)
 
 print(f"Results saved to {output_file}")

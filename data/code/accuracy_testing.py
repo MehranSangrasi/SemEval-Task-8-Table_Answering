@@ -6,7 +6,7 @@ predictions = []
 answers = []
 score = 0
 
-df = pd.read_csv('data/queries_with_answers_final_4.csv')
+df = pd.read_csv('data/filtered_dataset.csv')
 
 # predictions.append(actual_answer['actual_answer'].tolist())
 # answers.append(predicted_answer['answers'].tolist())
