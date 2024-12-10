@@ -4,6 +4,7 @@ import pandas as pd
 
 predictions = []
 answers = []
+matched_rows = []
 score = 0
 
 
@@ -23,7 +24,7 @@ def convert_to_value(val):
     Convert a string to a Python value (boolean, list, int, or float).
     """
     # Convert boolean strings to actual booleans
-    import pdb; pdb.set_trace()
+    # import pdb; pdb.set_trace()
     try:
         if val.lower() == 'true':
             return True
@@ -60,19 +61,26 @@ def convert_to_value(val):
 def evaluate_predictions(answers, predictions):
     score = 0
     for i in range(len(answers[0])):
-        answer = answers[0][218]
-        prediction = predictions[0][218]
+        answer = answers[0][i]
+        prediction = predictions[0][i]
 
         # Convert both answer and prediction to appropriate values
         answer = convert_to_value(answer)
         prediction = convert_to_value(prediction)
 
         if answer == prediction:
+            
             score += 1
+            matched_rows.append(df.iloc[i])
+            
 
     return score
 
 
 score = evaluate_predictions(answers, predictions)
 accuracy = score / len(answers[0])
-print(accuracy)
+print(accuracy) 
+
+matched_data = pd.DataFrame(matched_rows)
+matched_data.to_csv('data/matched_data.csv', index=False)
+print("saved")
