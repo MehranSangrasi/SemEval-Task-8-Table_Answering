@@ -1,7 +1,7 @@
 import pandas as pd
 
 
-data = pd.read_csv("data/matched_data_2.csv")
+data = pd.read_csv("/Users/mehran/CodeSpaces/Testing/Table_Answering/data/matched_data_2.csv")
 
 new_data = []
 
@@ -25,7 +25,7 @@ for index, row in data.iterrows():
 
 conversations_df = pd.DataFrame(new_data)
 
-conversations_df.to_csv("data/conversations.csv", index=False)
+conversations_df.to_csv("/Users/mehran/CodeSpaces/Testing/Table_Answering/data/conversations.csv", index=False)
     
     
     
