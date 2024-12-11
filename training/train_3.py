@@ -3,7 +3,7 @@ from torch import __version__; from packaging.version import Version as V
 xformers = "xformers==0.0.27" if V(__version__) < V("2.4.0") else "xformers"
 
 import torch
-# from trl import SFTTrainer
+from trl import SFTTrainer
 from datasets import load_dataset
 from transformers import TrainingArguments, TextStreamer
 from unsloth.chat_templates import get_chat_template
@@ -73,38 +73,38 @@ def apply_template(examples):
 csv_file = "/home/mehran1/projects/def-cjhuofw-ab/mehran1/SemEval/data/conversations.csv"  # Replace with your actual file path
 train_dataset = load_dataset("csv", data_files=csv_file)["train"]
 
-dataset = train_dataset.map(apply_template, batched=True)
+dataset = train_dataset.map(apply_template, batched=False)
 
 
 
 
-# trainer=SFTTrainer(
-#     model=model,
-#     tokenizer=tokenizer,
-#     train_dataset=dataset,
-#     dataset_text_field="text",
-#     max_seq_length=max_seq_length,
-#     dataset_num_proc=2,
-#     packing=True,
-#     args=TrainingArguments(
-#         learning_rate=3e-4,
-#         lr_scheduler_type="linear",
-#         per_device_train_batch_size=4,
-#         gradient_accumulation_steps=4,
-#         num_train_epochs=1,
-#         fp16=not is_bfloat16_supported(),
-#         bf16=is_bfloat16_supported(),
-#         logging_steps=1,
-#         optim="adamw_8bit",
-#         weight_decay=0.01,
-#         warmup_steps=10,
-#         output_dir="output",
-#         seed=0,
-#     ),
-# )
+trainer=SFTTrainer(
+    model=model,
+    tokenizer=tokenizer,
+    train_dataset=dataset,
+    dataset_text_field="text",
+    max_seq_length=max_seq_length,
+    dataset_num_proc=2,
+    packing=True,
+    args=TrainingArguments(
+        learning_rate=3e-4,
+        lr_scheduler_type="linear",
+        per_device_train_batch_size=4,
+        gradient_accumulation_steps=4,
+        num_train_epochs=1,
+        fp16=not is_bfloat16_supported(),
+        bf16=is_bfloat16_supported(),
+        logging_steps=1,
+        optim="adamw_8bit",
+        weight_decay=0.01,
+        warmup_steps=10,
+        output_dir="output",
+        seed=0,
+    ),
+)
 
-# trainer.train()
+trainer.train()
 
 
-# model.save_pretrained("/home/mehran1/projects/def-cjhuofw-ab/mehran1/SemEval/training")
-# tokenizer.save_pretrained("/home/mehran1/projects/def-cjhuofw-ab/mehran1/SemEval/training")
+model.save_pretrained("/home/mehran1/projects/def-cjhuofw-ab/mehran1/SemEval/training")
+tokenizer.save_pretrained("/home/mehran1/projects/def-cjhuofw-ab/mehran1/SemEval/training")

@@ -58,7 +58,7 @@ def preprocess_text(examples):
 csv_file = "/home/mehran1/projects/def-cjhuofw-ab/mehran1/SemEval/data/matched_data_2.csv"  # Replace with your actual file path
 train_dataset = load_dataset("csv", data_files=csv_file)["train"]
 
-dataset = train_dataset.map(preprocess_text, batched=True)
+dataset = train_dataset.map(preprocess_text, batched=False)
 
 
 trainer=SFTTrainer(
