@@ -3,3 +3,7 @@
 /__pycache__
 /data/datasets
 .env
+/training/Archive
+/training/model_200
+training/Archive.zip
+/training/tokenizer_200
