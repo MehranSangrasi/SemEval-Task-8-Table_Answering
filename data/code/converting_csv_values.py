@@ -8,7 +8,7 @@ matched_rows = []
 score = 0
 
 
-df = pd.read_csv('data/filtered_dataset.csv')
+df = pd.read_csv('data/dev_with_answers.csv')
 
 # df['answers'] = df['answers'].apply(ast.literal_eval)
 
@@ -16,8 +16,8 @@ df = pd.read_csv('data/filtered_dataset.csv')
 
 # df['answers'] = ast.literal_eval(df['answers'])
 
-predictions.append(df['answers'].tolist())
-answers.append(df['actual_answer'].tolist())
+predictions.append(df['own_answers'].tolist())
+answers.append(df['answer'].tolist())
 
 def convert_to_value(val):
     """
@@ -79,8 +79,9 @@ def evaluate_predictions(answers, predictions):
 
 score = evaluate_predictions(answers, predictions)
 accuracy = score / len(answers[0])
+accuracy = accuracy * 100
 print(accuracy) 
 
 matched_data = pd.DataFrame(matched_rows)
-matched_data.to_csv('data/matched_data.csv', index=False)
+matched_data.to_csv('data/dev_accuracy.csv', index=False)
 print("saved")
