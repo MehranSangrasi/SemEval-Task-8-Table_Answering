@@ -8,8 +8,8 @@ new_data = []
 def map_template(prompt, answer):
     
     return [ {"from": "human", "value": f"{prompt}" }, 
-            { "from": "gpt", "value": f"{answer}" }
-            ]
+            { "from": "gpt", "value": f"{answer}" },
+        ]
     
     
 for index, row in data.iterrows():
