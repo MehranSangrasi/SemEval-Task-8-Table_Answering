@@ -2,8 +2,6 @@
 from torch import __version__; from packaging.version import Version as V
 xformers = "xformers==0.0.27" if V(__version__) < V("2.4.0") else "xformers"
 
-
-
 import torch
 from trl import SFTTrainer
 from datasets import load_dataset
@@ -25,9 +23,9 @@ model, tokenizer = FastLanguageModel.from_pretrained(
 # Prepare model for PEFT
 model = FastLanguageModel.get_peft_model(
     model,
-    r=16,
+    r=32,
     lora_alpha=16,
-    lora_dropout=0,
+    lora_dropout=0.1,
     target_modules=["q_proj", "k_proj", "v_proj", "up_proj", "down_proj", "o_proj", "gate_proj"],
     use_rslora=True,
     use_gradient_checkpointing="unsloth"
@@ -47,20 +45,37 @@ print(model.print_trainable_parameters())
 #     return {"text": text}
 
 
-def preprocess_text(examples):
-    inputs = [f'Question: {q} \n Dataset Columns: {d}' for q,d in zip(examples['question'], examples['columns'])]
-    targets = [a for a in examples['query']]
-    model_inputs = tokenizer(inputs, padding='max_length', truncation=True, max_length=512)
-    labels = tokenizer(targets, padding='max_length', truncation=True, max_length=512)
-    model_inputs["labels"] = labels["input_ids"]
-    return model_inputs
+# def preprocess_text(examples):
+#     inputs = [f'Question: {q} \n Dataset Columns: {d}' for q,d in zip(examples['question'], examples['columns'])]
+#     targets = [a for a in examples['query']]
+#     model_inputs = tokenizer(inputs, padding='max_length', truncation=True, max_length=512)
+#     labels = tokenizer(targets, padding='max_length', truncation=True, max_length=512)
+#     model_inputs["labels"] = labels["input_ids"]
+#     return model_inputs
+  
+tokenizer = get_chat_template(
+    tokenizer,
+    mapping={"role": "from", "content": "value", "user": "human", "assistant": "gpt"},
+    chat_template="chatml",
+)
+
+def apply_template(examples):
+    messages = examples["conversations"]
+    text = [tokenizer.apply_chat_template(message, tokenize=False, add_generation_prompt=False) for message in messages]
+    print(text)
+    return {"text": text}
+
+
+
 
 # dataset = load_dataset("mlabonne/FineTome-100k", split="train")
 
-csv_file = "/home/mehran1/projects/def-cjhuofw-ab/mehran1/SemEval/data/matched_data_2.csv"  # Replace with your actual file path
+csv_file = "/home/mehran1/projects/def-cjhuofw-ab/mehran1/SemEval/data/conversations.csv"  # Replace with your actual file path
 train_dataset = load_dataset("csv", data_files=csv_file)["train"]
 
-dataset = train_dataset.map(preprocess_text, batched=True)
+dataset = train_dataset.map(apply_template, batched=False)
+
+
 
 
 trainer=SFTTrainer(
@@ -91,5 +106,5 @@ trainer=SFTTrainer(
 trainer.train()
 
 
-model.save_pretrained("/home/mehran1/projects/def-cjhuofw-ab/mehran1/SemEval/training")
-tokenizer.save_pretrained("/home/mehran1/projects/def-cjhuofw-ab/mehran1/SemEval/training")
+model.save_pretrained("/home/mehran1/projects/def-cjhuofw-ab/mehran1/SemEval/training/SuperNovaLite/Model")
+tokenizer.save_pretrained("/home/mehran1/projects/def-cjhuofw-ab/mehran1/SemEval/training/SuperNovaLite/Tokenizer")
