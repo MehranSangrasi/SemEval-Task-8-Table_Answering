@@ -1,0 +1,155 @@
+question,answer,type,columns_used,column_types,sample_answer,dataset
+Does the youngest billionaire identify as male?,True,boolean,"['age', 'gender']","['number[UInt8]', 'category']",True,001_Forbes
+What is the title of the billionaire with the lowest rank?,,category,"['rank', 'title']","['number[uint16]', 'category']",,001_Forbes
+List the top 4 cities where the youngest billionaires live.,"['', 'Los Angeles', 'Jiaozuo', 'Oslo']",list[category],"['age', 'city']","['number[UInt8]', 'category']","['San Francisco', 'New York', 'Wuhan', 'Bangalore']",001_Forbes
+List the bottom 2 countries with the least number of billionaires.,"['Colombia', 'Andorra']",list[category],['country'],['category'],"['Canada', 'Egypt']",001_Forbes
+List the top 4 ranks of female billionaires.,"[14, 18, 21, 30]",list[number],"['gender', 'rank']","['category', 'number[uint16]']",[],001_Forbes
+"Among those who survived, which fare range was the most common: (0-50, 50-100, 100-150, 150+)?",0-50,category,"[Fare, Survived]","['number[double]', 'boolean']",0-50,002_Titanic
+"Could you list the lower 3 fare ranges by number of survivors: (0-50, 50-100, 100-150, 150+)?","['50-100', '150+', '100-150']",list[category],"[Fare, Survived]","['number[double]', 'boolean']","[50-100, 150+, 100-150]",002_Titanic
+"What are the top 4 age ranges('30-50', '18-30', '0-18', '50+') with the highest number of survivors?","['30-50', '18-30', '0-18', '50+']",list[category],"[Age, Survived]","['number[UInt8]', 'boolean']","[30-50, 18-30, 0-18, 50+]",002_Titanic
+Which are the top 4 fares paid by survivors?,"[512.239, 512.239, 512.239, 263]",list[number],"[Fare, Survived]","['number[double]', 'boolean']","[133.65, 39.0, 35.5, 30.5]",002_Titanic
+How many respondents wear glasses all the time?,98,number,['How often do you wear glasses? 👓'],['category'],5,003_Love
+Identify the 5 largest total amounts paid for trips.,"[80.0, 80.0, 80.0, 80.0, 80.0]",list[number],['total_amount'],['number[double]'],"[45.8,
+39.9,
+33.2,
+25.2,
+24.87]",004_Taxi
+Are there any complaints made in Brooklyn?,True,boolean,['borough'],['category'],True,005_NYC
+Is the Mayor's office of special enforcement one of the agencies handling complaints?,True,boolean,['agency'],['category'],False,005_NYC
+How many complaints have been made in Queens?,23110,number,['borough'],['category'],0,005_NYC
+Name the 2 least frequent descriptors for complaints by inverse alphabetical order.,"['Booting Company', 'Ready NY - Businesses', 'Animal']",list[category],['descriptor'],['category'],"['Structure - Outdoors, Air: Odor/Fumes', 'Restaurant (AD2)', '12 Dead Animals']",005_NYC
+Which 2 hours see the least complaints?,"[6, 2]",list[number],['hour'],['number[uint8]'],"[7, 8]",005_NYC
+How many listings don't have a valid price?,0,number,['price'],['category'],0,006_London
+Which host verification method is the least used?,photographer,category,['host_verifications'],['list[category]'],[phone],006_London
+List the 2 most common host verification methods.,"['phone', 'email']",list[category],['host_verifications'],['list[category]'],"['email', 'phone']",006_London
+Are there any players who are taller than 6 feet and have an agility score above 90?,False,boolean,"['Height_ft<gx:number>', 'Agility<gx:number>']","['number[double]', 'number[uint8]']",False,007_Fifa
+Which are the top 5 nationalities in terms of the average overall score of their players?,"['Tanzania', 'Syria', 'Mozambique', 'Chad', 'Central African Rep.']",list[category],"['Nationality<gx:category>', 'Overall<gx:number>']","['category', 'number[uint8]']","['Portugal', 'Ivory Coast', 'Brazil', 'United States', 'Ghana']",007_Fifa
+Which are the top 6 clubs in terms of the average potential score of their players?,"['FC Bayern München', 'Real Madrid', 'FC Barcelona', 'Paris Saint-Germain', 'Juventus', 'Manchester City']",list[category],"['Club<gx:category>', 'Potential<gx:number>']","['category', 'number[uint8]']","['Sassuolo', 'Inter', 'Sporting CP', '1. FSV Mainz 05', 'Atalanta', 'DC United']",007_Fifa
+There are no tornadoes that resulted in more than 500 injuries.,True,boolean,[inj],['number[uint16]'],True,008_Tornados
+No tornado has a length greater than 100 miles.,True,boolean,[len],['number[double]'],True,008_Tornados
+There are no tornadoes that resulted in more than 100 fatalities.,True,boolean,[fat],['number[uint8]'],True,008_Tornados
+There were no days when the precipitation was greater than 5 inches.,True,boolean,[PRCP],['number[double]'],True,009_Central
+There were no days when the snow depth was more than 10 inches.,True,boolean,[SNWD],['number[UInt8]'],True,009_Central
+What are the three most common incident descriptions?,"[Theft, From Locked Vehicle, >$950, [Malicious Mischief], Vandalism to Property, Battery, Lost Property, Vehicle]",list[category],[Incident Description],['category'],"['Investigative Detention', 'Theft, From Locked Vehicle, $200-$950', 'Assault, Aggravated, W/ Other Weapon']",011_SF
+Which 3 incident years have the lowest number of online filed reports? If two have the same number choose the latest year,"[2023, 2020, 2021]",list[number],"[Incident Year, Filed Online]","['number[uint16]', 'boolean']","[2023, 2022, 2021]",011_SF
+What are the 4 most common chest pain types among male patients?,"['TA', 'ATA', 'NAP', 'ASY']",list[category],"['ChestPainType', 'Sex']","['category', 'category']","['TA', 'ATA', 'NAP', 'ASY']",012_Heart
+Did the oldest roller coaster in the dataset still operate?,True,boolean,"[year_introduced, Status]","['category', 'category']",True,013_Roller
+What type of the roller coaster is the oldest in the dataset?,Wood,category,"[Type, Opening date]","['category', 'category']",Other,013_Roller
+Name the 4 oldest roller coasters in the dataset.,"[Switchback Railway, Flip Flap Railway, Loop the Loop (Coney Island), Loop the Loop (Young's Pier)]",list[category],"[coaster_name, Opening date]","['category', 'category']","[\'Zipper Dipper\', \'Runaway Mine Train (Six Flags Over Texas)\', \'The Bush Beast\', \'Canyon Blaster (Adventuredome)\']",013_Roller
+Name the introduction years of the 6 oldest roller coasters in the dataset.,"[1884, 1895, 1901, 1901, 1902, 1902]",list[number],"[year_introduced, Opening date]","['number[uint16]', 'category']","[1934, 1966, 1985, 1993, 1996, 1999]",013_Roller
+What type of room is the most expensive property?,Entire home/apt,category,"['price', 'room_type']","['category', 'category']",,014_Airbnb
+What is the acceptance rate of the host of the property that can accommodate the most number of guests?,100%,category,"['accommodates', 'host_acceptance_rate']","['number[uint8]', 'category']",100%,014_Airbnb
+Which are the 2 lowest values of host response rates above 0% ?,"['5%', '10%']",list[category],['host_response_rate'],['category'],"['73%', '83%']",014_Airbnb
+Which are the 2 lowest values of host response rates?,"['0%', '0%']",list[category],['host_response_rate'],['category'],"['73%', '83%']",014_Airbnb
+What are the 4 highest values of host acceptance rates?,"['99%', '99%', '99%', '99%']",list[category],['host_acceptance_rate'],['category'],"['100%', '100%', '100%', '100%']",014_Airbnb
+Were there any employees hired in 2019?,True,boolean,[Date Hired],"['date[ns, UTC]']",False,018_Staff
+Which year had the highest number of employees hired?,2017,category,[Date Hired],"['date[ns, UTC]']",2017,018_Staff
+List the 3 departments with the most number of promotions in the last 5 years that have at least one promotion. ,"['hr', 'accounting', 'IT']",list[category],"[Department, Promoted in the last 5 years?]","['category', 'category']",[],018_Staff
+Identify the top 3 years with the highest employee hiring.,"['2017', '2018', '2016']",list[number],[Date Hired],"['date[ns, UTC]']","[2017, 2016, 2018]",018_Staff
+List the bottom 5 average monthly hours among employees who were promoted in the last 5 years.,"[215, 133, 159, 241, 247]",list[number],"[Average Monthly Hours, Promoted in the last 5 years?]","['number[uint16]', 'category']",[],018_Staff
+Did any incident result in the total destruction of the aircraft?,True,boolean,['Aircaft_Damage_Type'],['category'],False,019_Aircraft
+Has there been any instance where the ground casualties were non-zero?,True,boolean,['Ground_Casualties'],['category'],True,019_Aircraft
+What's the highest number of occupants recorded in an incident?,524.0,number,['Onboard_Total'],['category'],86,019_Aircraft
+How many incidents occurred in January 2022?,7,number,['Date'],"['date[ns, UTC]']",0,019_Aircraft
+How many incidents resulted in non-zero fatalities?,0,number,['Fatalities'],['number[uint16]'],10,019_Aircraft
+What was the cause of the incident that resulted in the most fatalities?,"Airplane - Pressurization, Airplane - Pressurization - Bulkhead failure, Airplane - Pressurization - Explosive decompression, Maintenance - (repair of) previous damage, Result - Loss of control",category,"['Incident_Cause(es)', 'Fatalities']","['category', 'number[uint16]']","Result - Loss of control, Security - Sabotage (bomb)",019_Aircraft
+What is the location of the incident with the highest number of onboard occupants?,near Ueno Village...,category,"['Incident_Location', 'Onboard_Total']","['category', 'category']",Sioux Falls ...,019_Aircraft
+List the top 5 locations where the most incidents have occurred. If there are two or more with the same number order them alphabetically,"['Arnhem', 'Beirut International Airport (BEY)', 'Glasgow-Preswick Airport', 'Havana-José Martí International Airport (HAV)', 'Miami International Airport, FL (MIA)']",list[category], ['Incident_Location'],['category'],"['Arnhem', 'Bembridge Ai...', 'Carolina Aer...', 'Dahra-Wareho...', 'Glasgow-Pres...']",019_Aircraft
+What are the 5 highest numbers of onboard passengers in incidents?,"[509.0, 503.0, 497.0, 451.0, 440.0]",list[number],['Onboard_Passengers'],['category'],"[81, 39, 14, 11, 8]",019_Aircraft
+List the 3 highest numbers of onboard crew in incidents.,"[32.0, 31.0, 29.0]",list[number],['Onboard_Crew'],['category'],"[5, 4, 3]",019_Aircraft
+Identify the 4 highest numbers of total onboard occupants in incidents.,"[524.0, 521.0, 517.0, 469.0]",list[number],['Onboard_Total'],['category'],"[86, 44, 19, 15]",019_Aircraft
+What are the 6 highest numbers of ground casualties in incidents?,"[1600, 900, 237, 107, 88, 87]",list[number],['Ground_Casualties'],['category'],"[9, 1]",019_Aircraft
+Do all customers have phone service?,True,boolean,['PhoneService'],['category'],False,021_Telco
+List the 4 most common property types.,"['Entire apartment', 'Private room in apartment', 'Entire condominium', 'Entire house']",list[category],['property_type'],['category'],"['Entire apartment', 'Private room in apartment', 'Entire guest suite', 'Entire condominium']",022_Airbnbs
+Were there days in the summer where the minimum temperature dropped below 10?,True,boolean,"[season, tmin]","['category', 'number[double]']",False,023_Climate
+"On average, what's the minimum temperature during winters?",2.7196082770831027,number,"[season, tmin]","['category', 'number[double]']",,023_Climate
+Are there any female respondents who belong to the ESTE NUTS1 region?,True,boolean,"[SEXO, NUTS1]","['category', 'category']",True,024_Salary
+"On average, what's the RETRINOIN value for male respondents?",29370.243704368546,number,"[SEXO, RETRINOIN]","['category', 'number[double]']",26024.9957143,024_Salary
+What is the lowest ranking value in the dataset?,11,number,['Ranking'],['number[uint8]'],11,025_Data
+What are the top 3 URLs with the highest average monthly searches?,"['https://www.obviously.ai/', 'https://venturebeat.com/2021/10/12/no-code-ai-startup-obviously-ai-raises-4-7m/', 'https://hbr.org/2021/11/how-no-code-platforms-could-disrupt-the-it-industry']",list[category],"['URLs', 'Avg. monthly searches']","['url', 'number[uint8]']","[https://towardsdatascience.com/top-8-no-code-machine-learning-platforms-you-should-use-in-2020-1d1801300dd0, https://hbr.org/2021/11/how-no-code-platforms-can-bring-ai-to-small-and-midsize-businesses, https://www.obviously.ai/]",025_Data
+List the bottom 2 competition levels of URLs with ranking better than 5.,"['Medium', 'Unknown']",list[category],"['Ranking', 'Competition']","['number[uint8]', 'category']","[High, High]",025_Data
+Which are the top 4 keywords associated with the URLs of lowest rankings?,"['no code data science', 'no code data analytics', 'no code data science', 'no code data science']",list[category],"['Ranking', 'Keyword']","['number[uint8]', 'category']","[no code analytics, no code data science, no code analytics platform, no code data science]",025_Data
+Enumerate the bottom 3 URLs with the highest rankings.,"['https://www.obviously.ai/', 'https://www.obviously.ai/', 'https://venturebeat.com/2021/10/12/no-code-ai-startup-obviously-ai-raises-4-7m/']",list[category],"['Ranking', 'URLs']","['number[uint8]', 'url']","[https://www.obviously.ai/, https://hbr.org/2021/11/how-no-code-platforms-can-bring-ai-to-small-and-midsize-businesses, https://analyticsindiamag.com/top-12-no-code-machine-learning-platforms-in-2021/]",025_Data
+What are the lowest 4 rankings associated with the keyword 'no code data science'?,"[10, 9, 8, 7]",list[number],"['Keyword', 'Ranking']","['category', 'number[uint8]']","[10, 9, 6, 4]",025_Data
+List the bottom 3 average monthly searches for URLs with medium competition.,"[50, 50, 50]",list[number],"['Competition', 'Avg. monthly searches']","['category', 'number[uint8]']","[50, 50, 50]",025_Data
+Provide the lowest 5 rankings of URLs with low competition (if any).,"[11, 10, 10, 9, 9]",list[number],"['Competition', 'Ranking']","['category', 'number[uint8]']","[11, 8, 6, 6, 5]",025_Data
+Are there any individuals in the dataset who are above 60 years of age?,False,boolean,['Age'],['number[uint8]'],True,028_Predict
+Does anyone have a Diabetes Pedigree Function score above 2.5?,True,boolean,['DiabetesPedigreeFunction'],['number[double]'],False,028_Predict
+How many individuals have an insulin level above 150?,187,number,['Insulin'],['number[uint16]'],4,028_Predict
+List the diabetes outcomes of the bottom 2 individuals with the lowest BMI.,"[0, 0]",list[category],"['BMI', 'Outcome']","['number[double]', 'number[uint8]']","[0, 0]",028_Predict
+List the diabetes outcomes of the top 5 individuals with the highest insulin levels.,"[1, 1, 1, 1, 1]",list[category],"['Insulin', 'Outcome']","['number[uint16]', 'number[uint8]']","[1, 0, 0, 1, 1]",028_Predict
+List the diabetes outcomes of the bottom 4 individuals with the lowest blood pressure.,"[0, 0, 0, 0]",list[category],"['BloodPressure', 'Outcome']","['number[uint8]', 'number[uint8]']","[0, 1, 0, 1]",028_Predict
+What are the ages of the top 4 individuals with the highest number of pregnancies?,"[51, 67, 67, 67]",list[number],"['Pregnancies', 'Age']","['number[uint8]', 'number[uint8]']","[40, 34, 50, 60]",028_Predict
+List the BMI of the bottom 3 individuals with the lowest glucose levels.,"[32.0, 32.0, 32.0]",list[number],"['Glucose', 'BMI']","['number[uint8]', 'number[double]']","[20.4, 37.2, 30.2]",028_Predict
+Enumerate the blood pressure levels of the top 5 individuals with the highest Diabetes Pedigree Function scores.,"[0, 0, 0, 0, 0]",list[number],"['DiabetesPedigreeFunction', 'BloodPressure']","['number[double]', 'number[uint8]']","[74, 50, 0, 80, 58]",028_Predict
+Are there any articles that have the material type 'Op-Ed'?,False,boolean,['material_type'],['category'],False,029_NYTimes
+How many unique material types are there in the dataset?,4,number,['material_type'],['category'],5,029_NYTimes
+What is the longest length of a headline in the dataset?,96,number,['headline'],['text'],110,029_NYTimes
+How many articles were published on '2021-01-02'?,52,number,['date'],"['date[ns, UTC]']",0,029_NYTimes
+What is the highest number of keywords associated with a single article?,8,number,['keywords'],['list[category]'],8,029_NYTimes
+What is the material type of the article with the longest headline?,News,category,"['headline', 'material_type']","['text', 'category']",News,029_NYTimes
+What is the material type of the article with the least number of keywords?,News,category,"['keywords', 'material_type']","['list[category]', 'category']",News,029_NYTimes
+List the material types of the top 3 articles with the longest headlines.,"['News', 'News', 'News']",list[category],"['headline', 'material_type']","['text', 'category']","['News', 'Interactive Feature', 'News']",029_NYTimes
+List the material types of the bottom 4 articles with the least number of keywords.,"['News', 'News', 'News', 'News']",list[category],"['keywords', 'material_type']","['list[category]', 'category']","['News', 'Interactive Feature', 'News', 'News']",029_NYTimes
+What are the lengths of the headlines of the top 4 articles with the most number of keywords?,"[86, 85, 84, 84]",list[number],"['keywords', 'headline']","['list[category]', 'text']","[73, 20, 69, 62]",029_NYTimes
+Enumerate the lengths of the headlines of the top 5 articles with the longest headlines.,"[96, 96, 95, 95, 95]",list[number],['headline'],['text'],"[110, 94, 92, 73, 73]",029_NYTimes
+How many participants are from the United Kingdom?,450,number,['In which country do you currently reside?'],['category'],1,030_Professionals
+What is the most common number of programming languages used by participants on a regular basis?,2,number,['What programming languages do you use on a regular basis?'],['list[category]'],3.0,030_Professionals
+What are the top 4 geographies represented in the dataset?,"['India', 'USA', 'Western Europe', 'China - Japan - Korea']",list[category],['Geographies'],['list[category]'],"['USA', 'India', 'Other', 'Russia']",030_Professionals
+Name the top 3 general segments of participants.,"['Analysts', 'Data Scientists', 'Academics']",list[category],['General Segments'],['list[category]'],"['Academics', 'Data Scientists', 'Analysts']",030_Professionals
+Identify the top 6 programming languages used regularly.,"['Python', 'SQL', 'R', 'Javascript', 'C++', 'Java']",list[category],['What programming languages do you use on a regular basis?'],['list[category]'],"['Python', 'SQL', 'R', 'Java', 'C++', 'Javascript']",030_Professionals
+list the highest average 3 years of machine learning experience.,"[19.83, 19.74, 19.68]",list[number],['(Average) For how many years have you used machine learning methods?'],['number[double]'],"[7.5,
+4.5,
+3.5]",030_Professionals
+Which company received the lowest rating?,N26,category,"['rating', 'Company']","['number[uint8]', 'category']",N26,031_Trustpilot
+What are the best 4 unique ratings given to 'Wise'?,"[5, 4, 2, 1]",list[number],"['rating', 'Company']","['number[uint8]', 'category']","[5, 4, 2]",031_Trustpilot
+What are the bottom 5 unique ratings given to 'N26'?,"[1, 2, 3, 4, 5]",list[number],"['rating', 'Company']","['number[uint8]', 'category']","[1, 3, 4, 5]",031_Trustpilot
+What's the most common education level among our employees?,Graduation,category,['Education'],['category'],Graduation,033_Employee
+What's the most common marital status in the database?,Married,category,['Marital_Status'],['category'],Married,033_Employee
+"Among the employees who have left the company in sales, what's the most common salary level?",low,category,"['Left', 'Department', 'salary']","['category', 'category', 'category']",,033_Employee
+"Among the employees who have had a work accident in sales, what's the most common salary level?",low,category,"['Work Accident', 'Department', 'salary']","['category', 'category', 'category']",low,033_Employee
+"For the 2 employees with the top satisfaction levels who belong to the sales department, what are their salary levels?","['low', 'low']",list[category],"['Satisfaction Level', 'Department', 'salary']","['number', 'category', 'category']",['low'],033_Employee
+Does the song with the lowest rank contain the word 'love' in its lyrics?,True,boolean,"['Rank', 'Lyrics']","['number[uint8]', 'text']",False,035_Billboard
+What is the title of the song with the lowest rank?,how sweet it is to be loved by you,category,"['Rank', 'Song']","['number[uint8]', 'category']",the end of the innocence,035_Billboard
+Who are the artists of the top 5 ranked songs?,"['sam the sham and the pharaohs', 'ssgt barry sadler', 'the beach boys', 'the beatles', 'the beatles']",list[category],"['Rank', 'Artist']","['number[uint8]', 'category']","['alicia keys', 'christina aguilera', 'mariah carey', 'wayne fontana  the mindbenders', 'fall out boy']",035_Billboard
+What are the titles of the 3 songs with the shortest lyrics?,"['girl youll be a woman soon', 'papa dont preach', 'breathe']",list[category],"['Song', 'Lyrics']","['category', 'text']","['all the small things', 'days go by', 'hurting each other']",035_Billboard
+Who are the artists of the bottom 5 ranked songs?,"['marvin gaye', 'wilson pickett', 'neil diamond', 'jerry butler', 'the beatles']",list[category],"['Rank', 'Artist']","['number[uint8]', 'category']","['don henley', 'lady antebellum', 'the who', 'aerosmith', 'the dave clark five']",035_Billboard
+What are the ranks of the top 3 songs with the most occurrences of the word 'love' in their lyrics?,"[64, 41, 28]",list[number],"['Rank', 'Lyrics']","['number[uint8]', 'text']","[11, 2, 5]",035_Billboard
+What are the years of production of the top 5 songs with the longest lyrics?,"[1998, 2009, 2010, 2007, 2002]",list[number],"['Year', 'Lyrics']","['number[uint16]', 'text']","[2013, 1973, 1988, 1994, 2005]",035_Billboard
+Who are the artists of the top 3 songs in 1965?,"['sam the sham and the pharaohs', 'four tops', 'the beach boys']",list[category],"['Rank', 'Year', 'Artist']","['number[uint8]', 'number[uint16]', 'category']","['wayne fontana  the mindbenders', 'the dave clark five']",035_Billboard
+What are the years of production of the top 3 songs with the word 'love' in their lyrics by the Beatles?,"[1967, 1965, 1966]",list[number],"['Year', 'Lyrics', 'Artist']","['number[uint16]', 'text', 'category']",[],035_Billboard
+Which origin has the lowest latitude?,Guáanica,category,"['lat_origin', 'name_origin']","['number[double]', 'category']",Okaloosa,036_US
+List the age of the 6 youngest individuals in the dataset.,"[2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0]",list[number],['age'],['number[UInt8]'],"[22.0, 22.0, 24.0, 24.0, 24.0, 26.0]",039_Happy
+Are all participants who expected more than 5 matches male?,True,boolean,"['expected_num_matches', 'gender']","['number[UInt8]', 'category']",True,040_Speed
+What are the top 4 tweet IDs with the lowest sentiment confidence?,"[570306133677760513, 570301031407624196, 570300817074462722, 570300767074181121]",list[number],"['tweet_id', 'airline_sentiment_confidence']","['number[int64]', 'number[double]']","[569731104070115329, 569263373092823040, 568818669024907264, 567775864679456768]",041_Airline
+What are the 3 lowest final grades of students who have more than 10 absences?,"[4, 14, 17]",list[number],"['absences', 'G3']","['number[uint8]', 'number[uint8]']","[6, 9]",042_Predict
+What are the 6 lowest final grades of students who don't want to take higher education?,"[8, 10, 12, 9, 7, 13]",list[number],"['higher', 'G3']","['category', 'number[uint8]']","[10, 12]",042_Predict
+What is the average disbursement gross for companies in the retail sector?,164636.4123068934,number,"['Sector', 'DisbursementGross']","['category', 'number[uint32]']",,043_Predict
+What are the top 5 approval years for companies in the retail sector?,"[2005, 2004, 2006, 2007, 2003]",list[number],"['Sector', 'ApprovalFY']","['category', 'number[uint16]']",[],043_Predict
+What are the 3 highest disbursement gross for companies with a franchise code of 1?,"[50000.0, 100000.0, 10000.0]",list[number],"['FranchiseCode', 'DisbursementGross']","['number[uint32]', 'number[uint32]']","[249719.0, 136000.0, 125000.0]",043_Predict
+What are the 6 highest default amounts among companies in the state of NY?,"[0.0, 50000.0, 25000.0, 100000.0, 35000.0, 10000.0]",list[number],"['State', 'default_amount']","['category', 'number[uint32]']","[49996.0, 12942.0]",043_Predict
+Are all movies with votes greater than 90 from the USA in English?,True,boolean,"['votes', 'country', 'language']","['number[UInt8]', 'category', 'category']",False,044_IMDb
+"What is the average duration for movies in the drama genre, from the USA, in English?",96.07926963408374,number,"['genre', 'country', 'language', 'duration']","['category', 'category', 'category', 'number[uint16]']",100.0,044_IMDb
+How many unique languages are there in the dataset for movies from the USA?,650,number,"['country', 'language']","['category', 'category']",3,044_IMDb
+What is the country of the English language movie with the longest duration?,Argentina,category,"['duration', 'language', 'country']","['number[uint16]', 'category', 'category']",USA,044_IMDb
+What are the top 2 genres among English language movies from the USA with a metascore greater than 90?,"['Drama', 'Crime, Drama']",list[category],"['metascore', 'country', 'language', 'genre']","['number[UInt8]', 'category', 'category', 'category']",[],044_IMDb
+What are the 3 longest durations for English language movies from the USA with a metascore of 100?,"[102, 119, 112]",list[number],"['metascore', 'country', 'language', 'duration']","['number[UInt8]', 'category', 'category', 'number[uint16]']",[],044_IMDb
+What are the four years with more English language movies from the USA?,"[2017.0, 2016.0, 2018.0, 2013.0]",list[number],"['country', 'language', 'year']","['category', 'category', 'number[UInt16]']","[1994, 1942, 1951, 1964]",044_IMDb
+Can you show the 6 highest metascores among English language movies from the USA?,"[49.0, 55.0, 57.0, 48.0, 54.0, 52.0]",list[number],"['country', 'language', 'metascore']","['category', 'category', 'number[UInt8]']",[],044_IMDb
+Is it true that the song with the lowest popularity in the dataset is longer than 300000 ms?,True,boolean,"[popularity, duration_ms]","['number[uint8]', 'number[UInt32]']",False,045_Predict
+Did any song released in the year 2020 in the dataset achieve the maximum popularity?,False,boolean,"[release_year, popularity]","['number[uint16]', 'number[uint8]']",False,045_Predict
+What's the average song duration in the dataset?,228998.0798095238,number,[duration_ms],['number[UInt32]'],256381.1,045_Predict
+Is it true that the athlete with the lowest ID is older than 30 years?,True,boolean,"[ID, Age]","['number[uint32]', 'number[UInt8]']",True,046_120
+Did any athlete from the team with the most participants win two gold medals?,False,boolean,"[Team, Medal]","['category', 'category']",False,046_120
+Does the athlete with the highest height also have a medal?,False,boolean,"[Height, Medal]","['number[UInt8]', 'category']",False,046_120
+How many unique teams are there in the dataset?,230,number,[Team],['category'],15,046_120
+How many athletes participated in the year with the most participants?,2536,number,[Year],['number[uint16]'],2,046_120
+Who is the athlete with the highest weight?,Ricardo Blas Jr.,category,"[Weight, Name]","['number[UInt8]', 'category']",Martin Laumann Ylven,046_120
+In which city did the athlete with the highest height participate?,London,category,"[Height, City]","['number[UInt8]', 'category']",Vancouver,046_120
+What are the names of the top 3 athletes with the highest weights?,"[Ricardo Blas Jr., Shinichi Shinohara, Emmanuel Yarborough]",list[category],"[Weight, Name]","['number[UInt8]', 'category']","['Martin Laumann Ylven', 'Juri Takayama', 'Graziano Mancinelli']",046_120
+What are the three highest weights of athletes?,"[214.0, 198.0, 190.0]",list[number],[Weight],['number[UInt8]'],"[92.0, 85.0, 77.0]",046_120
+Who are the six customer ids with the highest total revolving balance?,"[2517, 2517, 2517, 2517, 2517, 2517]",list[number],"['total_revolving_bal', 'id']","['number[uint16]', 'number[uint16]']","[10093, 7430, 6400, 3782, 9612, 7360]",047_Bank
+List the year the 3 oldest companies that have job listings were founded.,"[1744, 1781, 1781]",list[number],['Founded'],['number[int16]'],"[1784, 1912, 1928]",048_Data
+Are there any verified users who have tweeted in a language other than English?,True,boolean,"['user_verified<gx:boolean>', 'lang<gx:category>']","['boolean', 'category']",False,049_Boris
+What are the top five most frequently mentioned names in the tweets?,"['G7', 'foreignoffice', 'UN', 'Conservatives', 'COP26']",list[category],['mention_names<gx:list[category]>'],['list[category]'],"['[]', '[Hillingdon_Tory]', '[UN]', '[CyrilRamaphosa]', '[JoeMurphyLondon]']",049_Boris
+What are the bottom four numbers of favorites count?,"[7, 7, 8, 9]",list[number],['favorites<gx:number>'],['number[uint32]'],"[137, 198, 202, 210]",049_Boris

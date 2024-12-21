@@ -2,25 +2,39 @@ import pandas as pd
 from databench_eval import Evaluator
 
 
-df = pd.read_csv("data/pointless/dev_with_answers.csv")
+cw = pd.read_csv("data/correct_from_wrong.csv")
+wq = pd.read_csv("data/wrong_queries.csv")
 evaluator = Evaluator()
 
 correct=0
-for index, row in df.iterrows():
+for index, row in cw.iterrows():
     
-    actual_answer = row["answer"]
-    print("Actual answer: ", actual_answer)
-    predicted_answer = row["own_answers"]
-    print("Predicted answer: ", predicted_answer)
-    print("\n\n")
+    dataset = row["dataset_id"]
     
-    semantic = row["type"]
+    df = pd.read_csv(f"data/datasets/{dataset}.csv")
     
-    result = evaluator.compare(value=predicted_answer, truth=actual_answer, semantic=semantic)
+    query = row["query"]
+    
+    pred_answer = eval(query, {"df": df, "pd": pd})
+    # print(answer)
+    
+    question = row["question"]
+    
+    true_answer = wq.loc[wq["question"] == question]["answer"].values[0]
+    # print(true_answer)
+    
+    semantic = wq.loc[wq["question"] == question]["type"].values[0]
+    
+    # print(semantic)
+
+    
+    # semantic = row["type"]
+    
+    result = evaluator.compare(value=pred_answer, truth=true_answer, semantic=semantic)
     
     if result == True:
         correct+=1
         
 
 
-print("Accuracy: ", correct/len(df))
+print("Accuracy: ", correct/len(cw))
