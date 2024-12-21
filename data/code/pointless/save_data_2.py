@@ -4,18 +4,16 @@ import pandas as pd
 
 # Directory to store downloaded datasets
 local_directory = "data/datasets"
-# os.makedirs(local_directory, exist_ok=True)
+os.makedirs(local_directory, exist_ok=True)  # Ensure the directory exists
 
 # List of dataset IDs
-table_info = pd.read_csv("data/table_info.csv")
+table_info = pd.read_csv("table_info.csv")
 
 dataset_ids = []
 
 for index, row in table_info.iterrows():
     dataset_id = row['Dataset_ID']
     dataset_ids.append(dataset_id)
-    
-
 
 # Download and save datasets locally as CSV
 for dataset_id in dataset_ids:

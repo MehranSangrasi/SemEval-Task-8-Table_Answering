@@ -52,7 +52,7 @@ print(model.print_trainable_parameters())
 #     labels = tokenizer(targets, padding='max_length', truncation=True, max_length=512)
 #     model_inputs["labels"] = labels["input_ids"]
 #     return model_inputs
-
+  
 tokenizer = get_chat_template(
     tokenizer,
     mapping={"role": "from", "content": "value", "user": "human", "assistant": "gpt"},

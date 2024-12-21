@@ -1,0 +1,428 @@
+Dataset Name,Column Name,Unique Values
+001_Forbes,selfMade,"[True, False]"
+001_Forbes,gender,"['M', 'F']"
+002_Titanic,Survived,"[False, True]"
+002_Titanic,Pclass,"[3, 1, 2]"
+002_Titanic,Sex,"['male', 'female']"
+003_Love,What's your sexual orientation?,"['Heterosexual', 'Homosexual', 'Bisexual']"
+003_Love,Do you have children? 🍼,"['Yes', 'No']"
+003_Love,How long is your hair? 💇🏻♀️💇🏽♂️,"['Short', 'Long', 'Medium', 'Bald']"
+003_Love,How long is your facial hair? 🧔🏻,"['No facial hair', 'Short beard (few days)', 'Medium (weeks)', 'Long (months)']"
+003_Love,How often do you wear glasses? 👓,"['Constantly', 'Rarely', 'Occasioanlly', 'Regularly']"
+003_Love,Have you ever use an oline dating app?,"['No', 'Yes']"
+003_Love,Where have you met your sexual partners? (In a Bar or Restaurant),"[False, True]"
+003_Love,Where have you met your sexual partners? (Through Friends),"[False, True]"
+003_Love,Where have you met your sexual partners? (Through Work or as Co-Workers),"[False, True]"
+003_Love,Where have you met your sexual partners? (Through Family),"[False, True]"
+003_Love,Where have you met your sexual partners? (in University),"[True, False]"
+003_Love,Where have you met your sexual partners? (in Primary or Secondary School),"[False, True]"
+003_Love,Where have you met your sexual partners? (Neighbors),"[False, True]"
+003_Love,Where have you met your sexual partners? (in Church),"[False, True]"
+003_Love,Where have you met your sexual partners? (Other),"[False, True]"
+004_Taxi,VendorID,"[1, 2]"
+004_Taxi,RatecodeID,"[1, 5, 2, 4]"
+004_Taxi,store_and_fwd_flag,"['N', 'Y']"
+004_Taxi,payment_type,"[2, 1, 4, 3]"
+004_Taxi,mta_tax,"[0.5, 0.0, 0.8]"
+004_Taxi,tolls_amount,[0]
+004_Taxi,improvement_surcharge,"[1.0, 0.3, 0.0]"
+004_Taxi,congestion_surcharge,[2.5]
+004_Taxi,Airport_fee,[0.0]
+004_Taxi,airport_fee,[]
+005_NYC,segmentation_1,"['[]', ""['Manhattan Late at night']"", ""['Bronx Late at night']""]"
+005_NYC,facility_type,"['Precinct', 'DSNY Garage', 'School', 'School District']"
+005_NYC,vehicle_type,"['Car Service', 'Ambulette / Paratransit']"
+006_London,price,[]
+006_London,room_type,"['Private room', 'Entire home/apt', 'Shared room', 'Hotel room']"
+006_London,host_acceptance_rate,[]
+006_London,host_identity_verified,"['f', 't']"
+006_London,instant_bookable,"['f', 't']"
+006_London,last_scraped,"['2023-03-14 00:00:00+00:00', '2023-03-15 00:00:00+00:00', '2023-03-16 00:00:00+00:00', '2023-03-29 00:00:00+00:00']"
+006_London,source,"['city scrape', 'previous scrape']"
+006_London,host_response_time,"['within an hour', 'within a few hours', 'within a day', 'a few days or more']"
+006_London,host_is_superhost,"['f', 't']"
+006_London,host_has_profile_pic,"['t', 'f']"
+006_London,bathrooms,[]
+006_London,calendar_updated,[]
+006_London,has_availability,"['t', 'f']"
+006_London,calendar_last_scraped,"['2023-03-14 00:00:00+00:00', '2023-03-15 00:00:00+00:00', '2023-03-16 00:00:00+00:00', '2023-03-29 00:00:00+00:00']"
+006_London,license,[]
+006_London,price_M0jI,[]
+007_Fifa,Preferred Foot<gx:category>,"['Right', 'Left']"
+007_Fifa,Marking<gx:number>,[]
+007_Fifa,General Postion<gx:category>,"['FWD', 'MD', 'DF', 'GK']"
+007_Fifa,Legend,[False]
+010_ECommerce,Recommended IND,"[1, 0]"
+010_ECommerce,Division Name,"['Initmates', 'General', 'General Petite']"
+011_SF,Report Type Code,"['VS', 'II', 'IS', 'VI']"
+011_SF,Filed Online,[True]
+011_SF,Resolution,"['Open or Active', 'Cite or Arrest Adult', 'Exceptional Adult', 'Unfounded']"
+011_SF,ESNCAG - Boundary File,[1.0]
+011_SF,Central Market/Tenderloin Boundary Polygon - Updated,[1.0]
+011_SF,Civic Center Harm Reduction Project Boundary,[1.0]
+011_SF,Invest In Neighborhoods (IIN) Areas,[]
+012_Heart,Sex,"['M', 'F']"
+012_Heart,ChestPainType,"['ATA', 'NAP', 'ASY', 'TA']"
+012_Heart,FastingBS,"[0, 1]"
+012_Heart,RestingECG,"['Normal', 'ST', 'LVH']"
+012_Heart,ExerciseAngina,"['N', 'Y']"
+012_Heart,ST_Slope,"['Up', 'Flat', 'Down']"
+012_Heart,HeartDisease,"[0, 1]"
+013_Roller,Fast Lane available,['Fast Lane available']
+013_Roller,Fastrack available,['Fastrack available']
+013_Roller,Flash Pass Available,['Flash Pass Available']
+013_Roller,Must transfer from wheelchair,['Must transfer from wheelchair']
+013_Roller,Single rider line available,['Single rider line available']
+013_Roller,Flash Pass available,['Flash Pass available']
+013_Roller,Type_Main,"['Wood', 'Other', 'Steel']"
+013_Roller,speed1_unit,"['mph', 'km/h']"
+013_Roller,height_unit,"['ft', 'm']"
+014_Airbnb,scrape_id,[20221213034110]
+014_Airbnb,last_scraped,['2022-12-13 00:00:00+00:00']
+014_Airbnb,source,"['city scrape', 'previous scrape']"
+014_Airbnb,host_response_time,"['within an hour', 'a few days or more', 'within a few hours', 'within a day']"
+014_Airbnb,host_is_superhost,"['t', 'f']"
+014_Airbnb,host_has_profile_pic,"['t', 'f']"
+014_Airbnb,host_identity_verified,"['t', 'f']"
+014_Airbnb,room_type,"['Private room', 'Entire home/apt', 'Shared room', 'Hotel room']"
+014_Airbnb,bathrooms,[]
+014_Airbnb,calendar_updated,[]
+014_Airbnb,has_availability,"['t', 'f']"
+014_Airbnb,calendar_last_scraped,['2022-12-13 00:00:00+00:00']
+014_Airbnb,instant_bookable,"['f', 't']"
+016_Holiday,ProdTaken,"[1, 0]"
+016_Holiday,TypeofContact,"['Self Enquiry', 'Company Invited']"
+016_Holiday,CityTier,"[3, 1, 2]"
+016_Holiday,Occupation,"['Salaried', 'Free Lancer', 'Small Business', 'Large Business']"
+016_Holiday,Gender,"['Female', 'Male', 'Fe Male']"
+016_Holiday,PreferredPropertyStar,"[3.0, 4.0, 5.0]"
+016_Holiday,MaritalStatus,"['Single', 'Divorced', 'Married', 'Unmarried']"
+016_Holiday,Passport,"[1, 0]"
+016_Holiday,OwnCar,"[1, 0]"
+016_Holiday,NumberOfChildrenVisiting,"[0.0, 2.0, 1.0, 3.0]"
+017_Hacker,test,"['[]', ""['test 1']"", ""['test 2']"", ""['test 1' 'test 2']""]"
+017_Hacker,title_gx_cardiff_nlp_sentiment,[]
+017_Hacker,title_gx_hashtags,"['[]', ""['#deletefacebook']"", ""['#c0ffee']""]"
+017_Hacker,season,"['Autumn', 'Summer', 'Spring', 'Winter']"
+018_Staff,Left,"['Yes', 'No']"
+018_Staff,Work Accident,"['Yes', 'No']"
+018_Staff,salary,"['low', 'medium', 'high']"
+018_Staff,Promoted in the last 5 years?,"['Yes', 'No']"
+020_Real,Nuevo,"[1, 0]"
+020_Real,Reformado,"[0, 1]"
+020_Real,Conservado,"[1, 0]"
+020_Real,Exterior,"[0, 1]"
+020_Real,Orientación sur,"[0, 1]"
+020_Real,Soleado,"[0, 1]"
+020_Real,Amueblado,"[0, 1]"
+020_Real,Negociar muebles,"[0, 1]"
+020_Real,Cocina equipada,"[0, 1]"
+020_Real,Cocina independiente,"[0, 1]"
+020_Real,Armarios empotrados,"[0, 1]"
+020_Real,Garaje,"[1, 0]"
+020_Real,Terraza,"[1, 0]"
+020_Real,Ascensor,"[1, 0]"
+020_Real,Aire acondicionado,"[0, 1]"
+020_Real,Trastero,"[1, 0]"
+020_Real,Puerta blindada,"[0, 1]"
+020_Real,Piscina,"[0, 1]"
+020_Real,Jardín,"[0, 1]"
+020_Real,Comedor,"[0, 1]"
+020_Real,Balcón,"[0, 1]"
+020_Real,Lavadero,"[0, 1]"
+020_Real,Chimenea,"[0, 1]"
+020_Real,Portero automático,"[0, 1]"
+020_Real,Sistema de seguridad,"[0, 1]"
+020_Real,Calefacción central,"[0, 1]"
+020_Real,Calefacción eléctrica,"[0, 1]"
+020_Real,Gas natural,"[0, 1]"
+020_Real,Gasoil,"[0, 1]"
+020_Real,Aluminio,"[0, 1]"
+020_Real,PVC,"[0, 1]"
+020_Real,Climalit,"[0, 1]"
+020_Real,Madera,"[0, 1]"
+020_Real,Parquet,"[0, 1]"
+020_Real,Gres,"[0, 1]"
+020_Real,Tarima,"[0, 1]"
+020_Real,Mármol,"[0, 1]"
+021_Telco,gender,"['Female', 'Male']"
+021_Telco,SeniorCitizen,"[0, 1]"
+021_Telco,Partner,"['Yes', 'No']"
+021_Telco,Dependents,"['No', 'Yes']"
+021_Telco,PhoneService,"['No', 'Yes']"
+021_Telco,MultipleLines,"['No phone service', 'No', 'Yes']"
+021_Telco,InternetService,"['DSL', 'Fiber optic', 'No']"
+021_Telco,OnlineSecurity,"['No', 'Yes', 'No internet service']"
+021_Telco,OnlineBackup,"['Yes', 'No', 'No internet service']"
+021_Telco,DeviceProtection,"['No', 'Yes', 'No internet service']"
+021_Telco,TechSupport,"['No', 'Yes', 'No internet service']"
+021_Telco,StreamingTV,"['No', 'Yes', 'No internet service']"
+021_Telco,StreamingMovies,"['No', 'Yes', 'No internet service']"
+021_Telco,Contract,"['Month-to-month', 'One year', 'Two year']"
+021_Telco,PaperlessBilling,"['Yes', 'No']"
+021_Telco,PaymentMethod,"['Electronic check', 'Mailed check', 'Bank transfer (automatic)', 'Credit card (automatic)']"
+021_Telco,Churn,"['No', 'Yes']"
+022_Airbnbs,host_response_time,"['within a few hours', 'within a day', 'within an hour', 'a few days or more']"
+022_Airbnbs,host_is_superhost,"['f', 't']"
+022_Airbnbs,host_has_profile_pic,"['t', 'f']"
+022_Airbnbs,host_identity_verified,"['t', 'f']"
+022_Airbnbs,city,['New York']
+022_Airbnbs,room_type,"['Entire place', 'Private room', 'Hotel room', 'Shared room']"
+022_Airbnbs,instant_bookable,"['f', 't']"
+023_Climate,season,"['Winter', 'Autumn', 'Summer', 'Spring']"
+023_Climate,quarter,"[4, 3, 2, 1]"
+023_Climate,altitud,[667]
+023_Climate,nombre,['MADRID. RETIRO']
+023_Climate,provincia,['MADRID']
+023_Climate,indicativo,[3195]
+024_Salary,SEXO,"['Male', 'Female']"
+024_Salary,CONTROL,"['PRIVADO', 'PUBLICO']"
+024_Salary,MERCADO,"['UNIÓN EUROPEA', 'NACIONAL', 'LOCAL O REGIONAL', 'MUNDIAL']"
+024_Salary,TIPOPAIS,"['ESPAÑA', 'RESTO MUNDO']"
+024_Salary,RESPONSA,"['No', 'Sí']"
+024_Salary,TIPOJOR,"['TIEMPO PARCIAL', 'TIEMPO COMPLETO']"
+024_Salary,TIPOCON,"['DURACION DETERMINADA', 'DURACION INDEFINIDA']"
+024_Salary,Quantiles_target,"['Low', 'Medium-low', 'Medium-high', 'High']"
+025_Data,Avg. monthly searches,[50]
+025_Data,Competition,"['Medium', 'Unknown', 'Low', 'High']"
+027_Supermarket,Branch,"['A', 'C', 'B']"
+027_Supermarket,City,"['Yangon', 'Naypyitaw', 'Mandalay']"
+027_Supermarket,Customer type,"['Member', 'Normal']"
+027_Supermarket,Gender,"['Female', 'Male']"
+027_Supermarket,Payment,"['Ewallet', 'Cash', 'Credit card']"
+027_Supermarket,gross margin percentage,[4.761904762]
+028_Predict,Outcome,"[1, 0]"
+030_Professionals,General Segments,"[""['Data Scientists']"", ""['Academics']"", '[]', ""['Analysts']""]"
+031_Trustpilot,Company,"['Wise', 'N26']"
+032_Delicatessen,Kidhome,"[0, 1, 2]"
+032_Delicatessen,Teenhome,"[0, 1, 2]"
+032_Delicatessen,AcceptedCmp3,"[0, 1]"
+032_Delicatessen,AcceptedCmp4,"[0, 1]"
+032_Delicatessen,AcceptedCmp5,"[0, 1]"
+032_Delicatessen,AcceptedCmp1,"[0, 1]"
+032_Delicatessen,AcceptedCmp2,"[0, 1]"
+032_Delicatessen,Complain,"[0, 1]"
+032_Delicatessen,Z_CostContact,[3]
+032_Delicatessen,Z_Revenue,[11]
+032_Delicatessen,Response,"[1, 0]"
+033_Employee,Left,"['Yes', 'No']"
+033_Employee,Work Accident,"['Yes', 'No']"
+033_Employee,salary,"['low', 'medium', 'high']"
+033_Employee,Promoted in the last 5 years?,"['Yes', 'No']"
+033_Employee,Marital_Status,"['Together', 'Single', 'Married']"
+034_World,Ladder score in Dystopia,[1.972316742]
+035_Billboard,Source,"[3.0, 1.0, 5.0]"
+038_Stroke,gender,"['Male', 'Female', 'Other']"
+038_Stroke,hypertension,"[0, 1]"
+038_Stroke,heart_disease,"[1, 0]"
+038_Stroke,ever_married,"['Yes', 'No']"
+038_Stroke,Residence_type,"['Urban', 'Rural']"
+038_Stroke,smoking_status,"['formerly smoked', 'never smoked', 'smokes', 'Unknown']"
+038_Stroke,stroke,"[1, 0]"
+039_Happy,reflection_period,"['24h', '3m']"
+039_Happy,gender,"['m', 'f', 'o']"
+039_Happy,parenthood,"['n', 'y']"
+040_Speed,has_null,"[0, 1]"
+040_Speed,gender,"['female', 'male']"
+040_Speed,d_d_age,"[""['4-6']"", ""['0-1']"", ""['2-3']"", ""['7-37']""]"
+040_Speed,samerace,"[0, 1]"
+040_Speed,d_importance_same_race,"[""['2-5']"", ""['6-10']"", ""['0-1']""]"
+040_Speed,d_importance_same_religion,"[""['2-5']"", ""['0-1']"", ""['6-10']""]"
+040_Speed,d_pref_o_attractive,"[""['21-100']"", ""['16-20']"", ""['0-15']""]"
+040_Speed,d_pref_o_sincere,"[""['16-20']"", ""['0-15']"", ""['21-100']""]"
+040_Speed,d_pref_o_intelligence,"[""['16-20']"", ""['0-15']"", ""['21-100']""]"
+040_Speed,d_pref_o_funny,"[""['16-20']"", ""['21-100']"", ""['0-15']""]"
+040_Speed,d_pref_o_ambitious,"[""['0-15']"", ""['16-20']"", ""['21-100']""]"
+040_Speed,d_pref_o_shared_interests,"[""['0-15']"", ""['16-20']"", ""['21-100']""]"
+040_Speed,d_attractive_o,"[""['6-8']"", ""['9-10']"", ""['0-5']""]"
+040_Speed,d_sinsere_o,"[""['6-8']"", ""['9-10']"", ""['0-5']""]"
+040_Speed,d_intelligence_o,"[""['6-8']"", ""['9-10']"", ""['0-5']""]"
+040_Speed,d_funny_o,"[""['6-8']"", ""['9-10']"", ""['0-5']""]"
+040_Speed,d_ambitous_o,"[""['6-8']"", ""['9-10']"", ""['0-5']""]"
+040_Speed,d_shared_interests_o,"[""['6-8']"", ""['0-5']"", ""['9-10']""]"
+040_Speed,d_attractive_important,"[""['0-15']"", ""['21-100']"", ""['16-20']""]"
+040_Speed,d_sincere_important,"[""['16-20']"", ""['0-15']"", ""['21-100']""]"
+040_Speed,d_intellicence_important,"[""['16-20']"", ""['21-100']"", ""['0-15']""]"
+040_Speed,d_funny_important,"[""['0-15']"", ""['16-20']"", ""['21-100']""]"
+040_Speed,d_ambtition_important,"[""['0-15']"", ""['16-20']"", ""['21-100']""]"
+040_Speed,d_shared_interests_important,"[""['0-15']"", ""['16-20']"", ""['21-100']""]"
+040_Speed,d_attractive,"[""['6-8']"", ""['0-5']"", ""['9-10']""]"
+040_Speed,d_sincere,"[""['6-8']"", ""['0-5']"", ""['9-10']""]"
+040_Speed,d_intelligence,"[""['6-8']"", ""['9-10']"", ""['0-5']""]"
+040_Speed,d_funny,"[""['6-8']"", ""['9-10']"", ""['0-5']""]"
+040_Speed,d_ambition,"[""['6-8']"", ""['0-5']"", ""['9-10']""]"
+040_Speed,d_attractive_partner,"[""['6-8']"", ""['0-5']"", ""['9-10']""]"
+040_Speed,d_sincere_partner,"[""['9-10']"", ""['6-8']"", ""['0-5']""]"
+040_Speed,d_intelligence_partner,"[""['6-8']"", ""['9-10']"", ""['0-5']""]"
+040_Speed,d_funny_partner,"[""['6-8']"", ""['0-5']"", ""['9-10']""]"
+040_Speed,d_ambition_partner,"[""['6-8']"", ""['0-5']"", ""['9-10']""]"
+040_Speed,d_shared_interests_partner,"[""['0-5']"", ""['6-8']"", ""['9-10']""]"
+040_Speed,d_sports,"[""['9-10']"", ""['0-5']"", ""['6-8']""]"
+040_Speed,d_tvsports,"[""['0-5']"", ""['6-8']"", ""['9-10']""]"
+040_Speed,d_exercise,"[""['6-8']"", ""['9-10']"", ""['0-5']""]"
+040_Speed,d_dining,"[""['9-10']"", ""['6-8']"", ""['0-5']""]"
+040_Speed,d_museums,"[""['0-5']"", ""['6-8']"", ""['9-10']""]"
+040_Speed,d_art,"[""['0-5']"", ""['6-8']"", ""['9-10']""]"
+040_Speed,d_hiking,"[""['0-5']"", ""['6-8']"", ""['9-10']""]"
+040_Speed,d_gaming,"[""['0-5']"", ""['6-8']"", ""['9-10']""]"
+040_Speed,d_clubbing,"[""['0-5']"", ""['6-8']"", ""['9-10']""]"
+040_Speed,d_reading,"[""['6-8']"", ""['9-10']"", ""['0-5']""]"
+040_Speed,d_tv,"[""['9-10']"", ""['0-5']"", ""['6-8']""]"
+040_Speed,d_theater,"[""['0-5']"", ""['9-10']"", ""['6-8']""]"
+040_Speed,d_movies,"[""['9-10']"", ""['6-8']"", ""['0-5']""]"
+040_Speed,d_concerts,"[""['9-10']"", ""['6-8']"", ""['0-5']""]"
+040_Speed,d_music,"[""['9-10']"", ""['6-8']"", ""['0-5']""]"
+040_Speed,d_shopping,"[""['6-8']"", ""['0-5']"", ""['9-10']""]"
+040_Speed,d_yoga,"[""['0-5']"", ""['6-8']"", ""['9-10']""]"
+040_Speed,d_interests_correlate,"[""['0-0.33']"", ""['0.33-1']"", ""['-1-0']""]"
+040_Speed,d_expected_happy_with_sd_people,"[""['0-4']"", ""['7-10']"", ""['5-6']""]"
+040_Speed,d_expected_num_interested_in_me,"[""['0-3']"", ""['4-9']"", ""['10-20']""]"
+040_Speed,d_expected_num_matches,"[""['3-5']"", ""['0-2']"", ""['5-18']""]"
+040_Speed,d_like,"[""['6-8']"", ""['0-5']"", ""['9-10']""]"
+040_Speed,d_guess_prob_liked,"[""['5-6']"", ""['0-4']"", ""['7-10']""]"
+040_Speed,decision,"[1, 0]"
+040_Speed,decision_o,"[0, 1]"
+040_Speed,match,"[0, 1]"
+041_Airline,airline_sentiment,"['neutral', 'positive', 'negative']"
+041_Airline,airline_sentiment_gold,"['negative', 'neutral', 'positive']"
+042_Predict,school,"['GP', 'MS']"
+042_Predict,sex,"['F', 'M']"
+042_Predict,address,"['U', 'R']"
+042_Predict,famsize,"['GT3', 'LE3']"
+042_Predict,Pstatus,"['A', 'T']"
+042_Predict,reason,"['course', 'other', 'home', 'reputation']"
+042_Predict,guardian,"['mother', 'father', 'other']"
+042_Predict,traveltime,"[2, 1, 3, 4]"
+042_Predict,studytime,"[2, 3, 1, 4]"
+042_Predict,failures,"[0, 3, 2, 1]"
+042_Predict,schoolsup,"['yes', 'no']"
+042_Predict,famsup,"['no', 'yes']"
+042_Predict,paid,"['no', 'yes']"
+042_Predict,activities,"['no', 'yes']"
+042_Predict,nursery,"['yes', 'no']"
+042_Predict,higher,"['yes', 'no']"
+042_Predict,internet,"['no', 'yes']"
+042_Predict,romantic,"['no', 'yes']"
+043_Predict,NewExist,"[1.0, 2.0, 0.0]"
+043_Predict,UrbanRural,"[0, 1, 2]"
+046_120,Sex,"['M', 'F']"
+046_120,Season,"['Summer', 'Winter']"
+046_120,Medal,"['Gold', 'Bronze', 'Silver']"
+047_Bank,attrition_flag,"[0, 1]"
+047_Bank,gender,"['F', 'M']"
+048_Data,hourly,"[0, 1]"
+048_Data,employer_provided,"[0, 1]"
+048_Data,same_state,"[0, 1]"
+048_Data,python_yn,"[1, 0]"
+048_Data,R_yn,"[0, 1]"
+048_Data,spark,"[0, 1]"
+048_Data,aws,"[0, 1]"
+048_Data,excel,"[1, 0]"
+049_Boris,author_id<gx:category>,[3131144855]
+049_Boris,author_name<gx:category>,['Boris Johnson']
+049_Boris,author_handler<gx:category>,['BorisJohnson']
+049_Boris,author_avatar<gx:url>,['http://pbs.twimg.com/profile_images/1331215386633756675/NodbPVQv_normal.jpg']
+049_Boris,user_created_at<gx:date>,['2015-04-01 20:15:49+00:00']
+049_Boris,user_description<gx:text>,['Prime Minister of the United Kingdom and @Conservatives leader. Member of Parliament for Uxbridge and South Ruislip.']
+049_Boris,user_favourites_count<gx:number>,[468]
+049_Boris,user_followers_count<gx:number>,"[3543401, 3543402]"
+049_Boris,user_following_count<gx:number>,[460]
+049_Boris,user_listed_count<gx:number>,[8550]
+049_Boris,user_tweets_count<gx:number>,[4706]
+049_Boris,user_verified<gx:boolean>,[True]
+049_Boris,user_location<gx:text>,['United Kingdom']
+049_Boris,type<gx:category>,['original']
+049_Boris,rp_user_id<gx:category>,[]
+049_Boris,rp_user_name<gx:category>,[]
+049_Boris,location<gx:text>,[]
+049_Boris,search<gx:category>,['from:@BorisJohnson']
+050_ING,lang,['es']
+050_ING,type,"['original', 'reply']"
+050_ING,rp_user_id,[270815203.0]
+050_ING,rp_user_name,['ING_es']
+050_ING,location,[]
+050_ING,search,['to:@ING_es']
+051_Pokemon,legendary,"[False, True]"
+053_Patents,type,"['utility', 'design', 'plant', 'reissue']"
+053_Patents,date,"['2016-10-25 00:00:00+00:00', '2016-01-26 00:00:00+00:00', '2016-04-26 00:00:00+00:00']"
+053_Patents,lang,['en']
+054_Joe,author_id<gx:category>,[939091]
+054_Joe,author_name<gx:category>,['Joe Biden']
+054_Joe,author_handler<gx:category>,['JoeBiden']
+054_Joe,author_avatar<gx:url>,['http://pbs.twimg.com/profile_images/1308769664240160770/AfgzWVE7_normal.jpg']
+054_Joe,user_created_at<gx:date>,['2007-03-11 17:51:24+00:00']
+054_Joe,user_description<gx:text>,"['Husband to @DrBiden, proud father and grandfather. Ready to build back better for all Americans. Official account is @POTUS.']"
+054_Joe,user_favourites_count<gx:number>,[20]
+054_Joe,user_following_count<gx:number>,[47]
+054_Joe,user_listed_count<gx:number>,"[36167, 36168, 36166]"
+054_Joe,user_tweets_count<gx:number>,[7340]
+054_Joe,user_verified<gx:boolean>,[True]
+054_Joe,user_location<gx:text>,"['Washington, DC']"
+054_Joe,lang<gx:category>,"['en', 'es', 'und', 'fr']"
+054_Joe,type<gx:category>,['original']
+054_Joe,rp_user_id<gx:category>,[]
+054_Joe,rp_user_name<gx:category>,[]
+054_Joe,location<gx:text>,[]
+054_Joe,search<gx:category>,['from:@JoeBiden filter:images']
+055_German,Installment Rate as % of Income,"[4, 2, 3, 1]"
+055_German,Guarantors,"['None', 'Guarantor', 'Co-applicant']"
+055_German,Length of Current Property Residence,"[4, 2, 3, 1]"
+055_German,Housing,"['Ownership', 'Free Housing', 'Rented']"
+055_German,Number of Existing Loans,"[2, 1, 3, 4]"
+055_German,Job,"['Skilled', 'Unskilled - Resident', 'Highly Skilled', 'Unemployed / Unskilled  - Non-Resident']"
+055_German,Number of Dependants,"[1, 2]"
+055_German,Foreign Worker,"['Yes', 'No']"
+055_German,Risk,"['Good Risk', 'Bad Risk']"
+055_German,Sex,"['Male', 'Female']"
+055_German,Status,"['Single', 'Divorced/Separated/Married', 'Divorced/Separated', 'Married/Widowed']"
+057_Spain,gender,"['I prefer not to say', 'Female', 'Male']"
+057_Spain,lang,"['Castellano', 'Galego', 'Catal�', 'Euskara']"
+058_US,Wave,['Week 8']
+058_US,Are you,"['Male', 'Female']"
+058_US,Would you say you follow what's going on in government and public affairs,"['Most of the time', 'Hardly at all', 'Some of the time', 'Only now and then']"
+058_US,Are you registered to vote?,"['Yes', 'No - but I will register', 'No - I will not register']"
+058_US,Are you registered to vote? Not open to vote,"['Yes', 'No']"
+058_US,Region,"['South', 'Northeast', 'Midwest', 'West']"
+058_US,"In the event of being declared the loser, should {answer:Candidate} accept or challenge the result?","['Challenge', 'Accept', 'Unsure']"
+058_US,"If you have any concerns about the US election, what are they? - Contracting Covid-19 at a polling station",['Contracting Covid-19 at a polling station']
+058_US,"If you have any concerns about the US election, what are they? - Mail-in or in-person voter fraud",['Mail-in or in-person voter fraud']
+058_US,"If you have any concerns about the US election, what are they? - Polling place reduction and changes",['Polling place reduction and changes']
+058_US,"If you have any concerns about the US election, what are they? - Long wait times at polling place",['Long wait times at polling place ']
+058_US,"If you have any concerns about the US election, what are they? - Voter intimidation at polling place",['Voter intimidation at polling place ']
+058_US,"If you have any concerns about the US election, what are they? - Foreign interference/influence on the election",['Foreign interference/influence on the election']
+058_US,"If you have any concerns about the US election, what are they? - The losing candidate not accepting the result",['The losing candidate not accepting the result']
+058_US,"If you have any concerns about the US election, what are they? - Fake news/ disinformation",['Fake news/ disinformation']
+058_US,"If you have any concerns about the US election, what are they? - Other",['Other ']
+058_US,"If you have any concerns about the US election, what are they? - I don’t have any specific concerns about the election",['I don’t have any specific concerns about the election']
+058_US,likely_voter,"['Yes', 'No']"
+058_US,likely_decided_voter,"['Yes', 'No']"
+059_Second,company,['9881bcdd5a0ad4733037b3fb25e69c3a']
+059_Second,doors,"[4, 5, 2, 3]"
+059_Second,shift,"['Manual', 'Automático']"
+059_Second,is_professional,"[False, True]"
+059_Second,country,['Spain']
+059_Second,insert_date,['2021-01-15 00:00:00+00:00']
+060_Bakery,period_day,"['morning', 'afternoon', 'evening', 'night']"
+060_Bakery,weekday_weekend,"['weekend', 'weekday']"
+061_Disneyland,Branch,"['Disneyland_HongKong', 'Disneyland_California', 'Disneyland_Paris']"
+062_Trump,author_id,[25073877]
+062_Trump,author_name,['Donald J. Trump']
+062_Trump,author_handler,['realDonaldTrump']
+062_Trump,author_avatar,['https://pbs.twimg.com/profile_images/874276197357596672/kUuht00m_bigger.jpg']
+062_Trump,location,[]
+063_Influencers,is_organization,[False]
+064_Clustering,hair,"[1, 0]"
+064_Clustering,feathers,"[0, 1]"
+064_Clustering,eggs,"[0, 1]"
+064_Clustering,milk,"[1, 0]"
+064_Clustering,airborne,"[0, 1]"
+064_Clustering,aquatic,"[0, 1]"
+064_Clustering,predator,"[1, 0]"
+064_Clustering,toothed,"[1, 0]"
+064_Clustering,backbone,"[1, 0]"
+064_Clustering,breathes,"[1, 0]"
+064_Clustering,venomous,"[0, 1]"
+064_Clustering,fins,"[0, 1]"
+064_Clustering,tail,"[0, 1]"
+064_Clustering,domestic,"[0, 1]"
+064_Clustering,catsize,"[1, 0]"
