@@ -7,8 +7,8 @@ new_data = []
 
 def map_template(prompt, answer):
     return [
-        {"from": "human", "value": f"{prompt}"},
-        {"from": "gpt", "value": f"{answer}"},
+        {"role": "user", "content": f"{prompt}"},
+        {"role": "assistant", "content": f"{answer}"},
     ]
 
 # Process each row and map it into the desired structure
@@ -22,9 +22,11 @@ for index, row in data.iterrows():
 new_conversations_df = pd.DataFrame(new_data)
 
 # Append to the existing CSV file
-new_conversations_df.to_csv(
-    "data/conversations.csv",
-    mode='a',  # Append mode
-    header=False,  # Don't write the header again
-    index=False  # Avoid writing the index column
-)
+# new_conversations_df.to_csv(
+#     "data/conversations.csv",
+#     mode='a',  # Append mode
+#     header=False,  # Don't write the header again
+#     index=False  # Avoid writing the index column
+# )
+
+new_conversations_df.to_csv("data/conversations_final.csv", index=False)
