@@ -16,7 +16,7 @@ table_info = pd.read_csv("data/table_info.csv")
 
 
 # Function to query GPT-4 API
-def query_gpt4(dataset_id, question, answer, answer_type, columns_used, column_types, columns_total):
+def query_gpt4(dataset_id, question, answer, answer_type, columns_used, column_types, columns_total, query=''):
     
     answer = answer
     answer_type = answer_type
@@ -38,13 +38,17 @@ def query_gpt4(dataset_id, question, answer, answer_type, columns_used, column_t
 
     The answer should be exactly the same like this without any addition. 
     DO NOT ADD '```python```' OR '```' AT THE START OR END OF THE QUERY. ONLY THE QUERY.
+    Make sure there is df in the code as it represents the dataset.
     
     """
     
     prompt = f"""
 
     
-    The answer should be exactly the same like this without any addition. 
+    The answer should be exactly the same like this without any addition.
+    STRICT INSTRUCTIONS:
+    1. **If there is no query in the prompt, that means you are supposed to generate the query yourself.**
+    2. **If there is query present in the prompt, that means you are supposed to correct it and generate the right query.**
     Strictly dont add '```python' or '```' at the start or end of the query. Only the query.
     
     Question: {question}
@@ -53,6 +57,7 @@ def query_gpt4(dataset_id, question, answer, answer_type, columns_used, column_t
     Columns_Used: {columns_used}
     Column_Types: {column_types}
     Columns_Total: {columns_total}
+    Query: {query}
     
     Output the right query using the columns from columns used:
     """
