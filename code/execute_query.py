@@ -11,6 +11,7 @@ semeval_train = pd.read_csv("data/semeval_train.csv")
 wq = pd.read_csv("data/wrong_queries.csv")
 table_info = pd.read_csv("data/table_info.csv")
 
+
 # def custom_compare(value, truth, semantic=None):
 #     """Custom evaluation function to compare values based on the semantic type."""
 #     if "list" in semantic:
