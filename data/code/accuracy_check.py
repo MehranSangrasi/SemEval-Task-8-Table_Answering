@@ -18,7 +18,7 @@ for index, row in dev_set.iterrows():
         answer = row["sample_answer"]
         # answer_type = row["type"]
         
-        df = pd.read_csv(f"data/datasets/{dataset}_sample.csv")
+        df = pd.read_csv(f"data/datasets/{dataset}.csv")
         
         query = row['queries'].splitlines()[0]
         predicted_answer = eval(query)
