@@ -1,9 +1,9 @@
-import pandas as pd
 import json
 import ast
+import pandas as pd
 
+dev_set = pd.read_csv("data/final_dev_updated_conversation.csv")
 
-conversations = pd.read_csv("data/final_updated_conversation.csv")
 system_prompt = """
 You are a helpful assistant (expert query generator) designed to generate Python pandas DataFrame queries for tabular question-answering tasks. The user provides a question and the list of all columns in the dataset along with their data types as input. Your task is to:
 
@@ -39,21 +39,21 @@ You should provide the following code:
 df[df['Siblings_Spouses Aboard'] == 0].shape[0]
 """
 
-messages = {"messages":[]}
+messages = []
 
-for index, row in conversations.iterrows():
+
+for index, row in dev_set.iterrows():
+    conversation = ast.literal_eval(row['conversations'])
     
-    message = ast.literal_eval(row["conversations"])
+    input = conversation['content']
+    instruction = system_prompt
     
-    input = message[0]["content"]
-    output = message[1]["content"]
+    messages.append({"instruction": instruction, "input": input})
     
-    messages["messages"].append({"instruction": system_prompt, "input": input, "output": output})
     
-with open("data/training.json", "w") as f:
+with open("data/dev.json", "w") as f:
     json.dump(messages, f)
     
 print("Conversion to JSON completed!")
     
     
-
