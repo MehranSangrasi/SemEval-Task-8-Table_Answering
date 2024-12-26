@@ -5,9 +5,9 @@ from datasets import load_dataset
 from huggingface_hub import login
 
 
-login(
-    token="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",
-)
+# login(
+#     token="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",
+# )
 
 csv_file = "data\conversations_final.csv"  # Replace with your actual file path
 dataset = load_dataset("csv", data_files=csv_file)["train"]

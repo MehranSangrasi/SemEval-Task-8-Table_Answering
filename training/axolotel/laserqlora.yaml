@@ -1,0 +1,219 @@
+base_model: codellama/CodeLlama-13B-Python-hf
+model_type: AutoModelForCausalLM
+tokenizer_type: AutoTokenizer
+
+load_in_8bit: false
+load_in_4bit: true
+strict: false
+
+datasets:
+  - path: MehranWahid/conversations_final
+    type: alpaca
+dataset_prepared_path:
+val_set_size: 0.1
+output_dir: /home/mehran1/projects/def-cjhuofw-ab/mehran1/SemEval/models/codellama_13B/outputs
+
+adapter: qlora
+lora_model_dir:
+
+sequence_len: 1024
+sample_packing: true
+pad_to_sequence_len: true
+
+lora_r: 32
+lora_alpha: 16
+lora_dropout: 0.05
+lora_target_modules:
+
+# mlp.down_proj layers
+- layers.25.mlp.down_proj
+- layers.24.mlp.down_proj
+- layers.26.mlp.down_proj
+- layers.23.mlp.down_proj
+- layers.27.mlp.down_proj
+- layers.22.mlp.down_proj
+- layers.28.mlp.down_proj
+- layers.21.mlp.down_proj
+- layers.30.mlp.down_proj
+- layers.20.mlp.down_proj
+- layers.31.mlp.down_proj
+- layers.19.mlp.down_proj
+- layers.29.mlp.down_proj
+- layers.18.mlp.down_proj
+- layers.17.mlp.down_proj
+- layers.32.mlp.down_proj
+- layers.16.mlp.down_proj
+- layers.33.mlp.down_proj
+- layers.15.mlp.down_proj
+- layers.14.mlp.down_proj
+# mlp.gate_proj layers
+- layers.36.mlp.gate_proj
+- layers.35.mlp.gate_proj
+- layers.37.mlp.gate_proj
+- layers.34.mlp.gate_proj
+- layers.33.mlp.gate_proj
+- layers.38.mlp.gate_proj
+- layers.32.mlp.gate_proj
+- layers.31.mlp.gate_proj
+- layers.30.mlp.gate_proj
+- layers.29.mlp.gate_proj
+- layers.28.mlp.gate_proj
+- layers.39.mlp.gate_proj
+- layers.27.mlp.gate_proj
+- layers.26.mlp.gate_proj
+- layers.21.mlp.gate_proj
+- layers.25.mlp.gate_proj
+- layers.12.mlp.gate_proj
+- layers.24.mlp.gate_proj
+- layers.6.mlp.gate_proj
+- layers.7.mlp.gate_proj
+# mlp.up_proj layers
+- layers.31.mlp.up_proj
+- layers.32.mlp.up_proj
+- layers.30.mlp.up_proj
+- layers.29.mlp.up_proj
+- layers.28.mlp.up_proj
+- layers.27.mlp.up_proj
+- layers.33.mlp.up_proj
+- layers.34.mlp.up_proj
+- layers.26.mlp.up_proj
+- layers.35.mlp.up_proj
+- layers.25.mlp.up_proj
+- layers.24.mlp.up_proj
+- layers.23.mlp.up_proj
+- layers.36.mlp.up_proj
+- layers.13.mlp.up_proj
+- layers.22.mlp.up_proj
+- layers.14.mlp.up_proj
+- layers.9.mlp.up_proj
+- layers.20.mlp.up_proj
+- layers.19.mlp.up_proj
+
+# self_attn.k_proj layers
+- layers.0.self_attn.k_proj
+- layers.1.self_attn.k_proj
+- layers.2.self_attn.k_proj
+- layers.5.self_attn.k_proj
+- layers.4.self_attn.k_proj
+- layers.3.self_attn.k_proj
+- layers.7.self_attn.k_proj
+- layers.8.self_attn.k_proj
+- layers.6.self_attn.k_proj
+- layers.12.self_attn.k_proj
+- layers.10.self_attn.k_proj
+- layers.9.self_attn.k_proj
+- layers.11.self_attn.k_proj
+- layers.13.self_attn.k_proj
+- layers.14.self_attn.k_proj
+- layers.16.self_attn.k_proj
+- layers.15.self_attn.k_proj
+- layers.27.self_attn.k_proj
+- layers.28.self_attn.k_proj
+- layers.17.self_attn.k_proj
+# self_attn.o_proj layers
+- layers.0.self_attn.o_proj
+- layers.30.self_attn.o_proj
+- layers.19.self_attn.o_proj
+- layers.8.self_attn.o_proj
+- layers.7.self_attn.o_proj
+- layers.1.self_attn.o_proj
+- layers.32.self_attn.o_proj
+- layers.14.self_attn.o_proj
+- layers.21.self_attn.o_proj
+- layers.10.self_attn.o_proj
+- layers.16.self_attn.o_proj
+- layers.15.self_attn.o_proj
+- layers.13.self_attn.o_proj
+- layers.9.self_attn.o_proj
+- layers.26.self_attn.o_proj
+- layers.33.self_attn.o_proj
+- layers.28.self_attn.o_proj
+- layers.27.self_attn.o_proj
+- layers.17.self_attn.o_proj
+- layers.20.self_attn.o_proj
+# self_attn.q_proj layers
+- layers.0.self_attn.q_proj
+- layers.1.self_attn.q_proj
+- layers.2.self_attn.q_proj
+- layers.5.self_attn.q_proj
+- layers.8.self_attn.q_proj
+- layers.7.self_attn.q_proj
+- layers.4.self_attn.q_proj
+- layers.6.self_attn.q_proj
+- layers.9.self_attn.q_proj
+- layers.10.self_attn.q_proj
+- layers.3.self_attn.q_proj
+- layers.12.self_attn.q_proj
+- layers.11.self_attn.q_proj
+- layers.13.self_attn.q_proj
+- layers.14.self_attn.q_proj
+- layers.15.self_attn.q_proj
+- layers.16.self_attn.q_proj
+- layers.17.self_attn.q_proj
+- layers.20.self_attn.q_proj
+- layers.18.self_attn.q_proj
+# self_attn.v_proj layers
+- layers.0.self_attn.v_proj
+- layers.23.self_attn.v_proj
+- layers.26.self_attn.v_proj
+- layers.18.self_attn.v_proj
+- layers.25.self_attn.v_proj
+- layers.24.self_attn.v_proj
+- layers.28.self_attn.v_proj
+- layers.3.self_attn.v_proj
+- layers.22.self_attn.v_proj
+- layers.1.self_attn.v_proj
+- layers.17.self_attn.v_proj
+- layers.19.self_attn.v_proj
+- layers.2.self_attn.v_proj
+- layers.7.self_attn.v_proj
+- layers.21.self_attn.v_proj
+- layers.29.self_attn.v_proj
+- layers.27.self_attn.v_proj
+- layers.8.self_attn.v_proj
+- layers.5.self_attn.v_proj
+- layers.11.self_attn.v_proj
+
+lora_target_linear: true
+lora_fan_in_fan_out:
+
+wandb_project: medsft
+wandb_entity:
+wandb_watch:
+wandb_name:
+wandb_log_model:
+
+gradient_accumulation_steps: 8
+micro_batch_size: 2
+num_epochs: 3
+optimizer: paged_adamw_32bit
+lr_scheduler: cosine
+learning_rate: 0.00002
+
+train_on_inputs: false
+group_by_length: false
+bf16: auto
+fp16:
+tf32: false
+
+gradient_checkpointing: true
+early_stopping_patience:
+resume_from_checkpoint:
+local_rank:
+logging_steps: 1
+xformers_attention:
+flash_attention: true
+
+warmup_steps: 10
+evals_per_epoch: 2
+eval_table_size:
+saves_per_epoch:
+save_strategy:
+save_steps:
+debug:
+deepspeed: deepspeed_configs/zero2.json
+weight_decay: 0.0
+fsdp:
+fsdp_config:
+special_tokens:
+  pad_token: "</s>"
