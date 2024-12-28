@@ -1,0 +1,149 @@
+question,answer
+Does the youngest billionaire identify as male?,True
+What is the title of the billionaire with the lowest rank?,
+List the top 4 cities where the youngest billionaires live.,"['', 'Los Angeles', 'Jiaozuo', 'Oslo']"
+List the bottom 2 countries with the least number of billionaires.,"['Colombia', 'Andorra']"
+List the top 4 ranks of female billionaires.,"[14, 18, 21, 30]"
+"Among those who survived, which fare range was the most common: (0-50, 50-100, 100-150, 150+)?",0-50
+"Could you list the lower 3 fare ranges by number of survivors: (0-50, 50-100, 100-150, 150+)?","['50-100', '150+', '100-150']"
+"What are the top 4 age ranges('30-50', '18-30', '0-18', '50+') with the highest number of survivors?","['30-50', '18-30', '0-18', '50+']"
+Which are the top 4 fares paid by survivors?,"[512.239, 512.239, 512.239, 263]"
+How many respondents wear glasses all the time?,98
+Identify the 5 largest total amounts paid for trips.,"[80.0, 80.0, 80.0, 80.0, 80.0]"
+Are there any complaints made in Brooklyn?,True
+Is the Mayor's office of special enforcement one of the agencies handling complaints?,True
+How many complaints have been made in Queens?,23110
+Name the 2 least frequent descriptors for complaints by inverse alphabetical order.,"['Booting Company', 'Ready NY - Businesses', 'Animal']"
+Which 2 hours see the least complaints?,"[6, 2]"
+How many listings don't have a valid price?,0
+Which host verification method is the least used?,photographer
+List the 2 most common host verification methods.,"['phone', 'email']"
+Are there any players who are taller than 6 feet and have an agility score above 90?,False
+Which are the top 5 nationalities in terms of the average overall score of their players?,"['Tanzania', 'Syria', 'Mozambique', 'Chad', 'Central African Rep.']"
+Which are the top 6 clubs in terms of the average potential score of their players?,"['FC Bayern München', 'Real Madrid', 'FC Barcelona', 'Paris Saint-Germain', 'Juventus', 'Manchester City']"
+There are no tornadoes that resulted in more than 500 injuries.,True
+No tornado has a length greater than 100 miles.,True
+There are no tornadoes that resulted in more than 100 fatalities.,True
+There were no days when the precipitation was greater than 5 inches.,True
+There were no days when the snow depth was more than 10 inches.,True
+What are the three most common incident descriptions?,"[Theft, From Locked Vehicle, >$950, [Malicious Mischief], Vandalism to Property, Battery, Lost Property, Vehicle]"
+Which 3 incident years have the lowest number of online filed reports? If two have the same number choose the latest year,"[2023, 2020, 2021]"
+What are the 4 most common chest pain types among male patients?,"['TA', 'ATA', 'NAP', 'ASY']"
+Did the oldest roller coaster in the dataset still operate?,True
+What type of the roller coaster is the oldest in the dataset?,Wood
+Name the 4 oldest roller coasters in the dataset.,"[Switchback Railway, Flip Flap Railway, Loop the Loop (Coney Island), Loop the Loop (Young's Pier)]"
+Name the introduction years of the 6 oldest roller coasters in the dataset.,"[1884, 1895, 1901, 1901, 1902, 1902]"
+What type of room is the most expensive property?,Entire home/apt
+What is the acceptance rate of the host of the property that can accommodate the most number of guests?,100%
+Which are the 2 lowest values of host response rates above 0% ?,"['5%', '10%']"
+Which are the 2 lowest values of host response rates?,"['0%', '0%']"
+What are the 4 highest values of host acceptance rates?,"['99%', '99%', '99%', '99%']"
+Were there any employees hired in 2019?,True
+Which year had the highest number of employees hired?,2017
+List the 3 departments with the most number of promotions in the last 5 years that have at least one promotion. ,"['hr', 'accounting', 'IT']"
+Identify the top 3 years with the highest employee hiring.,"['2017', '2018', '2016']"
+List the bottom 5 average monthly hours among employees who were promoted in the last 5 years.,"[215, 133, 159, 241, 247]"
+Did any incident result in the total destruction of the aircraft?,True
+Has there been any instance where the ground casualties were non-zero?,True
+What's the highest number of occupants recorded in an incident?,524.0
+How many incidents occurred in January 2022?,7
+How many incidents resulted in non-zero fatalities?,0
+What was the cause of the incident that resulted in the most fatalities?,"Airplane - Pressurization, Airplane - Pressurization - Bulkhead failure, Airplane - Pressurization - Explosive decompression, Maintenance - (repair of) previous damage, Result - Loss of control"
+What is the location of the incident with the highest number of onboard occupants?,near Ueno Village...
+List the top 5 locations where the most incidents have occurred. If there are two or more with the same number order them alphabetically,"['Arnhem', 'Beirut International Airport (BEY)', 'Glasgow-Preswick Airport', 'Havana-José Martí International Airport (HAV)', 'Miami International Airport, FL (MIA)']"
+What are the 5 highest numbers of onboard passengers in incidents?,"[509.0, 503.0, 497.0, 451.0, 440.0]"
+List the 3 highest numbers of onboard crew in incidents.,"[32.0, 31.0, 29.0]"
+Identify the 4 highest numbers of total onboard occupants in incidents.,"[524.0, 521.0, 517.0, 469.0]"
+What are the 6 highest numbers of ground casualties in incidents?,"[1600, 900, 237, 107, 88, 87]"
+Do all customers have phone service?,True
+List the 4 most common property types.,"['Entire apartment', 'Private room in apartment', 'Entire condominium', 'Entire house']"
+Were there days in the summer where the minimum temperature dropped below 10?,True
+"On average, what's the minimum temperature during winters?",2.7196082770831027
+Are there any female respondents who belong to the ESTE NUTS1 region?,True
+"On average, what's the RETRINOIN value for male respondents?",29370.243704368546
+What is the lowest ranking value in the dataset?,11
+What are the top 3 URLs with the highest average monthly searches?,"['https://www.obviously.ai/', 'https://venturebeat.com/2021/10/12/no-code-ai-startup-obviously-ai-raises-4-7m/', 'https://hbr.org/2021/11/how-no-code-platforms-could-disrupt-the-it-industry']"
+List the bottom 2 competition levels of URLs with ranking better than 5.,"['Medium', 'Unknown']"
+Which are the top 4 keywords associated with the URLs of lowest rankings?,"['no code data science', 'no code data analytics', 'no code data science', 'no code data science']"
+Enumerate the bottom 3 URLs with the highest rankings.,"['https://www.obviously.ai/', 'https://www.obviously.ai/', 'https://venturebeat.com/2021/10/12/no-code-ai-startup-obviously-ai-raises-4-7m/']"
+What are the lowest 4 rankings associated with the keyword 'no code data science'?,"[10, 9, 8, 7]"
+List the bottom 3 average monthly searches for URLs with medium competition.,"[50, 50, 50]"
+Provide the lowest 5 rankings of URLs with low competition (if any).,"[11, 10, 10, 9, 9]"
+Are there any individuals in the dataset who are above 60 years of age?,False
+Does anyone have a Diabetes Pedigree Function score above 2.5?,True
+How many individuals have an insulin level above 150?,187
+List the diabetes outcomes of the bottom 2 individuals with the lowest BMI.,"[0, 0]"
+List the diabetes outcomes of the top 5 individuals with the highest insulin levels.,"[1, 1, 1, 1, 1]"
+List the diabetes outcomes of the bottom 4 individuals with the lowest blood pressure.,"[0, 0, 0, 0]"
+What are the ages of the top 4 individuals with the highest number of pregnancies?,"[51, 67, 67, 67]"
+List the BMI of the bottom 3 individuals with the lowest glucose levels.,"[32.0, 32.0, 32.0]"
+Enumerate the blood pressure levels of the top 5 individuals with the highest Diabetes Pedigree Function scores.,"[0, 0, 0, 0, 0]"
+Are there any articles that have the material type 'Op-Ed'?,False
+How many unique material types are there in the dataset?,4
+What is the longest length of a headline in the dataset?,96
+How many articles were published on '2021-01-02'?,52
+What is the highest number of keywords associated with a single article?,8
+What is the material type of the article with the longest headline?,News
+What is the material type of the article with the least number of keywords?,News
+List the material types of the top 3 articles with the longest headlines.,"['News', 'News', 'News']"
+List the material types of the bottom 4 articles with the least number of keywords.,"['News', 'News', 'News', 'News']"
+What are the lengths of the headlines of the top 4 articles with the most number of keywords?,"[86, 85, 84, 84]"
+Enumerate the lengths of the headlines of the top 5 articles with the longest headlines.,"[96, 96, 95, 95, 95]"
+How many participants are from the United Kingdom?,450
+What is the most common number of programming languages used by participants on a regular basis?,2
+What are the top 4 geographies represented in the dataset?,"['India', 'USA', 'Western Europe', 'China - Japan - Korea']"
+Name the top 3 general segments of participants.,"['Analysts', 'Data Scientists', 'Academics']"
+Identify the top 6 programming languages used regularly.,"['Python', 'SQL', 'R', 'Javascript', 'C++', 'Java']"
+list the highest average 3 years of machine learning experience.,"[19.83, 19.74, 19.68]"
+Which company received the lowest rating?,N26
+What are the best 4 unique ratings given to 'Wise'?,"[5, 4, 2, 1]"
+What are the bottom 5 unique ratings given to 'N26'?,"[1, 2, 3, 4, 5]"
+What's the most common education level among our employees?,Graduation
+What's the most common marital status in the database?,Married
+"Among the employees who have left the company in sales, what's the most common salary level?",low
+"Among the employees who have had a work accident in sales, what's the most common salary level?",low
+"For the 2 employees with the top satisfaction levels who belong to the sales department, what are their salary levels?","['low', 'low']"
+Does the song with the lowest rank contain the word 'love' in its lyrics?,True
+What is the title of the song with the lowest rank?,how sweet it is to be loved by you
+Who are the artists of the top 5 ranked songs?,"['sam the sham and the pharaohs', 'ssgt barry sadler', 'the beach boys', 'the beatles', 'the beatles']"
+What are the titles of the 3 songs with the shortest lyrics?,"['girl youll be a woman soon', 'papa dont preach', 'breathe']"
+Who are the artists of the bottom 5 ranked songs?,"['marvin gaye', 'wilson pickett', 'neil diamond', 'jerry butler', 'the beatles']"
+What are the ranks of the top 3 songs with the most occurrences of the word 'love' in their lyrics?,"[64, 41, 28]"
+What are the years of production of the top 5 songs with the longest lyrics?,"[1998, 2009, 2010, 2007, 2002]"
+Who are the artists of the top 3 songs in 1965?,"['sam the sham and the pharaohs', 'four tops', 'the beach boys']"
+What are the years of production of the top 3 songs with the word 'love' in their lyrics by the Beatles?,"[1967, 1965, 1966]"
+Which origin has the lowest latitude?,Guáanica
+List the age of the 6 youngest individuals in the dataset.,"[2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0]"
+Are all participants who expected more than 5 matches male?,True
+What are the top 4 tweet IDs with the lowest sentiment confidence?,"[570306133677760513, 570301031407624196, 570300817074462722, 570300767074181121]"
+What are the 3 lowest final grades of students who have more than 10 absences?,"[4, 14, 17]"
+What are the 6 lowest final grades of students who don't want to take higher education?,"[8, 10, 12, 9, 7, 13]"
+What is the average disbursement gross for companies in the retail sector?,164636.4123068934
+What are the top 5 approval years for companies in the retail sector?,"[2005, 2004, 2006, 2007, 2003]"
+What are the 3 highest disbursement gross for companies with a franchise code of 1?,"[50000.0, 100000.0, 10000.0]"
+What are the 6 highest default amounts among companies in the state of NY?,"[0.0, 50000.0, 25000.0, 100000.0, 35000.0, 10000.0]"
+Are all movies with votes greater than 90 from the USA in English?,True
+"What is the average duration for movies in the drama genre, from the USA, in English?",96.07926963408374
+How many unique languages are there in the dataset for movies from the USA?,650
+What is the country of the English language movie with the longest duration?,Argentina
+What are the top 2 genres among English language movies from the USA with a metascore greater than 90?,"['Drama', 'Crime, Drama']"
+What are the 3 longest durations for English language movies from the USA with a metascore of 100?,"[102, 119, 112]"
+What are the four years with more English language movies from the USA?,"[2017.0, 2016.0, 2018.0, 2013.0]"
+Can you show the 6 highest metascores among English language movies from the USA?,"[49.0, 55.0, 57.0, 48.0, 54.0, 52.0]"
+Is it true that the song with the lowest popularity in the dataset is longer than 300000 ms?,True
+Did any song released in the year 2020 in the dataset achieve the maximum popularity?,False
+What's the average song duration in the dataset?,228998.0798095238
+Is it true that the athlete with the lowest ID is older than 30 years?,True
+Did any athlete from the team with the most participants win two gold medals?,False
+Does the athlete with the highest height also have a medal?,False
+How many unique teams are there in the dataset?,230
+How many athletes participated in the year with the most participants?,2536
+Who is the athlete with the highest weight?,Ricardo Blas Jr.
+In which city did the athlete with the highest height participate?,London
+What are the names of the top 3 athletes with the highest weights?,"[Ricardo Blas Jr., Shinichi Shinohara, Emmanuel Yarborough]"
+What are the three highest weights of athletes?,"[214.0, 198.0, 190.0]"
+Who are the six customer ids with the highest total revolving balance?,"[2517, 2517, 2517, 2517, 2517, 2517]"
+List the year the 3 oldest companies that have job listings were founded.,"[1744, 1781, 1781]"
+Are there any verified users who have tweeted in a language other than English?,True
+What are the top five most frequently mentioned names in the tweets?,"['G7', 'foreignoffice', 'UN', 'Conservatives', 'COP26']"
+What are the bottom four numbers of favorites count?,"[7, 7, 8, 9]"
