@@ -5,23 +5,27 @@ def match_questions(file1, file2, output_file):
     df1 = pd.read_csv(file1)
     df2 = pd.read_csv(file2)
 
-    # Ensure there is a 'Question' column in both files
+    # Ensure there is a 'question' column in both files
     if 'question' not in df1.columns or 'question' not in df2.columns:
-        raise ValueError("Both files must have a 'Question' column.")
+        raise ValueError("Both files must have a 'question' column.")
 
-    # Merge the DataFrames on the 'Question' column
+    # Merge the DataFrames on the 'question' column
     merged_df = pd.merge(df1, df2, on='question', how='inner')
 
-    # Ensure the second file has an 'Answer' column
-    if 'answer' not in df2.columns:
-        raise ValueError("The second file must have an 'Answer' column.")
+    # Define the columns to extract from the second file
+    required_columns = ['question', 'answer', 'type', 'columns_used', 'column_types', 'sample_answer', 'dataset']
+    
+    # Check if all required columns are in the second file
+    missing_columns = [col for col in required_columns if col not in df2.columns]
+    if missing_columns:
+        raise ValueError(f"The second file is missing these required columns: {missing_columns}")
 
-    # Extract the matched questions and their answers
-    output_df = merged_df[['question', 'answer']]
+    # Extract the matched questions and their associated information
+    output_df = merged_df[required_columns]
 
     # Save the results to a new file
     output_df.to_csv(output_file, index=False)
-    print(f"Matched questions and their answers saved to {output_file}.")
+    print(f"Matched questions and their associated details saved to {output_file}.")
 
 # Example usage:
 file1 = 'final_wrong.csv'  # Replace with the path to your first file
