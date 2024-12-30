@@ -1,0 +1,108 @@
+question,answer,type,columns_used,column_types,sample_answer,dataset,queries
+Is there an author who received no retweets for any of their posts?,True,boolean,"['author_name', 'retweets']","['category', 'number[uint8]']",True,050_ING,"
+(df['retweets'] == 0).all()
+"
+Are there any posts that do not contain any links?,True,boolean,['links'],['list[url]'],True,050_ING,"
+(df['links'].apply(len) == 0).any()
+"
+How many posts do not contain any mentions of other users?,3788,number,['mention_ids'],['list[number[int64]]'],10,050_ING,"
+df[df['mention_ids'].isnull()].shape[0]
+"
+Who is the author of the post with the most words?,juan prin,category,"['author_name', 'text']","['category', 'text']",🇪🇸 Bearded.LocutusBorg 🇮🇪🏳️‍🌈,050_ING,"
+df.loc[df['text'].str.len().idxmax(), 'author_name']
+"
+What are the word counts of the 3 longest posts?,"[61, 60, 59]",list[number],['text'],['text'],"[49, 44, 41]",050_ING,"
+df['text'].str.len().nlargest(3).tolist()
+"
+Are all Pokémon in the first generation legendary?,False,boolean,"['generation', 'legendary']","['number[uint8]', 'boolean']",False,051_Pokemon,"
+(df[df['generation'] == 1]['legendary'] == False).any()
+"
+Are there patents associated with the organization 'IBM'?,True,boolean,['organization'],['category'],False,053_Patents,"
+df[df['organization'] == 'IBM'].shape[0] > 0
+"
+What are the top 4 numbers of claims in the patents?,"[100, 96, 93, 88]",list[number],['num_claims'],['number[uint8]'],"[12, 18, 7, 13]",053_Patents,"
+df['num_claims'].value_counts().nlargest(4).index.tolist()
+"
+Is the most mentioned user also the most retweeted mentioned user?,False,boolean,"['author_id<gx:category>', 'mention_names<gx:list[category]>', 'retweets<gx:number>']","['number[uint32]', 'list[category]']",False,054_Joe,"
+df['id<gx:category>'].nlargest(2).tolist()
+"
+How many times has the most mentioned user been mentioned?,383,number,['mention_names<gx:list[category]>'],['list[category]'],1,054_Joe,"
+df['mention_names<gx:list[category]>'].apply(lambda x: len(x) if isinstance(x, list) else 0).max()
+"
+Who are the top 2 authors of the tweets with the most retweets?,['Joe Biden''],list[category],"['author_name<gx:category>', 'retweets<gx:number>']","['category', 'number[uint32]']",['Joe Biden'],054_Joe,"
+df.groupby('author_id<gx:category>')['retweets<gx:number>'].sum().nlargest(2).index.tolist()
+"
+What are the 5 highest unique number of times a user is mentioned? Exclude empty references.,"[16, 10, 6, 5, 5]",list[number],['mention_names<gx:list[category]>'],['list[category]'],[1],054_Joe,"
+df['user_followers_count<gx:number>'].nlargest(5).tolist()"
+What are the top 4 loan durations in the dataset?,"[72, 60, 60, 60]",list[number],['Loan Duration - Months'],['number[uint8]'],"[60, 60, 42, 33]",055_German,"
+df['Loan Duration - Months'].value_counts().nlargest(4).index.tolist()
+"
+Do all foods contain sugar?,False,boolean,['Total Sugar (g)'],['number[double]'],False,056_Emoji,"
+df['Total Sugar (g)'].notna().all()
+"
+Did any respondent indicate that they will not vote?,True,boolean,['Vote Intention'],['list[category]'],False,057_Spain,"
+df['Vote Intention'].eq('No').any()
+"
+How many respondents think it should be more difficult for companies to lay off workers?,10344,number,['It should be more difficult for companies to lay off workers'],['number[UInt8]'],0,057_Spain,"
+(df['It should be more difficult for companies to lay off workers'].eq(5)).sum()
+"
+What is the most common reason for voting given by respondents?,The party ideas are close to my own,category,['voteReason'],['category'],The party ideas are close to my own,057_Spain,"
+df['prevVote'].mode().iloc[0]
+"
+What is the most common first language among respondents?,Castellano,category,['lang'],['category'],Castellano,057_Spain,"
+df['edu'].mode().iloc[0]
+"
+Identify the top 3 most common reasons for voting among respondents.,"['The party ideas are close to my own', 'The party is the most competent', 'I prefer not to say']",list[category],['voteReason'],['category'],"[The party ideas are close to my own, The party is the most competent, I prefer not to say]",057_Spain,"
+df['Vote Intention'].value_counts().nlargest(3).index.tolist()
+"
+What are the top 3 most common positions on the Left-Right economic values axis?,"[5.0, 3.0, 6.0]",list[number],['User self-placement on Left-Right economic values axis'],['number[UInt8]'],"[5.0, 6.0, 3.0]",057_Spain,"
+df['Austerity politics are needed in order to overcome the crisis'].value_counts().nlargest(3).index.tolist()
+"
+Are there survey participants who are not registered to vote?,True,boolean,['Are you registered to vote?'],['category'],True,058_US,"
+df['Are you registered to vote?'].eq('No').any()
+"
+What is the count of respondents who are most likely to vote for Biden in the upcoming day of the election?,799,number,['Who are you most likely to vote for on election day?'],['category'],0,058_US,"
+df[df['Who are you most likely to vote for on election day?'] == 'Boris Johnson'].shape[0]
+"
+How many respondents are from the region adjacent to the South Atlantic Ocean?,774,number,['Division'],['category'],0,058_US,"
+df[(df['Division'] == 'West North Central') | (df['Division'] == 'Mountain')].shape[0]
+"
+Identify the highest 3 unique county codes present in the dataset.,"[56031, 56025, 56021]",list[number],['County FIPS'],['number[uint16]'],"[53009, 51143, 48113]",058_US,"
+df['County FIPS'].value_counts().nlargest(3).index.tolist()
+"
+On how many different days were transactions recorded?,159,number,[date_time],['category'],20,060_Bakery,"
+df['date_time'].nunique()
+"
+Which day period has the highest number of unique transaction IDs?,morning,category,"[period_day, Transaction]","['category', 'number[uint16]']",afternoon,060_Bakery,"
+df['period_day'].value_counts().idxmax()
+"
+What are the 4 items that were bought two times in the evening?,"['Art Tray', 'Mighty Protein', 'Mortimer', 'Vegan mincepie']",list[category],"[Item, period_day]","['category', 'category']",[],060_Bakery,"
+df[df['period_day'] == 'evening'].groupby('Item').size().nlargest(4).index.tolist()
+"
+Identify the highest 5 transaction numbers.,"[9680, 9681, 9682, 9683, 9684]",list[number],[Transaction],['number[uint16]'],"[9133, 7776, 7497, 7435, 7221]",060_Bakery,"
+df['Transaction'].nlargest(5).tolist()
+"
+What is the maximum review ID? If there is a tie then pick the highest ID.,670801367,number,['Review_ID'],['number[uint32]'],644423763,061_Disneyland,"
+df['Review_ID'].nlargest(2).iloc[-1]
+"
+What are the highest 5 review IDs in terms of rating? If you find a tie then keep the highest IDs.,"[670801367, 670760708, 670721950, 670606796, 670585330]",list[number],"['Review_ID', 'Rating']","['number[uint32]', 'number[uint8]']","[644423763, 643982268, 635972926, 621724235, 576395715]",061_Disneyland,"
+df.nlargest(5, 'Rating')['Review_ID'].tolist()
+"
+What are the top 3 (not necessarily unique) ratings given by reviewers from Australia?,"[5, 5, 5]",list[number],"['Reviewer_Location', 'Rating']","['category', 'number[uint8]']","[5, 5, 5]",061_Disneyland,"
+df[df['Reviewer_Location'] == 'Australia']['Rating'].value_counts().nlargest(3).index.tolist()
+"
+What are the bottom 2 languages in terms of tweet count? If there are more than two give priority to those starting with the letter p,"['pl', 'pt']",list[category],['lang'],['category'],['en'],062_Trump,"
+df['lang'].value_counts().nsmallest(2).index.tolist()
+"
+What are the top 4 mentioned names in the tweets?,"['realDonaldTrump', 'FoxNews', 'CNN', 'foxandfriends']",list[category],['mention_names'],['list[category]'],"['[]', '""realDonaldTrump""]', '[""IvankaTrump""', '""trumpferrypoint""']",062_Trump,"
+df['text'].str.findall(r'\b[A-Z][a-z]+\b').explode().value_counts().nlargest(4).index.tolist()
+"
+What are the bottom 3 author names in terms of tweet count?,['Donald J. Trump'],list[category],['author_name'],['category'],['Donald J. Trump'],062_Trump,"
+df.nsmallest(3, 'retweets')['author_name'].tolist()
+"
+What is the most common name?,Christophe Viau,category,['name'],['category'],Peter Skomoroch,063_Influencers,"
+df['name'].mode().iloc[0]
+"
+What are the times the two most common descriptions are repeated?,"[2369, 2200]",list[number],['Description'],['category'],"[1, 1]",065_RFM,"
+df[df['Description'].isin(df['Description'].value_counts().nlargest(2).index)]['InvoiceDate'].tolist()
+"

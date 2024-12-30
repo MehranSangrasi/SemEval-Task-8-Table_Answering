@@ -1,0 +1,87 @@
+question,answer,type,columns_used,column_types,sample_answer,dataset,queries
+Who are the authors of the 4 shortest posts (based on the number of words)?,"['Correctorada', 'El Joker', 'Xenia Viladas', 'DrJaus \xa0🇪🇸']",list[category],"['author_name', 'text']","['category', 'text']","[Vito!!, Albert Navarro, JEEVES, Leo Tarda]",050_ING,"
+df['text'].str.split().str.len().nsmallest(4).index.map(df.loc[lambda x: x['author_name'], 'author_name'].iloc).tolist()
+"
+What are the word counts for the 6 shortest posts?,"[1, 1, 1, 1, 1, 1]",list[number],['text'],['text'],"[2, 3, 4, 6, 12, 13]",050_ING,"
+df.nsmallest(6, 'word_count')['word_count'].tolist()
+"
+Name the top 2 primary categories that have the most Pokémon.,"['Water', 'Normal']",list[category],['type1'],['category'],"['Normal', 'Grass']",051_Pokemon,"
+df['primary_type'].value_counts().nlargest(2).index.tolist()
+"
+What is the average Extraversion level for the profession with the highest number of records (n)?,0.373214039767641,number,"['Profession', 'Extraversion', 'n']","['category', 'number[double]', 'number[uint16]']",0.3521943338191243,052_Professional,"
+df[df['Profession'].mode()[0]]['Extraversion'].mean()
+"
+"Provide a list with the median number of claims for the B2 and S1 kinds separately. ""[16"," 1]""",list[number],"['num_claim', 'kind']","['number[UInt32]', 'category']","[18, 1]",053_Patents,"
+[df[df['kind'] == 'B2']['num_claims'].median(), df[df['kind'] == 'S1']['num_claims'].median()].
+"
+List the 3 most recent patents by their ID.,"[9479476.0, 9479477.0, 9479478.0]",list[number],"['id', 'date']","['number[UInt32]', 'date[ns, UTC]']","[9480043.0, 9479911.0, 9480049.0]",053_Patents,"
+df.nlargest(3, 'date')['id'].tolist()
+"
+Is the author who has the most favourites also the one with the most retweets?,True,boolean,"['author_id<gx:category>', 'user_favourites_count<gx:number>', 'retweets<gx:number>']","['number[uint32]', 'number[uint8]', 'number[uint8]']",True,054_Joe,"
+df.loc[df['favourites'].idxmax(), 'author_id<gx:category>'] == df.loc[df['retweets'].idxmax(), 'author_id<gx:category>']
+"
+Does the author with the most retweets also have the most replies?,True,boolean,"['author_id<gx:category>', 'retweets<gx:number>', 'replies<gx:number>']","['number[uint32]', 'number[uint32]', 'number[uint16]']",True,054_Joe,"
+(df.loc[df['retweets'].idxmax(), 'replies'] > df['replies'].max())
+"
+"How many authors have tweets which have received more than 10,000 favourites?",1,number,['favorites<gx:number>'],['number[uint8]'],1,054_Joe,"
+df[df['favorites'] > 10000].shape[0]
+"
+How many retweets does the most retweeted tweet have?,205169,number,['retweets<gx:number>'],['number[uint32]'],50625,054_Joe,"
+df['retweets'].max()
+"
+Who is the author of the tweet with the most retweets?,Joe Biden,category,"['author_name<gx:category>', 'retweets<gx:number>']","['category', 'number[uint32]']",Joe Biden,054_Joe,"
+df.loc[df['retweets'].idxmax(), 'author_id<gx:category>']
+"
+Who are the top 3 authors with the most followers?,['Joe Biden'],list[category],"['author_name<gx:category>', 'user_followers_count<gx:number>']","['category', 'number[uint32]']",['Joe Biden'],054_Joe,"
+df.nlargest(3, 'user_followers_count')['author_name<gx:category>'].tolist()"
+Who are the top 4 authors with the most favourites?,['Joe Biden'],list[category],"['author_name<gx:category>', 'user_favourites_count<gx:number>']","['category', 'number[uint8]']",['Joe Biden'],054_Joe,"
+df.nlargest(4, 'favorites')['author_name'].tolist()
+"
+Who are the 4 users by name apart from the author who are mentioned the most often?,"[KamalaHarris, DrBiden, BarackObama, NRA]",list[category],"['author_name<gx:category>', 'mention_names<gx:list[category]>']","[KeishaBottoms, ChristieVilsack, NRA, Philabundance]",,054_Joe,"
+df['mention_names'].explode().value_counts().nsmallest(4).index.tolist()
+"
+What are the 2 highest numbers of retweets a tweet in the dataset has?,"[205169, 101314]",list[number],['retweets<gx:number>'],['number[uint32]'],"[50625, 13690]",054_Joe,"
+df['retweets'].nlargest(2).tolist()
+"
+Is the borrower with the highest loan amount also the one with the longest loan duration?,False,boolean,"['Loan Amount', 'Loan Duration - Months']","['number[uint16]', 'number[uint8]']",False,055_German,"
+df.loc[df['Loan Amount'].idxmax(), 'Loan Duration'] == df['Loan Duration'].max()
+"
+What are the top 4 jobs of borrowers with the longest loan duration?,"['Skilled', 'Skilled', 'Skilled', 'Unskilled - Resident']",list[category],"['Loan Duration - Months', 'Job']","['number[uint8]', 'category']","['Skilled', 'Skilled', 'Skilled', 'Highly Skilled']",055_German,"
+df.nlargest(4, 'Loan Duration')['Job'].tolist()
+"
+Enumerate the 4 foods with the most total fat.,"['bacon', 'peanuts', 'cheese', 'popcorn']",list[category],"['Total Fat (g)', 'name']","['number[double]', 'category']","[chocolate bar, cookie, hotdog, french fries]",056_Emoji,"
+df.nlargest(4, 'Total Fat')['Name'].tolist()
+"
+Are there any respondents who participated in the 2016 Presidential election (four years ago) but are not planning to do so in the upcoming election?,True,boolean,"['Did you vote in the 2016 Presidential election? (Four years ago)', 'How likely are you to vote in the forthcoming US Presidential election? Early Voting Open']","['category', 'category']",True,058_US,"
+df[(df['2016 Presidential Election'] == 'Yes') & (df['Upcoming Election'] == 'No')].any().any()
+"
+Do we have any respondents in the dataset who didn't participate in the 2016 Presidential election (four years ago) but intend to do so in the upcoming election?,True,boolean,"['Did you vote in the 2016 Presidential election? (Four years ago)', 'How likely are you to vote in the forthcoming US Presidential election? Early Voting Open']","['category', 'category']",True,058_US,"
+df[(df['Howie Hawkins (Green)'] == 0) & (df['None of the above'] == 0) & (df['I don\'t have a favorite'] == 0)].shape[0]
+"
+How many respondents have a high school degree or less as their highest level of education?,0,number,['What is the highest degree or level of school you have *completed* ?'],['category'],0,058_US,"
+df[df['What is the highest degree or level of school you have *completed* ? (category)'].isin(['No schooling completed', 'Less than 9th grade', '9th to 12th grade, no diploma', 'High school graduate (includes equivalency)'])].shape[0]
+"
+Who is the preferred choice among the respondents for the upcoming election?,Donald Trump (Republican),category,['Who are you most likely to vote for on election day?'],['category'],Joe Biden (Democrat),058_US,"
+df['Headline vote share'].mode()[0]
+"
+What is the most commonly achieved educational level among the respondents?,"Some college, no degree",category,['What is the highest degree or level of school you have *completed* ?'],['category'],High school graduate (includes equivalency),058_US,"
+df['What is the most commonly achieved educational level among the respondents?'].mode().iloc[0]
+"
+Enumerate the 2 most common professions among the respondents. If two or more have the same number sort them out by alphabetical order.,"['Other', 'Healthcare']",list[category],['Which of these best describes the kind of work you do?'],['category'],"['Education and training', 'Healthcare']",058_US,"
+df['What is the highest degree or level of school you have *completed*?'].value_counts().nlargest(2).sort_index().index.tolist()
+"
+List the top 4 urban/rural categories (using NCHS codes) with the greatest number of respondents.,"[1, 2, 3, 4]",list[number],['NCHS Urban/rural'],['number[uint8]'],"[1, 2, 5, 3]",058_US,"
+df['NCHS Urban/rural (uint8, unique_values: [2, 6, 1, 4, 5, 3])'].value_counts().nlargest(4).index.tolist()
+"
+Are there any transactions recorded in the evening on weekends?,True,boolean,"[period_day, weekday_weekend]","['category', 'category']",True,060_Bakery,"
+(df['weekday_weekend'] == 'weekend' &df['period_day'] == 'evening').any()
+"
+How many different IDs are there in the transactions that were made during the afternoon?,2478,number,"[Transaction, period_day]","['number[uint16]', 'category']",11,060_Bakery,"
+df[(df['period_day'] == 'afternoon')].['Transaction'].nunique()
+"
+In which date was the first most negative review (rating=1) made?,2010-12,category,"['Year_Month', 'Rating']","['category', 'number[uint8]']",2011-10,061_Disneyland,"
+df.loc[df['Rating'] == 1].nsmallest(1, 'Year_Month')['Year_Month'].iloc[0]
+"
+How many tweets were posted in 2018?,2891,number,['date'],"['date[ns, UTC]']",2,062_Trump,"
+df['date'].dt.year.nunique()
+"

@@ -12,7 +12,7 @@ evaluator = Evaluator()
 # dev_set = pd.read_csv("data/dev_answers.csv")
 dev = json.load(open("data/dev.json"))
 # dev_set = pd.DataFrame(dev)
-dev_set = json.load(open("data/dev_output.json"))
+dev_set = json.load(open("data/dev_output_2.json"))
 dev_csv = pd.read_csv("data/dev_set.csv")
 correct = 0
 count = 0
@@ -32,25 +32,36 @@ for index, items in enumerate(dev_set):
         df = pd.read_csv(f"data/datasets/{dataset}.csv")
         
         text = items["output"]
+        # output = output.split("\n")[3]
+        # print(output)
+        
         
         start_index = text.find('df')
         end_index = text.find('\n', start_index)
 
         if start_index != -1 and end_index != -1:
+            if text[start_index-1] == "(":
+                start_index = start_index - 1
             extracted_text = text[start_index:end_index]
-            answer = eval(extracted_text)
+            print(f"Question: {question} Extracted: {extracted_text}")
+            answer = eval(extracted_text, {"df": df}, {"pd": pd})
+            print("Own answer: ", answer)
             # print("Extracted text:", extracted_text)
         else:
             if end_index == -1:
                 extracted_text = text[start_index:]
-                print(extracted_text, end="\n\n")
-                answer = eval(extracted_text)
+                print(f"Question: {question} Extracted: {extracted_text}")
+                answer = eval(extracted_text, {"df": df}, {"pd": pd})
+                print("Own answer: ", answer)
+                # answer = eval(extracted_text)
 
         
         actual_answer = dev_csv[dev_csv["question"] == question]["answer"].values[0]
+        print("Actual Answer:", actual_answer)
         semantic = dev_csv[dev_csv["question"] == question]["type"].values[0]
         
         result = evaluator.compare(value=answer, truth=actual_answer, semantic=semantic)
+        print("Equal or not:", result, end="\n\n")
         
         if result == True:
             correct+=1

@@ -1,0 +1,7 @@
+question,answer,type,columns_used,column_types,sample_answer,dataset,query
+the,(df['SNWD'] <= 10).all(),,,,,,
+Which 3 incident years have the lowest number of online filed reports? If two have the same number choose the latest year,"[2023, 2020, 2021]",list[number],"[Incident Year, Filed Online]","['number[uint16]', 'boolean']","[2023, 2022, 2021]",011_SF,df[hello]
+Did the oldest roller coaster in the dataset still operate?,TRUE,boolean,"[year_introduced, Status]","['category', 'category']",TRUE,013_Roller,"df.loc[df['opening_date_clean'].isin(df['opening_date_clean'].nsmallest(1)), 'Status'].str.strip().str.lower().eq('operating').any()"
+What is the highest number of keywords associated with a single article?,8,number,['keywords'],['list[category]'],8,029_NYTimes,de[hello]
+List the material types of the top 3 articles with the longest headlines.,"['News', 'News', 'News']",list[category],"['headline', 'material_type']","['text', 'category']","['News', 'Interactive Feature', 'News']",029_NYTimes,df[hello]
+What's the most common education level among our employees?,Graduation,category,['Education'],['category'],Graduation,033_Employee,df['Education'].mode()[0]

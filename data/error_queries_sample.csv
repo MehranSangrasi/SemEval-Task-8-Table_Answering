@@ -1,0 +1,31 @@
+question,answer,type,columns_used,column_types,sample_answer,dataset,queries
+Who are the authors of the 4 shortest posts (based on the number of words)?,"['Correctorada', 'El Joker', 'Xenia Viladas', 'DrJaus \xa0🇪🇸']",list[category],"['author_name', 'text']","['category', 'text']","[Vito!!, Albert Navarro, JEEVES, Leo Tarda]",050_ING,"
+df['text'].str.split().str.len().nsmallest(4).index.map(df.loc[lambda x: x['author_name'], 'author_name'].iloc).tolist()
+"
+What are the word counts for the 6 shortest posts?,"[1, 1, 1, 1, 1, 1]",list[number],['text'],['text'],"[2, 3, 4, 6, 12, 13]",050_ING,"
+df.nsmallest(6, 'word_count')['word_count'].tolist()
+"
+Name the top 2 primary categories that have the most Pokémon.,"['Water', 'Normal']",list[category],['type1'],['category'],"['Normal', 'Grass']",051_Pokemon,"
+df['primary_type'].value_counts().nlargest(2).index.tolist()
+"
+What is the average Extraversion level for the profession with the highest number of records (n)?,0.373214039767641,number,"['Profession', 'Extraversion', 'n']","['category', 'number[double]', 'number[uint16]']",0.3521943338191243,052_Professional,"
+df[df['Profession'].mode()[0]]['Extraversion'].mean()
+"
+"Provide a list with the median number of claims for the B2 and S1 kinds separately. ""[16"," 1]""",list[number],"['num_claim', 'kind']","['number[UInt32]', 'category']","[18, 1]",053_Patents,"
+[df[df['kind'] == 'B2']['num_claims'].median(), df[df['kind'] == 'S1']['num_claims'].median()].
+"
+List the 3 most recent patents by their ID.,"[9479476.0, 9479477.0, 9479478.0]",list[number],"['id', 'date']","['number[UInt32]', 'date[ns, UTC]']","[9480043.0, 9479911.0, 9480049.0]",053_Patents,"
+df.nlargest(3, 'date')['id'].tolist()
+"
+Is the author who has the most favourites also the one with the most retweets?,True,boolean,"['author_id<gx:category>', 'user_favourites_count<gx:number>', 'retweets<gx:number>']","['number[uint32]', 'number[uint8]', 'number[uint8]']",True,054_Joe,"
+df.loc[df['favourites'].idxmax(), 'author_id<gx:category>'] == df.loc[df['retweets'].idxmax(), 'author_id<gx:category>']
+"
+Does the author with the most retweets also have the most replies?,True,boolean,"['author_id<gx:category>', 'retweets<gx:number>', 'replies<gx:number>']","['number[uint32]', 'number[uint32]', 'number[uint16]']",True,054_Joe,"
+(df.loc[df['retweets'].idxmax(), 'replies'] > df['replies'].max())
+"
+"How many authors have tweets which have received more than 10,000 favourites?",1,number,['favorites<gx:number>'],['number[uint8]'],1,054_Joe,"
+df[df['favorites'] > 10000].shape[0]
+"
+How many retweets does the most retweeted tweet have?,205169,number,['retweets<gx:number>'],['number[uint32]'],50625,054_Joe,"
+df['retweets'].max()
+"

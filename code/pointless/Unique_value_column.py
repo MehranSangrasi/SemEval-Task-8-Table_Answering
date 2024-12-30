@@ -2,9 +2,6 @@ import os
 import pandas as pd
 
 
-import pandas as pd
-
-
 
 # Path to the directory containing datasets
 datasets_dir = "datasets"
