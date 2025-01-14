@@ -12,21 +12,35 @@ df_unique_values = pd.read_csv(unique_values_file)
 def integrate_unique_values(columns, dataset_id, unique_values_df):
     column_list = [col.strip() for col in columns.split(',')]
     updated_columns = []
+    
     for col in column_list:
-        col_name = col.split(';')[0].strip()  # Extract the column name
+        col_parts = col.split(';')
+        
+        # Ensure there are at least two parts: the column name and datatype
+        if len(col_parts) == 2:
+            col_name = col_parts[0].strip()  # Extract the column name
+            col_datatype = col_parts[1].strip()  # Extract the column datatype
+        else:
+            # If no semicolon, assume only column name is provided
+            col_name = col_parts[0].strip()
+            col_datatype = "unknown"  # Or any other default datatype if applicable
+        
         # Check for a match in the unique values file
         match = unique_values_df[
             (unique_values_df['Dataset Name'] == dataset_id) &
             (unique_values_df['Column Name'] == col_name)
         ]
+        
         if not match.empty:
-            # Append unique values to the column name
+            # Append unique values in the requested format
             unique_values = match['Unique Values'].iloc[0]
-            updated_col = f"[{col_name}, unique_values: {unique_values}] ; {col.split(';', 1)[1]}"
+            updated_col = f"{col_name} ({col_datatype}, unique_values: {unique_values})"
         else:
             # Keep the original column if no unique values are found
-            updated_col = col
+            updated_col = f"{col_name} ({col_datatype})"
+        
         updated_columns.append(updated_col)
+    
     return ', '.join(updated_columns)
 
 # Process each dataset
