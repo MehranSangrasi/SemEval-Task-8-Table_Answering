@@ -35,7 +35,7 @@ Query: pd.to_datetime(df['Date Hired']).dt.year.eq(2019).any()
 json_obj = []
 
 for item in data:
-    conversations = {"conversations": []}
+    conversations = {"conversations": [], "tools": "[]"}
     input = item['input']
     output = item['output']
     # human_prompt = system_prompt + "\n\n\n" + input
@@ -43,7 +43,7 @@ for item in data:
     assistant_prompt = output
     
     conversation1 = {'from': 'human', 'value': human_prompt}
-    conversation2 = {'from': 'assistant', 'value': assistant_prompt}
+    conversation2 = {'from': 'gpt', 'value': assistant_prompt}
     conversations["conversations"].append(conversation1)
     conversations["conversations"].append(conversation2)
     json_obj.append(conversations)
@@ -60,26 +60,26 @@ for item in other_data['messages']:
     
     for key in ['query2', 'query3', 'query4']:
         if key in item and item[key] is not None:
-            conversations = {"conversations": []}
+            conversations = {"conversations": [], "tools": "[]"}
             output = item[key]
             
             human_prompt = input
             assistant_prompt = output
             conversation1 = {'from': 'human', 'value': human_prompt}
-            conversation2 = {'from': 'assistant', 'value': assistant_prompt}
+            conversation2 = {'from': 'gpt', 'value': assistant_prompt}
             conversations["conversations"].append(conversation1)
             conversations["conversations"].append(conversation2)
             json_obj.append(conversations)
             
 for item in final_data:
-    conversations = {"conversations": []}
+    conversations = {"conversations": [], "tools": "[]"}
     input = item['input']
     output = item['output']
     
     human_prompt = input
     assistant_prompt = output
     conversation1 = {'from': 'human', 'value': human_prompt}
-    conversation2 = {'from': 'assistant', 'value': assistant_prompt}
+    conversation2 = {'from': 'gpt', 'value': assistant_prompt}
     conversations["conversations"].append(conversation1)
     conversations["conversations"].append(conversation2)
     json_obj.append(conversations)
@@ -92,16 +92,16 @@ for item in final_data:
             human_prompt = system_prompt + "\n\n\n" + input
             assistant_prompt = output
             conversation1 = {'from': 'human', 'value': human_prompt}
-            conversation2 = {'from': 'assistant', 'value': assistant_prompt}
+            conversation2 = {'from': 'gpt', 'value': assistant_prompt}
             conversations["conversations"].append(conversation1)
             conversations["conversations"].append(conversation2)
             json_obj.append(conversations)
             
 # current_data.extend(json_obj)
-# random.shuffle(json_obj)
+random.shuffle(json_obj)
 
 # print(len(current_data))
 print(len(json_obj))
 
-with open('train_dev_test/axolotl/transformed/chatml_trans.json', 'w') as f:
+with open('data/train_transformed.json', 'w') as f:
     json.dump(json_obj, f, indent=4)
