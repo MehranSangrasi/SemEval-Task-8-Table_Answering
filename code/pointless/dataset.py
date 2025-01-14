@@ -41,7 +41,8 @@ def integrate_unique_values(columns, dataset_id, unique_values_df):
         
         updated_columns.append(updated_col)
     
-    return ', '.join(updated_columns)
+    # Join columns with newline separator instead of comma
+    return '\n'.join(updated_columns)
 
 # Process each dataset
 for index, row in df_columns.iterrows():
