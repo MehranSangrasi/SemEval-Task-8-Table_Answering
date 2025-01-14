@@ -4,7 +4,7 @@ import pandas as pd
 
 
 # Path to the directory containing datasets
-datasets_dir = "datasets"
+datasets_dir = "data/test_set"
 
 # File to keep track of processed datasets
 tracking_file = "datasets_tracking.csv"
@@ -67,7 +67,7 @@ for file_name in os.listdir(datasets_dir):
 results_df = pd.DataFrame(results)
 
 # Save results to a CSV file
-results_csv_path = "columns_with_less_than_10_unique_values.csv"
+results_csv_path = "columns_with_less_than_10_unique_values_test.csv"
 results_df.to_csv(results_csv_path, index=False)
 
 # Display results

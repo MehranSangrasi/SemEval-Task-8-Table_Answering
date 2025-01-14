@@ -1,0 +1,320 @@
+True
+False
+False
+False
+df['author_id'].nunique()
+49
+2
+0
+Manuel
+es
+df.loc[df['text'].str.len().idxmax(), 'author_name']
+reply
+df.nlargest(3, 'retweets')['author_name'].tolist()
+['es', 'es', 'es', 'es', 'es']
+df['text'].str.split().str.len().nsmallest(4).index.map(df.loc[lambda x: x['author_name'], 'author_name'].iloc).tolist()
+['reply', 'original']
+[0, 1, 0, 1, 0]
+[280, 233, 230]
+[0, 0, 0, 0]
+df.nsmallest(6, 'word_count')['word_count'].tolist()
+False
+False
+True
+False
+13
+618
+5
+84.2
+Water
+Whismur
+Dragon
+Mega Slowbro
+['Mega Gallade', 'Latias', 'Metagross']
+['Alolan Dugtrio', 'Arrokuda', 'Helioptile', 'Steenee', 'Orbeetle']
+df['primary_type'].value_counts().nlargest(2).index.tolist()
+[]
+[130, 120, 115, 90, 90]
+[50, 90]
+[110, 71]
+[240, 280, 289, 290, 365, 380]
+True
+False
+False
+True
+0.6291001325102317
+18
+df[df['Profession'].mode()[0]]['Extraversion'].mean()
+0.0355792960526332
+U.S. Representative
+U.S. Representative
+U.S. Representative
+Data Analyst
+['User Experience Designer (UX Designer)', 'Sustainability Coach', 'Insurance Writer']
+['Automation Engineer', 'Stock Trader', 'Data Analyst', 'User Experience Designer (UX Designer)']
+['U.S. Representative', 'Media Executive', 'Bookkeeper', 'Music Promoter', 'Director of Sales Marketing']
+['U.S. Representative', 'Examiner']
+[0.5907415983292473, 0.5853143224995465, 0.5741970926130652]
+[0.3282629326553239, 0.3454430761347227, 0.5168284093531004, 0.5454469457823092]
+[0.7997301042051191, 0.7874815418605556, 0.786896532913159, 0.7780772474605324, 0.7595518653914357]
+[0.0355792960526332, 0.1108088371055385, 0.1436964701751416, 0.1772058461581069, 0.2179965189872425, 0.2289998631350671]
+True
+False
+False
+True
+18
+17.65
+41
+19
+Samsung Electronics Co., Ltd.
+B2
+en
+video, display, mobile, content
+["Children's Hospital Medical Center", 'HYUNDAI MOBIS CO., LTD.', 'Samsung Electronics Co., Ltd.']
+['utility', 'design']
+['B2', 'S1']
+['layer, semiconductor, region, gate', 'light, optical, electrode, waveguide']
+[12, 18, 7, 13]
+[9479911.0, 9323438.0, 9480043.0]
+[df[df['kind'] == 'B2']['num_claims'].median(), df[df['kind'] == 'S1']['num_claims'].median()].
+df.nlargest(3, 'date')['id'].tolist()
+True
+df.loc[df['favourites'].idxmax(), 'author_id<gx:category>'] == df.loc[df['retweets'].idxmax(), 'author_id<gx:category>']
+[1351367275094310912, 1332730472351240192]
+(df.loc[df['retweets'].idxmax(), 'replies'] > df['replies'].max())
+30308043
+df[df['favorites'] > 10000].shape[0]
+df['retweets'].max()
+0
+Joe Biden
+Joe Biden
+Joe Biden
+df.loc[df['retweets'].idxmax(), 'author_id<gx:category>']
+df.nlargest(3, 'user_followers_count')['author_name<gx:category>'].tolist()
+df.nlargest(4, 'favorites')['author_name'].tolist()
+df['mention_names'].explode().value_counts().nsmallest(4).index.tolist()
+[939091]
+[30308043, 30212714, 30212713]
+[195121, 110921, 87668]
+[30308043, 30212714, 30212713, 30212713, 30212712]
+df['retweets'].nlargest(2).tolist()
+df.loc[df['Loan Amount'].idxmax(), 'Loan Duration'] == df['Loan Duration'].max()
+True
+False
+False
+8613
+7
+60
+2
+Radio/TV
+Skilled
+Existing Credits Paid Back Duly Till Now
+Less than 100 DM
+['Skilled', 'Skilled', 'Highly Skilled']
+df.nlargest(4, 'Loan Duration')['Job'].tolist()
+['Skilled', 'Highly Skilled', 'Unskilled - Resident', 'Skilled', 'Skilled']
+['Unemployed / Unskilled  - Non-Resident', 'Unskilled - Resident']
+[8613, 7297, 7253]
+[18, 24, 60, 15]
+[3, 2, 2]
+[65, 64]
+False
+True
+False
+False
+0
+0.06386499999999999
+5
+0.2403
+chocolate bar
+chocolate bar
+pineapple
+chicken
+['chocolate bar', 'cookie', 'french fries', 'bread', 'hotdog']
+['milk', 'cookie', 'hotdog']
+df.nlargest(4, 'Total Fat')['Name'].tolist()
+['green apple', 'pineapple', 'strawberry', 'grapes', 'tangerine', 'banana']
+[5.18, 4.97, 3.12, 2.74, 2.47]
+[0.0, 0.0, 0.0]
+[0.2599, 0.252, 0.1484, 0.1473]
+[0.0044, 0.0054, 0.0067, 0.0072, 0.0081, 0.0109]
+False
+False
+False
+True
+0
+38.72222222222222
+1
+nan
+[Ciudadanos]
+df['prevVote'].mode().iloc[0]
+Ciudadanos
+University degree
+['[Ciudadanos]', '[I prefer not to say]', '[]', '[I am undeceided]', '[Podemos]']
+['[Ciudadanos]', '[I prefer not to say]', '[]']
+['Ciudadanos', 'I prefer not to say', 'PSOE']
+['University degree', 'I prefer not to say', 'Technical/Vocational education']
+[33.0, 38.0, 22.0]
+df['Austerity politics are needed in order to overcome the crisis'].value_counts().nlargest(3).index.tolist()
+[5.0, 3.0, 0.0, 4.0]
+[2.0, 4.0]
+False
+df[(df['2016 Presidential Election'] == 'Yes') & (df['Upcoming Election'] == 'No')].any().any()
+df[(df['Howie Hawkins (Green)'] == 0) & (df['None of the above'] == 0) & (df['I don\'t have a favorite'] == 0)].shape[0]
+df[(df['simple_2016_vote'] == 'Donald Trump (Republican)') & (df['Who did you vote for?'] == 'Joe Biden (Democrat)')].shape[0] > 0
+11
+0
+df[df['What is the highest degree or level of school you have *completed* ? (category)'].isin(['No schooling completed', 'Less than 9th grade', '9th to 12th grade, no diploma', 'High school graduate (includes equivalency)'])].shape[0]
+4
+25-34
+df['Headline vote share'].mode()[0]
+df['What is the most commonly achieved educational level among the respondents?'].mode().iloc[0]
+South Atlantic
+['MI', 'GA', 'AL', 'CA', 'TX', 'NJ']
+df['What is the highest degree or level of school you have *completed*?'].value_counts().nlargest(2).sort_index().index.tolist()
+['White (not Hispanic, Latino or Spanish origin)', 'Black or African American (not Hispanic, Latino or Spanish origin)']
+['25-34', '55-64', '65+', '35-44', '18-24', '45-54']
+[13135, 29189, 13095]
+[4.871233760276248, 2.273869489671245, 1.969631929375061, 1.875535313329686]
+df['NCHS Urban/rural (uint8, unique_values: [2, 6, 1, 4, 5, 3])'].value_counts().nlargest(4).index.tolist()
+[10.0, 11.0]
+False
+False
+True
+True
+19
+19.1
+61990
+3
+automotorDURSAN.com A
+BMW
+Diésel
+Madrid
+['Madrid', 'Barcelona', 'Málaga']
+['Gris / Plata', 'Negro', 'Azul']
+['MERCEDES-BENZ', 'BMW', 'AUDI', 'HONDA', 'SEAT']
+['Eléctrico', 'Híbrido']
+[2016.0, 2020.0, 2017.0, 2018.0]
+[370000, 300000, 254000]
+[54, 44, 40, 32, 29]
+[258.0, 258.0, 218.0, 182.0, 180.0, 170.0]
+True
+False
+False
+(df['weekday_weekend'] == 'weekend' &df['period_day'] == 'evening').any()
+12
+20
+9133
+df[(df['period_day'] == 'afternoon')].['Transaction'].nunique()
+afternoon
+Coffee
+Farm House
+afternoon
+['Coffee', 'Bread', 'Farm House']
+['Coffee', 'Bread']
+['Brownie', 'Coke']
+['Cake', 'Focaccia']
+[628, 956, 1152, 1259]
+[9133, 7776, 7497, 7435, 7221]
+[7776, 7104, 5816, 2850]
+[956, 2711]
+True
+False
+True
+False
+9
+4.25
+643982268
+2
+United States
+Disneyland_California
+df.loc[df['Rating'] == 1].nsmallest(1, 'Year_Month')['Year_Month'].iloc[0]
+Australia
+['United States', 'Australia', 'Malta']
+['Disneyland_California', 'Disneyland_HongKong']
+['missing', '2019-1', '2015-12', '2012-5']
+['Canada', 'United States', 'United Kingdom']
+[540713188, 576395715, 310041955, 121577468, 441572512]
+[119781124, 124120037, 337648026, 620582661]
+[5]
+[2, 5]
+True
+True
+True
+True
+df['author_id'].nunique()
+8111.15
+105448
+df['date'].dt.year.nunique()
+Donald J. Trump
+I have great confidence that China will properly deal with North Korea. If they are unable to do so, the U.S., with its allies, will! U.S.A.
+en
+en
+['realDonaldTrump']
+['en']
+['Trump', 'The', 'It', 'If']
+['Donald J. Trump', 'Donald J. Trump', 'Donald J. Trump']
+[852508752142114816, 900150814081036288, 1017190186269184001, 822501939267141634, 761711856457125888]
+[603361519192174592, 589632894177533953, 616672730319069185, 618552478653616128]
+[105448, 85433, 84944, 79544, 67612, 59793]
+[10, 14, 376]
+False
+True
+True
+False
+6
+0.0923955552240227
+324.5
+11
+Alberto Perdomo
+Data Science Fact
+https://storage.googleapis.com/pics.contexto.io/photos/paperclips/000/016/416/thumb/8f8493dfc040e56ef7ff8f59f9474774_normal.jpeg?1517502015
+Paul Klemm
+['Peter Skomoroch', 'Nieman Lab', 'Munmun De Choudhury']
+['Christopher', 'Chris J. Headleand']
+['Catherine Rampell', 'Nieman Lab', 'Deok Gun Park', 'ESFL']
+['ESFL', 'WikipediaLiveMonitor', 'Alberto Perdomo']
+[527, 498, 411, 8031, 91203]
+[35070, 35046, 35106, 35054]
+[0.4905835057931528, 0.2858285808469396, 0.2194061763508274, 0.2171608658929857, 0.1213462154304343, 0.1023296876109954]
+[3.0, 5.0, 7.0]
+True
+True
+False
+True
+5
+3.1
+6
+4
+1
+df[df['legs'] == 8].iloc[0]['animal_name']
+6
+honeybee
+['gnat', 'honeybee', 'wasp']
+['porpoise', 'dogfish']
+[1, 6, 4, 2]
+[7, 2, 4]
+[1, 6, 2, 4, 7]
+[4, 7, 2, 6]
+[4, 2, 0, 6]
+[6, 2, 0]
+False
+True
+True
+True
+20
+3.5410000000000004
+25
+19
+United Kingdom
+RETROSPOT LAMP
+BLUE POLKADOT WRAP
+Australia
+['BLUE POLKADOT WRAP', 'HANGING JAM JAR T-LIGHT HOLDER', 'FAIRY CAKE FLANNEL ASSORTED COLOUR']
+['HANGING METAL STAR LANTERN', 'LARGE CAKE TOWEL CHOCOLATE SPOTS']
+['United Kingdom', 'Australia']
+['Australia', 'United Kingdom']
+['548005', '555200', '573399', '577076', '568909']
+['22465', '21109', '82484', '22799', '82600']
+[1, 4, 2, 12]
+df[df['Description'].isin(df['Description'].value_counts().nlargest(2).index)]['InvoiceDate'].tolist()

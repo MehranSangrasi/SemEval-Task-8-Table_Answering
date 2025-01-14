@@ -1,0 +1,454 @@
+True
+True
+False
+False
+True
+True
+True
+True
+True
+Laboratory Technician
+Sales
+Divorced
+Life Sciences
+Manager
+Male
+3
+Other
+35.65
+6
+25
+3183.0
+241
+19.5
+8
+8
+8
+[3, 4]
+[2028, 2090, 2426, 2661, 2670]
+[2, 1, 4, 3]
+[23, 22, 21, 20, 17]
+[38, 32, 29, 36, 22]
+['Laboratory Technician', 'Research Scientist', 'Manufacturing Director']
+['Research & Development', 'Sales']
+['Single', 'Married', 'Divorced']
+['Life Sciences', 'Other', 'Medical']
+['Travel_Rarely', 'Travel_Frequently', 'Non-Travel']
+[1, 2, 3, 4]
+[1, 2, 3]
+False
+True
+False
+2
+False
+False
+False
+0     False
+1     False
+2     False
+3     False
+4     False
+5     False
+6     False
+7     False
+8     False
+9     False
+10    False
+11    False
+12    False
+13    False
+14    False
+15    False
+16    False
+17    False
+18    False
+19    False
+Name: num_helpful_votes, dtype: bool
+0
+1240.3
+20
+5
+0.8
+5463
+2004-04-23 00:00:00+00:00
+0
+16
+['2010-10-25 00:00:00+00:00', '2009-10-14 00:00:00+00:00', '2011-03-20 00:00:00+00:00', '2004-04-23 00:00:00+00:00']
+[5, 3, 2, 2, 1]
+[]
+[111492, 108562, 262330, 258705, 84087]
+['July 2010', 'July 2011', 'October 2010', 'March 2012']
+False
+True
+False
+False
+True
+True
+False
+Request for Quotations
+Western and Central Africa
+1
+Consultant Services
+Eastern and Southern Africa
+Burkina Faso
+800433.3
+3
+20
+164490.6105
+477763.0
+224496.80638662673
+13
+[800433.3, 716716.34, 369866.76]
+True
+[477763.0, 552271.0, 754040.0, 783608.0, 841649.0]
+[2024, 2025, 2023]
+[591432.79]
+[157840.9, 166464.39]
+[716716.34, 369866.76, 198952.48, 189088.46]
+[]
+['Western and Central Africa', 'Eastern and Southern Africa', 'EAST ASIA AND PACIFIC', 'LATIN AMERICA AND CARIBBEAN']
+['Request for Quotations', 'Request for Bids', 'Individual Consultant Selection', 'Consultant Qualification  Selection']
+['Ghana', 'World', 'Burkina Faso', 'Nigeria']
+['Request for Bids', 'Direct Selection']
+['Request for Bids', 'Direct Selection']
+True
+False
+False
+False
+True
+False
+False
+Attractions
+Automotive
+Automotive
+150.0
+Commercial Trucks
+20
+1
+3
+6
+2
+2
+1
+True
+20
+[150.0, 2.0, 1.0]
+[12, 8]
+['Attractions', 'Automotive']
+['Auto Body Styles', 'Amusement and Theme Parks', 'Bars & Restaurants', 'Casinos & Gambling']
+[]
+['Attractions', 'Attractions', 'Attractions', 'Attractions']
+[150.   1.   2.]
+[150.   1.   2.]
+True
+False
+True
+True
+False
+True
+False
+Switzerland
+Ireland
+Luxembourg
+Switzerland
+Hong Kong (China)
+Israel
+Barbados
+101.1
+46.5
+20
+73.21
+50.8
+76.7
+115.89000000000001
+3
+[46.5, 67.2, 59.4, 39.2, 36.7]
+[76.6, 85.0, 62.7, 64.4, 65.1]
+[43.5, 54.6, 99.4, 101.1, 102.4]
+[0, 2, 7]
+[0, 2, 1, 4, 3]
+[8, 4]
+[43.5, 54.6, 99.4, 101.1, 102.4]
+['Luxembourg', 'Israel', 'Netherlands', 'Finland', 'Puerto Rico']
+['Switzerland', 'Iceland', 'Hong Kong (China)']
+['Barbados', 'Puerto Rico', 'Finland']
+['Australia', 'Austria', 'Canada', 'New Zealand', 'Ireland', 'France']
+['Luxembourg', 'Switzerland', 'United States', 'Australia', 'Denmark']
+['Hong Kong (China)', 'Singapore', 'Puerto Rico']
+True
+False
+True
+False
+True
+True
+True
+4
+1
+4.0
+4.0
+3
+4
+3
+True
+337
+322.25
+12
+8.8
+3.0
+0.4924867083432169
+4
+[337, 330, 328, 327, 325]
+0
+0
+[118, 115, 112, 111, 110]
+[7.9, 8.0, 8.0, 8.0, 8.0]
+[337, 330, 328, 327, 325]
+[337, 330]
+[314, 308]
+[4, 5, 4, 4, 4]
+[3, 1, 3, 3, 3]
+[4.5, 4.5, 4.0, 3.5]
+[4.5, 4.5, 4.0, 4.0, 3.5]
+False
+True
+True
+True
+True
+True
+True
+False
+False
+male
+yes
+southeast
+male
+True
+0
+northwest
+no
+42.13
+0.6
+4
+249048.48968
+18
+1
+4
+29.354999999999997
+[42.13, 40.3]
+[39611.7577, 10602.385, 11090.7178]
+[18, 23, 19, 23, 25]
+[18, 19, 19]
+['yes']
+['southeast', 'southwest', 'southeast']
+True
+False
+True
+False
+True
+True
+True
+52 kg
+74 kg
+Squat
+398
+10
+10
+10
+398
+Matthew Anderson
+Chris Brown
+2125
+133
+287
+2
+[398, 396, 396]
+[[62, 41], [47, 40, 25], [38, 31], [46, 37], [33, 20], [64, 62, 56], [60, 40, 40], [55]]
+['Bench Press', 'Deadlift']
+[359, 265, 264]
+['Jessica Wilson', 'John Doe', 'Emily Davis', 'Chris Brown', 'Matthew Anderson', 'Jane Smith']
+['74 kg', '120 kg', '52 kg']
+['Matthew Anderson', 'Laura Taylor', 'Sarah Thomas', 'Laura Taylor', 'Jane Smith']
+False
+False
+True
+False
+True
+[226.8, 222.5, 218.2, 212.8, 188.2]
+False
+True
+HHS Region 01
+Heart disease
+Male
+Rural
+HHS Region 04
+0.4
+8
+3711.6
+185.57999999999998
+161.29999999999998
+[276.4, 248.8, 246.0, 229.0, 226.8]
+[0.4, 0.4, 0.5, 0.5, 0.5]
+[115.1, 132.2, 138.1, 139.6, 148.6]
+[226.8, 222.5, 218.2, 212.8]
+[]
+[]
+['Urban' 'Rural']
+False
+False
+False
+True
+True
+False
+nan
+nan
+OKC
+Dwyane Wade
+GSW
+5
+Monta Ellis
+169
+8904
+0
+0.0
+82
+82
+0
+0
+154
+[886, 670, 662]
+[7773]
+[2280, 2133, 2036, 2023]
+[169, 160, 145]
+[82, 82, 82]
+['Carmelo Anthony', 'Dwyane Wade', 'LaMarcus Aldridge', 'Brook Lopez', 'LeBron James']
+['David Lee', 'LaMarcus Aldridge', 'Blake Griffin']
+['OKC', 'MIA', 'NYK', 'GSW', 'POR']
+['GSW', 'OKC', 'MIA', 'POR', 'NYK']
+['Monta Ellis', 'Kemba Walker']
+['Brook Lopez', 'Kevin Durant', 'LaMarcus Aldridge']
+['Russell Westbrook', 'Deron Williams', 'LeBron James', 'Stephen Curry']
+True
+False
+True
+20
+1
+19
+1
+23.1
+55
+140
+22.575000000000006
+2
+17.0
+0
+40
+2.383247452752784
+[180, 165, 165]
+[17, 16, 18, 19]
+[]
+[]
+[0, 1]
+[0]
+[165, 165, 180]
+[]
+[17 18]
+False
+False
+True
+False
+False
+False
+False
+True
+Sunday
+7
+Wednesday
+7
+11
+Monday
+26.4
+0.9
+48.95
+643.1
+4.621855972613053
+0
+[26.4, 24.1, 22.9]
+[70.8, 77.5, 80.8, 94.3, 97.1]
+[21, 27, 27, 29]
+[7.2, 6.7, 6.7, 5.4, 5.4]
+[0.0, 0.0, 0.0]
+[26.2, 27.4, 27.9]
+['Wednesday', 'Monday', 'Tuesday']
+['Sunday', 'Tuesday', 'Monday']
+['Tuesday', 'Monday', 'Sunday', 'Saturday', 'Tuesday']
+['Monday', 'Thursday', 'Saturday', 'Wednesday', 'Monday', 'Monday', 'Wednesday']
+False
+False
+False
+False
+False
+True
+True
+Lower Manhattan
+Coffee
+Sun
+Hot chocolate
+Jan
+8
+Lower Manhattan
+Coffee
+2
+16
+6,00 US$6,20 US$9,00 US$2,00 US$6,20 US$3,00 US$2,00 US$4,00 US$4,25 US$7,00 US$2,55 US$7,00 US$3,00 US$3,10 US$6,00 US$6,00 US$3,75 US$2,50 US$9,00 US$4,75 US$
+True
+3.2049999999999996
+20
+2
+9,00 US$
+0
+[2, 2, 2]
+[5, 8]
+[2.0, 2.0, 2.0, 2.5]
+[7]
+['Lower Manhattan', "Hell's Kitchen"]
+[]
+['Brewed Chai tea', 'Hot chocolate', 'Gourmet brewed coffee']
+['Jan']
+['Sun']
+[5, 8]
+Sustainably Grown Organic Lg
+True
+True
+False
+True
+False
+False
+False
+True
+Sapiens A Brief History Of Humankind
+ Novel
+7
+Benjamin Graham
+80
+0.0
+1
+8780
+3
+10.65
+0
+3
+19
+[80, 146, 190, 202, 208]
+[80, 146, 190, 202, 208]
+[30.0, 39.0, 27.0, 13.0]
+[]
+[0.0, 2.0, 2.0, 3.0, 4.0]
+[30.0, 39.0, 23.0, 13.0, 27.0]
+[498]
+Ecotourism
+['History and Tradition', ' Business, Investment and Economics', 'Islamic Books', 'Islamic Books', 'Computer Science & Engineering']
+['Harish Bhat , B.S. Badan']
+['Madinah Arabic Reader 1', 'How Harsh Mariwala ?Groomed? Marico', 'Train to Pakistan']
+['History and Tradition', ' Business, Investment and Economics', 'Novel', 'Novel']
+['Yuval Noah Harari', 'Benjamin Graham', 'Khaled Hosseini']
+['1st Edition', 'Edition', 'Edition', '1st Published']

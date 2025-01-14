@@ -25,7 +25,7 @@ Question: What are the top 3 most common marital statuses among our employees? \
 
 Query: df.groupby('Marital_Status').size().sort_values(ascending=False).head(3).index.tolist()
 
-Question: Were there any employees hired in 2019? \n Dataset Columns: Left (category, unique_values: [Yes, No]), Satisfaction Level (float64), Work Accident (category, unique_values: [Yes, No]), Average Monthly Hours (uint16), Last Evaluation (float64), Years in the Company (uint8, unique_values: [3, 5, 4, 6, 2, 8, 10, 7]), salary (category, unique_values: [low, medium, high]), Department (category), Number of Projects (uint8, unique_values: [2, 5, 4, 6, 7, 3]), Promoted in the last 5 years? (category, unique_values: [Yes, No]), Date Hired (datetime64[us), UTC]
+Question: Were there any employees hired in 2019? \n Dataset Columns: \nLeft (category, unique_values: [Yes, No]), Satisfaction Level (float64), Work Accident (category, unique_values: [Yes, No]), Average Monthly Hours (uint16), Last Evaluation (float64), Years in the Company (uint8, unique_values: [3, 5, 4, 6, 2, 8, 10, 7]), salary (category, unique_values: [low, medium, high]), Department (category), Number of Projects (uint8, unique_values: [2, 5, 4, 6, 7, 3]), Promoted in the last 5 years? (category, unique_values: [Yes, No]), Date Hired (datetime64[us), UTC]
 
 Query: pd.to_datetime(df['Date Hired']).dt.year.eq(2019).any()
 
@@ -38,7 +38,8 @@ for item in data:
     conversations = {"conversations": [], "tools": "[]"}
     input = item['input']
     output = item['output']
-    human_prompt = system_prompt + "\n\n\n" + input
+    # human_prompt = system_prompt + "\n\n\n" + input
+    human_prompt = input
     assistant_prompt = output
     
     conversation1 = {'from': 'human', 'value': human_prompt}
@@ -62,7 +63,7 @@ for item in other_data['messages']:
             conversations = {"conversations": [], "tools": "[]"}
             output = item[key]
             
-            human_prompt = system_prompt + "\n\n\n" + input
+            human_prompt = input
             assistant_prompt = output
             conversation1 = {'from': 'human', 'value': human_prompt}
             conversation2 = {'from': 'gpt', 'value': assistant_prompt}
@@ -75,7 +76,7 @@ for item in final_data:
     input = item['input']
     output = item['output']
     
-    human_prompt = system_prompt + "\n\n\n" + input
+    human_prompt = input
     assistant_prompt = output
     conversation1 = {'from': 'human', 'value': human_prompt}
     conversation2 = {'from': 'gpt', 'value': assistant_prompt}
@@ -102,5 +103,5 @@ random.shuffle(json_obj)
 # print(len(current_data))
 print(len(json_obj))
 
-with open('data/updated_chatml_final.json', 'w') as f:
+with open('data/train_transformed.json', 'w') as f:
     json.dump(json_obj, f, indent=4)

@@ -1,0 +1,60 @@
+True
+True
+False
+False
+3943
+61
+1243
+0
+Lavincompae
+es
+INGdigno1999
+reply
+['es', 'es', 'es', 'es', 'es']
+['reply', 'original']
+[0, 0, 0, 0, 3]
+[387, 362, 357]
+[0, 0, 1, 0]
+True
+True
+True
+True
+20
+1125
+160
+80.93843283582089
+Poison
+Shuckle
+Psychic
+Mega Mewtwo Y
+['Eternamax Eternatus', 'Mega Mewtwo X', 'Mega Mewtwo Y']
+['Shedinja', 'Diglett', 'Alolan Diglett', 'Magikarp', 'Pichu']
+['Mega Heracross', 'Mega Tyranitar', 'Mega Scizor', 'Tyranitar', 'Scizor', 'Ursaring']
+[250, 230, 200, 160, 160]
+[20, 31]
+[135, 127]
+[175, 180, 180, 185, 190, 194]
+True
+False
+False
+True
+0.7826336180787501
+1002
+0.0353641396193574
+Policy Officer
+Governor
+Mortgage Banker
+Program Manager
+['Book Publisher', 'Bureau Chief', 'Publisher']
+['.Net Architect', 'Android Developer', 'Principal Engineer', 'Game Engineer']
+['Director of Athletics', 'Recruiting Coordinator', 'Athletic Coordinator', 'Director of Personnel', 'Skills Trainer']
+['U.S. Senator', 'Congressman']
+[0.7557249985959847, 0.7413189187628788, 0.7034528053640179]
+[0.1652381569664056, 0.2005428064324122, 0.2215546116855247, 0.2506791678499942]
+[0.9794365922809228, 0.9723660656030668, 0.954299437125917, 0.9362989453985364, 0.9307917067583288]
+[0.0353641396193574, 0.0355792960526332, 0.0399752446723049, 0.0573280662585624, 0.0591099063085338, 0.0592781792571762]
+True
+False
+True
+True
+3574

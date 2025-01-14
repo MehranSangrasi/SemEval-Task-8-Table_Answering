@@ -1,0 +1,524 @@
+question,dataset,queries
+Is our average employee older than 35?,066_IBM_HR,df['Age'].mean() > 35
+Is the most frequent travel value rarely traveling?,066_IBM_HR,df['BusinessTravel'].mode()[0] == 'Travel_Rarely'
+Is the highest DailyRate equal to 1499?,066_IBM_HR,df['DailyRate'].max() == 1499
+Is the highest DailyRate negative?,066_IBM_HR,df['DailyRate'].max() < 0
+Is our research dept bigger than sales?,066_IBM_HR,df['Department'].value_counts().loc['Research & Development'] > df['Department'].value_counts().loc['Sales']
+Is the highest rating given to any performance to 4?,066_IBM_HR,(df['PerformanceRating'] == 4).any()
+Are there more employees who travel frequently than those who work in the HR department?,066_IBM_HR,(df['JobSatisfaction'] > df['EnvironmentSatisfaction']).any()
+Is the average MonthlyIncome of employees affected by attrition less than those not affected?,066_IBM_HR,df.groupby('Attrition')['MonthlyIncome'].mean().loc['Yes'] < df.groupby('Attrition')['MonthlyIncome'].mean().loc['No']
+Is the standard number of working hours the same across all employees?,066_IBM_HR,df['StandardHours'].nunique() == 1
+What is the most common role?,066_IBM_HR,df['JobRole'].mode().iloc[0]
+Which department has the highest average YearsAtCompany?,066_IBM_HR,df.groupby('Department')['YearsAtCompany'].mean().idxmax()
+What is the least common marital status?,066_IBM_HR,df['MaritalStatus'].value_counts().idxmin()
+What is the most frequent field of education for our employees?,066_IBM_HR,df['EducationField'].mode()[0]
+Which travel category has the highest average income?,066_IBM_HR,df.groupby('JobRole')['MonthlyIncome'].mean().idxmax()
+ Which gender is most satisfied with the job on average?,066_IBM_HR,df.groupby('Gender')['JobSatisfaction'].mean().idxmax()
+What is the most common score given work and life balance?,066_IBM_HR,df['WorkLifeBalance'].mode()[0]
+Which EducationField do we employ the least?,066_IBM_HR,df['EducationField'].value_counts().idxmin()
+What is the average age of our employees?,066_IBM_HR,df['Age'].mean()
+What is the total number of different job roles offered by IBM?,066_IBM_HR,df['JobRole'].nunique()
+What is the maximum years someone has been at IBM?,066_IBM_HR,df['YearsAtCompany'].max()
+What is the median monthly income of our employees?,066_IBM_HR,df['MonthlyIncome'].median()
+What is the sum of the miles employees have to travel to get to work?,066_IBM_HR,df['DistanceFromHome'].sum()
+What is the average number of total working years for employees who are working in sales?,066_IBM_HR,df[df['Department'] == 'Sales']['TotalWorkingYears'].mean()
+How many employees rate their satisfaction with their environment with a score of 4?,066_IBM_HR,df[df['EnvironmentSatisfaction'] == 4].shape[0]
+What is the range (max - min) of YearsSinceLastPromotion?,066_IBM_HR,df['YearsSinceLastPromotion'].max() - df['YearsSinceLastPromotion'].min()
+What is the longest time someone has been without a promotion?,066_IBM_HR,df['YearsSinceLastPromotion'].max()
+List the unique different grades received by anyone for their performance.,066_IBM_HR,df['PerformanceRating'].unique().tolist()
+List the amounts of the lowest 5 monthly incomes.,066_IBM_HR,df['MonthlyIncome'].nsmallest(5).tolist()
+List all the different education levels of our employees can be classified into.,066_IBM_HR,df['Education'].unique().tolist()
+"List the top 5 highest PercentSalaryHike values. The answer is a list with five values, even if they are repeated.",066_IBM_HR,df['PercentSalaryHike'].nlargest(5).tolist()
+List the 5 most common ages of our employees.,066_IBM_HR,df['Age'].value_counts().nlargest(5).index.tolist()
+List the top 3 most common job roles our company has.,066_IBM_HR,df['JobRole'].value_counts().nlargest(3).index.tolist()
+List the 2 departments that employ the most people.,066_IBM_HR,df['Department'].value_counts().nlargest(2).index.tolist()
+List the different marital status values in our database.,066_IBM_HR,df['MaritalStatus'].unique().tolist()
+List all the different (unique) values we use to classify the field of education of our employees.,066_IBM_HR,df['EducationField'].unique().tolist()
+List the top 5 BusinessTravel categories.,066_IBM_HR,df['BusinessTravel'].value_counts().nlargest(5).index.tolist()
+List all the unique possible values overtime can take.,066_IBM_HR,df['Overtime'].unique()
+List the 4 most common JobLevels.,066_IBM_HR,df['JobLevel'].value_counts().nlargest(4).index.tolist()
+List the 3 most common JobLevels.,066_IBM_HR,df['JobLevel'].value_counts().nlargest(3).index.tolist()
+Does the dataset contain any review that more than forty users have labeled as helpful?,067_TripAdvisor,(df['num_helpful_votes'] > 40).any()
+Are all the reviews sources (phone or not phone) non-null?,067_TripAdvisor,df['via_mobile'].notna().all()
+Is 1 the least frequent overall rating given in a review?,067_TripAdvisor,df['ratings'].value_counts().idxmin() == 1
+How many reviews give ratings related to the location?,067_TripAdvisor,df[df['title'].str.contains('Location')].shape[0]
+Is there more overall ratings given than ratings related to the location?,067_TripAdvisor,(df['title'].str.contains('Location')).sum() < (df['title'].str.contains('Overall')).sum()
+Is there any review written in 2024?,067_TripAdvisor,df['date'].dt.year.max() == 2024
+Are all of our reviews labelled helpful by someone?,067_TripAdvisor,(df['num_helpful_votes'] > 0).all()
+Are there more reviews marked as being made from a phone than not?,067_TripAdvisor,df['via_mobile'].value_counts()[True] > df['via_mobile'].value_counts()[False]
+Is the maximum number of helpful votes found in only one review?,067_TripAdvisor,(df['num_helpful_votes'].max() == 1).all()
+Is the best possible review for room ratings found in more than fifteen reviews?,067_TripAdvisor,(df['num_helpful_votes'] == df['num_helpful_votes'].max()) & (df['num_helpful_votes'].max() > 15)
+Which year had the highest number of reviews made?,067_TripAdvisor,df['year'].value_counts().idxmax()
+What is the average rating given to rooms?,067_TripAdvisor,df['ratings'].apply(lambda x: x['accuracy']).mean()
+What (non-null) room rating is most common?,067_TripAdvisor,df['room_rating'].mode()[0]
+Which value is most frequent for num_helpful_votes`?,067_TripAdvisor,df['num_helpful_votes'].mode()[0]
+Who is the author of 'value with a view'?,067_TripAdvisor,"df.loc[df['title'] == 'value with a view', 'author'].iloc[0]"
+What is the average review length (in characters) without taking the title into account?,067_TripAdvisor,df['text'].str.len().mean()
+What is the total number of reviews?,067_TripAdvisor,df['id'].nunique()
+What is the highest number of users that has labeled a single review as helpful?,067_TripAdvisor,df['num_helpful_votes'].max()
+What is the average number of helpful votes?,067_TripAdvisor,df['num_helpful_votes'].mean()
+What is the length of the longest text of a review (in chars)?,067_TripAdvisor,df['text'].str.len().max()
+What is the year of the first review made?,067_TripAdvisor,df['date'].min()
+How many reviews did family fun guru write?,067_TripAdvisor,df[df['author'] == 'family fun guru'].shape[0]
+What is the sum of all helpful votes for these reviews?,067_TripAdvisor,df['num_helpful_votes'].sum()
+List the top 4 years according to the number of reviews.,067_TripAdvisor,df['date'].value_counts().nlargest(4).index.tolist()
+List the 5 (non-unique) highest values of `num_helpful_votes`.,067_TripAdvisor,df['num_helpful_votes'].nlargest(5).tolist()
+List the usernames of the authors who provided a username and wrote more than 3 reviews. If there are none answer with an empty list.,067_TripAdvisor,"df[df['author'].notna() & df['text'].str.contains('
+', na=False)].groupby('author')['text'].count().loc[lambda x: x > 3].index.tolist()"
+List the usernames of the authors who provided a username and wrote more than 4 reviews. If there are none answer with an empty list.,067_TripAdvisor,df[df['author'].notna() & df['text'].notna()].groupby('author')['text'].count().loc[lambda x: x > 4].index.tolist()
+List the 5 largest non-unique (they can be repeated) offering IDs.,067_TripAdvisor,df['offering_id'].value_counts().nlargest(5).index.tolist()
+List the 4 most common years a guest stayed at a property.,067_TripAdvisor,df['date_stayed'].value_counts().nlargest(4).index.tolist()
+Does any entry in the dataset have a supplier contract greater than one million dollars?,068_WorldBank_Awards,(df['Supplier Contract Amount (USD)'] > 1000000).any()
+Is there any region which was awarded only one contract?,068_WorldBank_Awards,(df['Borrower Contract Reference Number'].value_counts() == 1).any()
+Is India amongst the borrower countries?,068_WorldBank_Awards,df['Borrower Country'].str.contains('India').any()
+Is India the borrower country with the most contracts awarded?,068_WorldBank_Awards,df['Borrower Country'].value_counts().idxmax() == 'India'
+Is there any project where the review is made before its execution?,068_WorldBank_Awards,(df['Review type'] == 'Prior').any()
+Is there any project where the review is made after its execution?,068_WorldBank_Awards,df['Contract Signing Date'].gt(df['As of Date']).any()
+Is any supplier from the US?,068_WorldBank_Awards,(df['Supplier Country'] == 'United States').any()
+What is the most frequent method of procurement for a given contract?,068_WorldBank_Awards,df['Procurement Method'].mode().iloc[0]
+Which region has the most contracts?,068_WorldBank_Awards,df['Region'].value_counts().idxmax()
+What is the longest name amongst the countries which have borrowed money? ,068_WorldBank_Awards,df[df['Borrower Contract Reference Number'].notnull()]['Borrower Country'].str.len().idxmax()
+What is the procurement category associated with the largest contract?,068_WorldBank_Awards,"df.loc[df['Supplier Contract Amount (USD)'].idxmax(), 'Procurement Category']"
+Which region has the largest contracts on average?,068_WorldBank_Awards,df.groupby('Region')['Supplier Contract Amount (USD)'].mean().idxmax()
+Who is the most frequent country of borrowers present in the dataset?,068_WorldBank_Awards,df['Borrower Country'].mode()[0]
+Which global project practice would appear first if we sorted the columnn from A to Z?,068_WorldBank_Awards,df['Project Global Practice'].sort().iloc[0]
+How big is the biggest contract in the dataset? Answer in USD.,068_WorldBank_Awards,df['Supplier Contract Amount (USD)'].max()
+How many different fiscal years the contracts belong to?,068_WorldBank_Awards,df['Fiscal Year'].nunique()
+What is the total number of procurements in the dataset?,068_WorldBank_Awards,df['Contract Description'].notna().sum()
+How big is the average procurement across all entries?,068_WorldBank_Awards,df['Supplier Contract Amount (USD)'].mean()
+"Assuming supplier IDs are assigned from lowest to highest, what is the ID of the oldest supplier present in the dataset?",068_WorldBank_Awards,df['Supplier ID'].min()
+What is the standard deviation of the contracts awarded?,068_WorldBank_Awards,df['Supplier Contract Amount (USD)'].std()
+What is the total number of supplier contracts in the 2024 fiscal year?,068_WorldBank_Awards,df[df['Fiscal Year'] == 2024].shape[0]
+List the 3 quantities of usd associated with the top 3 biggest contracts.,068_WorldBank_Awards,"df.nlargest(3, 'Supplier Contract Amount (USD)')['Supplier Contract Amount (USD)'].tolist()"
+Are there contracts awarded after the 2020 fiscal year had ended?,068_WorldBank_Awards,(df['Fiscal Year'] > 2020).any()
+"Assuming new suppliers get the last assigned id + 1, what are the unique IDs of the earliest 5 different suppliers we have in the dataset?",068_WorldBank_Awards,df['Supplier ID'].nsmallest(5).tolist()
+What are the 3 fiscal years that had the most procurements?,068_WorldBank_Awards,df['Fiscal Year'].value_counts().nlargest(3).index.tolist()
+For each of the first three fiscal years present in this dataset list the total amount of dollars awarded.,068_WorldBank_Awards,df[df['Fiscal Year'].isin(df['Fiscal Year'].nlargest(3).tolist())].groupby('Fiscal Year')['Supplier Contract Amount (USD)'].sum().nsmallest(3).tolist()
+"List the amounts awarded to the 2 contracts that are strictly over 100k dollars but closest to 100,000USD.",068_WorldBank_Awards,"df[df['Supplier Contract Amount (USD)'] > 100000].nsmallest(2, 'Supplier Contract Amount (USD)')['Supplier Contract Amount (USD)'].tolist()"
+ How much were the 4 largest contracts in central and west africa awarded for? Answer with a list with one amount per contract,068_WorldBank_Awards,"df[df['Region'] == 'Western and Central Africa'].nlargest(4, 'Supplier Contract Amount (USD)')['Supplier Contract Amount (USD)'].tolist()"
+List the 5 countries which most frequently borrow money through a procurement.,068_WorldBank_Awards,df[df['Procurement Method'] == 'Bidding']['Borrower Country'].value_counts().nlargest(5).index.tolist()
+List the 4 regions the countries most frequently belong to.,068_WorldBank_Awards,df['Region'].value_counts().nlargest(4).index.tolist()
+List the 4 most frequent methods of procurement.,068_WorldBank_Awards,df['Procurement Method'].value_counts().nlargest(4).index.tolist()
+What are the first 4 (row-wise) distinct 'Supplier Countries' we can find in the dataset?,068_WorldBank_Awards,df['Supplier Country'].drop_duplicates().head(4).tolist()
+List the unique review methods for contracts awarded above five hundred thousand dollars,068_WorldBank_Awards,df[df['Supplier Contract Amount (USD)'] > 500000]['Procurement Method'].unique().tolist()
+List the unique review methods for contracts awarded more than 500000USD,068_WorldBank_Awards,df[df['Supplier Contract Amount (USD)'] > 500000]['Procurement Method'].unique().tolist()
+Is there a first tier category with a name related to attractions?,069_Taxonomy,"df['Tier 1'].str.contains('attractions', case=False).any()"
+Are there more than five first tier categories?,069_Taxonomy,df['Tier 1'].nunique() > 5
+Is any entry in the third tier a (direct or otherwise) descendant of 150?,069_Taxonomy,df['Parent'].iloc[df[df['Tier 3'].notnull()].index[0]].startswith('150')
+Are all rows named?,069_Taxonomy,df['Name'].isnull().any()
+Are there any fourth level entities in the taxonomy?,069_Taxonomy,df['Tier 4'].notna().any()
+Are there more entities with a valid parent ID than third tier entities?,069_Taxonomy,(df['Parent'].notna().sum() > df[df['Tier 3'].notnull()].shape[0])
+Does the dataset contain exactly 703 entries?,069_Taxonomy,df['Unique ID'].nunique() == 703
+Do all entities have a valid unique value associated?,069_Taxonomy,(df['Unique ID'].duplicated() | (df['Unique ID'].isnull())).any()
+Which first tier category name has the most descendants? (direct or otherwise),069_Taxonomy,"df.loc[df['descendants_count'].idxmax(), 'Tier 1']"
+What is most common category name among the first level categories?,069_Taxonomy,df['Tier 1'].mode()[0]
+Which first tier category has the second largest amount of descendants (direct or otherwise)?,069_Taxonomy,df['Tier 1'].value_counts().nlargest(2).index[-1]
+What is the second most popular category name among the first level categories?,069_Taxonomy,df['Tier 1'].value_counts().nlargest(2).index[-1]
+What is the most common unique parent ID found in the dataset?,069_Taxonomy,df['Parent'].mode()[0]
+What is the non-null third level value in the dataset that appears first?,069_Taxonomy,df['Tier 3'].dropna().iloc[0]
+What is the name of the direct ascendant of the bars and restaurants entity?,069_Taxonomy,"df.loc[df['Name'] == 'Beverage Service > Bars and Restaurants', 'Parent'].iloc[0]"
+How many elements are there in our taxonomy?,069_Taxonomy,df['Name'].nunique()
+How many elements in the taxonomy do not have a parent id associated?,069_Taxonomy,df['Parent'].isnull().sum()
+What is the total number of unique non-null Parent values?,069_Taxonomy,df['Parent'].nunique()
+How many entries belong to the third or fourth tiers?,069_Taxonomy,df[(df['Tier 3'].notna()) | (df['Tier 4'].notna())].shape[0]
+How many unique entries exist in the first level of our taxonomy?,069_Taxonomy,df['Tier 1'].nunique()
+How many rows contain null values in Tier 2?,069_Taxonomy,df['Tier 2'].isnull().sum()
+How many Parent IDs appear exactly once?,069_Taxonomy,df['Parent'].value_counts().eq(1).sum()
+Are all names unique?,069_Taxonomy,df['Name'].nunique() == len(df)
+What is the number of unique names?,069_Taxonomy,df['Name'].nunique()
+List the 3 Parent values associated the 3 highest number of descendants (direct or otherwise).,069_Taxonomy,df['Parent'].value_counts().nlargest(3).index.tolist()
+List the entry counts for the attractions and automotive entities.,069_Taxonomy,"df['Name'].value_counts().loc[[ 'Wise, the AI assistant' 'Boris Johnson' 'Jeff Bezos' 'Elon Musk' 'Vladimir Putin' 'Xi Jinping' 'Narendra Modi' 'Kim Jong-un' 'Donald Trump' 'Barack Obama' 'United States' 'United Kingdom' 'India' 'Russia' 'China' 'South Korea' 'France' 'Germany' 'Italy' 'Spain' 'Japan' 'Canada' 'Australia' 'Brazil' 'Mexico' 'Indonesia' 'Pakistan' 'Bangladesh' 'Nigeria' 'Egypt'"
+List the number of children for the categories of commercial trucks and convertibles. Answer with a two element list.,069_Taxonomy,df[df['Name'] == 'commercial trucks']['number of children'].iloc[0]
+List counts of non-null values for each Tier column.,069_Taxonomy,df['Tier 1'].value_counts().head(5).tolist()
+List the first (by number of appearance) 3 different values in the highest tier of the dataset. If there are less than 3 list as many as there are.,069_Taxonomy,df['highest_tier'].value_counts().nlargest(3).index.tolist()
+List the first (by row number) 2 different level 1 values found in the dataset. If there are less than 2 list as many as there are.,069_Taxonomy,df['Tier 1'].drop_duplicates().head(2).tolist()
+List the first (by number of appearance) 4 different second highest level values.,069_Taxonomy,df['Tier 2'].value_counts().nlargest(4).index.tolist()
+List all (unique) highest tier values present in the first 4 rows.,069_Taxonomy,"df.loc[df['Unnamed: 7'].notna(), 'Tier 4'].iloc[:4].unique().tolist()"
+List the 4 first tier values present in the first 4 rows.,069_Taxonomy,df['Tier 1'].iloc[:4].tolist()
+List the first 4 different non-null parent values found in the dataset. If there are less than 4 list as many as there are.,069_Taxonomy,df['Parent'].dropna().unique()[:4]
+List the first 3 different non-null parent values found in the dataset. If there are less than 3 list as many as there are.,069_Taxonomy,df['Parent'].dropna().unique()[:3]
+Is there any vegan product in our dataset?,070_OpenFoodFacts,(df['Unnamed: 7'] == 'SCD').any()
+Did Eduardo create upload any products to the database?,070_OpenFoodFacts,df[df['Name'] == 'Eduardo']['Unique ID'].any()
+Is the product with code 00001522 apt for vegans?,070_OpenFoodFacts,"df.loc[df['Name'] == '00001522', 'Vegan'].iloc[0] == 'Yes'"
+Is any product palm oil free?,070_OpenFoodFacts,(df['Palm Oil Free'].str.contains('Yes')).any()
+Are there any products belonging to the category 'Plant-based foods and beverages'?,070_OpenFoodFacts,df['Tier 4'].str.contains('Plant-based foods and beverages').any()
+Are all products created by the openfoodfacts contributors labeled as vegan?,070_OpenFoodFacts,(df['Name'] == 'openfoodfacts').all()
+ Are more than a 1000 products sold in Mercadona stores?,070_OpenFoodFacts,df[df['Name'] == 'Mercadona'].sum()[['Product line purchases']] > 1000
+Are there products from the 'Hacendado' brand in more than one country?,070_OpenFoodFacts,df[df['Name'] == 'Hacendado']['Country'].nunique() > 1
+What is the most frequent brand name? Answer with a single category.,070_OpenFoodFacts,df['Name'].mode().iloc[0]
+Which country has the most products listed? Answer with a single category.,070_OpenFoodFacts,df['country'].mode()[0]
+What is the single label associated with the most products? Answer with a single category.,070_OpenFoodFacts,df['Single Label'].mode()[0]
+How many products are labeled as 'Vegan'?,070_OpenFoodFacts,df[df['Name'].str.contains('Vegan')].shape[0]
+Which store has the most products listed?,070_OpenFoodFacts,df['Store Name'].value_counts().idxmax()
+Which creator has contributed the most to the database?,070_OpenFoodFacts,df['Name'].value_counts().idxmax()
+How many products belong to the 'Hacendado' brand?,070_OpenFoodFacts,df[df['Name'] == 'Hacendado'].shape[0]
+How many unique countries exist in the dataset?,070_OpenFoodFacts,df['country_code'].nunique()
+How many products have no labels?,070_OpenFoodFacts,df[df['Name'].str.contains('No Label')].shape[0]
+How many products are associated with the 'Mercadona' type of store?,070_OpenFoodFacts,df[df['Name'] == 'Mercadona']['Product'].count()
+What is the total number of products in the dataset that have a non-empty product name?,070_OpenFoodFacts,df[df['Name'].notnull()].shape[0]
+What is the total number of products in the dataset that have a unique product code?,070_OpenFoodFacts,df['Product Code'].nunique().tolist()[0]
+How many products are listed under 'Plant-based foods and beverages'?,070_OpenFoodFacts,df[df['Tier 4'] == 'Plant-based foods and beverages'].shape[0]
+ List the product codes associated with the Seitan category,070_OpenFoodFacts,df[df['Name'] == 'Seitan']['Product Code'].tolist()
+ List the product names associated with the Seitan category,070_OpenFoodFacts,df[df['Tier 4'] == 'Seitan']['Name'].tolist()
+List the two most frequent labels in the dataset,070_OpenFoodFacts,df['Name'].value_counts().nlargest(2).index.tolist()
+" ""List the five most frequent labels in the dataset. If there are less than five list as many as there are.""",070_OpenFoodFacts,df['Name'].value_counts().nlargest(5).index.tolist()
+ List the two most frequent store names in the dataset,070_OpenFoodFacts,df['Name'].value_counts().nlargest(2).index.tolist()
+ List the two number of stores for the two most frequent store names in the dataset,070_OpenFoodFacts,df['Name'].value_counts().nlargest(2).index.tolist()
+ List the 3 most frequent countries in the dataset,070_OpenFoodFacts,df['country'].value_counts().head(3).index.tolist()
+ List the 3 number of products present for the 3 most frequent countries in the dataset,070_OpenFoodFacts,df['country'].value_counts().nlargest(3).index.tolist()
+Is Switzerland the country with the highest Cost of Living Index?,071_COL,"df.loc[df['Cost of Living Index'].idxmax(), 'Country'] == 'Switzerland'"
+Is the Bahamas ranked second in the dataset?,071_COL,"df.loc[1, 'Country'] == 'The Bahamas'"
+Is there any country with a Rent Index above 65?,071_COL,df['Rent Index'].gt(65).any()
+Does Iceland have more purchasing power than a country that has a 100 in that index?,071_COL,"df.loc[df['Country'] == 'Iceland', 'Local Purchasing Power Index'].iloc[0] > df.loc[df['Local Purchasing Power Index'] == 100, 'Local Purchasing Power Index'].iloc[0]"
+Is Barbados considered overall more expensive than the country ranked in the 10th place?,071_COL,"(df[df['Country'] == 'Barbados']['Cost of Living Index'].iloc[0] > df.nlargest(10, 'Cost of Living Index')['Cost of Living Index'].iloc[-1])"
+Does the dataset include at least 120 countries?,071_COL,len(df) >= 120
+"If I am from Iceland and I move to Singapore, would I expect my rent to be more expensive according to the index?",071_COL,"df[(df['Country'] == 'Iceland') & (df['Rent Index'] < df.loc[df['Country'] == 'Singapore', 'Rent Index'].iloc[0])].shape[0] > 0"
+Is Switzerland considered to be the most expensive country regardless if I rent or own my home?,071_COL,"df.loc[df['Rent Index'].idxmax(), 'Country'] == df.loc[df['Cost of Living Index'].idxmax(), 'Country']"
+Which country ranks the most expensive in terms of overall cost of living?,071_COL,"df.loc[df['Cost of Living Index'].idxmax(), 'Country']"
+In which country would it be cheaper to buy groceries?,071_COL,"df.loc[df['Groceries Index'].idxmin(), 'Country']"
+"If I have to rent but I want to move to the cheapest country to live in, where should I move to?",071_COL,df[df['Cost of Living Index'] == df['Cost of Living Index'].min()]['Country'].iloc[0]
+In which country would it be most expensive to eat in a restaurant?,071_COL,"df.loc[df['Restaurant Price Index'].idxmax(), 'Country']"
+Which country has the second-highest world rent?,071_COL,"df.nlargest(2, 'Rent Index')['Country'].iloc[1]"
+Which country is the second most expensive destination to move to considering I am not a home owner in the country?,071_COL,"df.nsmallest(2, 'Cost of Living Index')['Country'].iloc[1]"
+Which country has a Groceries Index closest to 80?,071_COL,"df.loc[df['Groceries Index'].sub(80).abs().idxmin(), 'Country']"
+What is the Cost of Living Index assigned to the most expensive country to live in?,071_COL,"df.loc[df['Cost of Living Index'].idxmax(), 'Cost of Living Index']"
+What is the Rent Index of the top-ranked country?,071_COL,"df.loc[df['Rank'] == df['Rank'].min(), 'Rent Index'].iloc[0]"
+What is the total number of countries in the dataset?,071_COL,df['Country'].nunique()
+What is the average Groceries Index across all countries?,071_COL,df['Groceries Index'].mean()
+What is the difference between the highest and lowest Restaurant Price Index?,071_COL,df['Restaurant Price Index'].max() - df['Restaurant Price Index'].min()
+"If I'm moving to Singapore and I have to rent there, what would my associated index for cost of living be?",071_COL,"df.loc[df['Country'] == 'Singapore', 'Cost of Living Index'].iloc[0]"
+What is the mean Local Purchasing Power Index of the top 10 countries by rank?,071_COL,"df.nlargest(10, 'Rank')['Local Purchasing Power Index'].mean()"
+What is Iceland's rank?,071_COL,df[df['Country'] == 'Iceland']['Rank'].iloc[0]
+List the Rent Index values of the top 5 overall most expensive countries excluding rent.,071_COL,"df.nlargest(5, 'Cost of Living Plus Rent Index')['Rent Index'].tolist()"
+List the Cost of Living Index values of the 5 countries that are ranked the cheapest.,071_COL,"df.nsmallest(5, 'Local Purchasing Power Index')['Cost of Living Index'].tolist()"
+List the Local Purchasing Power Index values of countries ranked 1st to 5th.,071_COL,"df.nsmallest(5, 'Local Purchasing Power Index')['Local Purchasing Power Index'].tolist()"
+List the 3 associated index values for the countries where groceries are most expensive.,071_COL,"df.nlargest(3, 'Groceries Index').index.tolist()"
+List the index given to restaurant prices for the top 5 overall most expensive countries for home owners.,071_COL,"df.nlargest(5, 'Cost of Living Index')['Restaurant Price Index'].sort_values(ascending=False).index.tolist()"
+List the 5 lowest indices for cost of life for a person who have to rent.,071_COL,"df[df['Rent Index'] > 50].nsmallest(5, 'Cost of Living Index')['Rank'].tolist()"
+List the 5 Local Purchasing Power Index values closest to 100.,071_COL,"df.nsmallest(5, 'Local Purchasing Power Index')['Local Purchasing Power Index'].tolist()"
+List the names of the top 5 ranked countries.,071_COL,"df.nlargest(5, 'Rank')['Country'].tolist()"
+List the 3 countries where I would pay the most for groceries.,071_COL,"df.nlargest(3, 'Groceries Index')['Country'].tolist()"
+List the 3 countries where it's cheapest to rent.,071_COL,"df.nsmallest(3, 'Rent Index')['Country'].tolist()"
+List the countries ranked 10th to 15th.,071_COL,"df.loc[9:14, 'Country'].tolist()"
+List the top 5 countries by Local Purchasing Power Index.,071_COL,"df.nlargest(5, 'Local Purchasing Power Index')['Country'].tolist()"
+List the 3 countries where restaurants are the cheapest.,071_COL,"df.nsmallest(3, 'Restaurant Price Index')['Country'].tolist()"
+Is there any applicant who got a grade better than 330 in their graduate record examination?,072_Admissions,(df['GRE Score'] > 330).any()
+Is there any applicant who got a score worse than 100 in their English test?,072_Admissions,(df['TOEFL Score'] < 100).any()
+Is the best CGPA greater than 9.5?,072_Admissions,df['CGPA'].max() > 9.5
+Did any applicant with a perfect university rating score get a grade below 320 in their graduate record examination?,072_Admissions,df[(df['University Rating'] == 5) & (df['GRE Score'] == 340) & (df['TOEFL Score'] == 300) & (df['SOP'] == 5) & (df['LOR'] == 5) & (df['CGPA'] == 9.95) & (df['Research'] == 1)]['Chance of Admit'].iloc[0]
+Is there an applicant with a chance above 95 per cent of getting into the university they applied to?,072_Admissions,(df['Chance of Admit'] > 95).any()
+Is the lowest score assigned to a student's stated purpose for admission worse than 2?,072_Admissions,df['SOP'].min() <= 2
+Are there any applicants who don't have any research experience previous to their application?,072_Admissions,df['Research'].eq(0).any()
+Is the average English score better than 105?,072_Admissions,df['GRE Score'].mean() > 105
+What is the rating given by the college they applied to to the applicant with the highest CGPA?,072_Admissions,"df.loc[df['CGPA'].idxmax(), 'University Rating']"
+What is the university rating of the applicant with the lowest GRE score?,072_Admissions,"df.loc[df['GRE Score'].idxmin(), 'University Rating']"
+Which score given to the stated purpose of admission of the student is most common among applications?,072_Admissions,df['SOP'].mode()[0]
+What is the score for the recommendation letters presented by the student with the lowest English score?,072_Admissions,"df.loc[df['TOEFL Score'].idxmin(), 'LOR']"
+What is the university rating of the applicant who is less likely to be admitted?,072_Admissions,"df.loc[df['Chance of Admit'].idxmin(), 'University Rating']"
+Which rating given to the stated purpose of students is associated with the highest accumulated grade point average?,072_Admissions,"df.loc[df['CGPA'].idxmax(), 'University Rating']"
+Which rating number is most commonly given by universities?,072_Admissions,df['University Rating'].mode()[0]
+Do most students have some research experience prior to the application?,072_Admissions,df['Research'].value_counts().idxmax() == 1
+What is the highest graduate record score in the dataset?,072_Admissions,df['GRE Score'].max()
+What is the average English score of applicants who have at least some research experience?,072_Admissions,df[df['Research'] == 1]['GRE Score'].mean()
+What is the total number of applicants with a university rating of 3?,072_Admissions,df[df['University Rating'] == 3].shape[0]
+What is the maximum grade point average among applicants without research experience?,072_Admissions,df[df['Research'] == 0]['CGPA'].max()
+What is the minimum score of letters presented among applicants who have over an eighty per cent chance of admission?,072_Admissions,df[df['Chance of Admit'] > 0.8]['LOR'].min()
+What is the standard deviation of CGPA scores?,072_Admissions,df['CGPA'].std()
+What is the sum of English test scores for applicants with an stated purpose better than 4?,072_Admissions,df[df['LOR ']>4]['Chance of Admit '].sum()
+How many applicants have a graduate record score between 300 and 310 (including both)?,072_Admissions,df[(df['GRE Score'] >= 300) & (df['GRE Score'] <= 310)].shape[0]
+List the 5 highest graduate record scores in the dataset.,072_Admissions,df['GRE Score'].nlargest(5).tolist()
+How many people in the dataset got a perfect English score?,072_Admissions,df[df['TOEFL Score'] == 300].shape[0]
+How many applicants got a perfect score in their statement of purpose?,072_Admissions,df[df['SOP'] == 5].shape[0]
+List the top 5 English scores in the dataset.,072_Admissions,df['TOEFL Score'].nlargest(5).tolist()
+List the 5 lowest grade point average scores in the dataset.,072_Admissions,df['CGPA'].nsmallest(5).tolist()
+List the top 5 stated purpose scores in the dataset.,072_Admissions,df['stated_happy_with_sd_people'].value_counts().nlargest(2).index.tolist()
+List the top 5 scores assigned to endorsement letters in the dataset.,072_Admissions,df['Score'].nlargest(5).tolist()
+List the top 5 English scores of applicants who have experience as researchers.,072_Admissions,"df[df['Research'] == 1].nlargest(5, 'GRE Score')['GRE Score'].tolist()"
+List the best 2 graduate record scores of applicants whose stated motivation to enter got a rating better than 4.,072_Admissions,df[df['SOP'] > 4]['GRE Score'].nlargest(2).tolist()
+List the 2 worst grade point average scores of applicants who received the second worst possible rating from their university.,072_Admissions,"df[df['University Rating'] == 2].nlargest(2, 'GRE Score')['GRE Score'].tolist()"
+List the university ratings associated with the top 5 CGPA scores.,072_Admissions,"df.nlargest(5, 'CGPA')['University Rating'].tolist()"
+List the university ratings of the lowest 5 grade point average scores.,072_Admissions,"df.nsmallest(5, 'Chance of Admit')['University Rating'].tolist()"
+List the scores given to the stated motivations of the 4 applicants who have the best shot at getting into the university they applied to.,072_Admissions,"df.nlargest(4, 'Chance of Admit')['SOP'].tolist()"
+List the SOP ratings of applicants with the top 5 English scores.,072_Admissions,"df.nlargest(5, 'TOEFL Score')['SOP'].tolist()"
+List the LOR ratings of applicants with the lowest 5 gpa scores.,072_Admissions,"df.nsmallest(5, 'GPA')['LOR'].tolist()"
+Is there any individual in the dataset with a body mass index greater than 50?,073_Med_Cost,(df['bmi'] > 50).any()
+Is it true that the number of regions represented are more than 3?,073_Med_Cost,(len(df['region'].unique()) > 3)
+Is it true that there are no centenarians in this dataset? ,073_Med_Cost,(df['age'] < 100).all()
+Is the average BMI found in this dataset considered not to be obese?,073_Med_Cost,df['bmi'].mean() > 30
+Are there any childless individuals?,073_Med_Cost,df['children'].eq(0).any()
+Does the dataset contain people who do not consume tobacco?,073_Med_Cost,df['smoker'].isin(['no']).any()
+Is there anyone that is a northeastern?,073_Med_Cost,(df['region'] == 'northeast').any()
+Would an individual with the median BMI of the dataset considered to be underweight?,073_Med_Cost,df['bmi'].median() < 18.5
+"Is the maximum medical charge in the dataset greater than $60,000?",073_Med_Cost,(df['charges'].max() > 60000)
+What is the location most represented in this dataset?,073_Med_Cost,df['location'].mode()[0]
+Which gender has the highest number of individuals?,073_Med_Cost,df['sex'].mode()[0]
+What is the smoking status of the individual who paid the most money?,073_Med_Cost,"df.loc[df['charges'].idxmax(), 'smoker']"
+What is the region the youngest teenager comes from?,073_Med_Cost,"df.loc[df['age'] == df['age'].min(), 'region'].iloc[0]"
+What is the gender of the person with the highest body mass index?,073_Med_Cost,"df.loc[df['bmi'].idxmax(), 'sex']"
+Is being childless the most common state for people in the dataset? True,073_Med_Cost,df['children'].mode().eq(0).iloc[0] == True
+What is the most frequent number of children?,073_Med_Cost,df['children'].mode()[0]
+What region is represented least in the dataset?,073_Med_Cost,df['region'].value_counts().idxmin()
+What is the smoking status of the individual with the lowest BMI?,073_Med_Cost,"df.loc[df['bmi'].idxmin(), 'smoker']"
+What is the maximum BMI in the dataset?,073_Med_Cost,df['bmi'].max()
+What is the average number of children?,073_Med_Cost,df['children'].mean()
+How many unique regions are in the dataset?,073_Med_Cost,df['region'].nunique()
+What is the sum of all medically related charges in the dataset?,073_Med_Cost,df['charges'].sum()
+How old is the youngest teenager in the dataset?,073_Med_Cost,"df.loc[df['age'] == df['age'].min(), 'age'].iloc[0]"
+How many people in the dataset have lived for more than six decades?,073_Med_Cost,df[df['age'] > 60].shape[0]
+How many people could be considered smokers?,073_Med_Cost,df[df['smoker'] == 'yes'].shape[0]
+What is the median BMI in the dataset?,073_Med_Cost,df['bmi'].median()
+List the 2 highest BMIs in the dataset for people who can be considered to suffer from Class III Obesity.,073_Med_Cost,df[df['bmi'] > 35]['bmi'].nlargest(2).tolist()
+List the charges of individuals with the 3 highest BMIs.,073_Med_Cost,"df.nlargest(3, 'bmi')['charges'].tolist()"
+List the ages of individuals with the 5 lowest charges.,073_Med_Cost,"df.nsmallest(5, 'charges')['age'].tolist()"
+List the ages of the 3 youngest teenagers.,073_Med_Cost,"df[df['age'] < 20].nsmallest(3, 'age')['age'].tolist()"
+List the unique different smoking statuses found among individuals over 60 years of age.,073_Med_Cost,df[df['age'] > 60]['smoker'].unique()
+List the regions of individuals with the 3 highest BMIs.,073_Med_Cost,"df.nlargest(3, 'bmi')['region'].tolist()"
+Is there a lifter older than 50?,074_Lift,df['Age'] > 50].any()
+Does the dataset contain squatting lifts?,074_Lift,(df['Lift Type'] == 'Squat').any()
+Is the biggest lift performed greater than 880 pounds?,074_Lift,df['Amount Lifted (kg)'].max() > 880
+Is the minimum lifted less than 330 pounds?,074_Lift,df['Amount Lifted (kg)'].min() < 330
+Are there more than 100 lifters in the weight class someone that weights 82kg would compete in?,074_Lift,df[(df['Weight Class'] == '83 kg') & (df['Lift Type'] == 'Bench Press')].shape[0] > 100
+Is the average age of all lifting records in the '105 kg' weight class above 40?,074_Lift,(df[(df['Weight Class'] == '105 kg')].mean()[['Age']] > 40).bool()
+Is the average age of all lifting records in the weight class of someone who weights 103000 grams above 40?,074_Lift,(df[df['Lifter Name'] == df[df['Weight Class'] == '83 kg']['Lifter Name'].iloc[0]]['Age'].iloc[0] > 40)
+Does 'Jessica Wilson' appear in the dataset?,074_Lift,df['Lifter Name'].str.contains('Jessica Wilson').any()
+Are there fewer than 5 unique types of exercise recorded?,074_Lift,df['Lift Type'].nunique() < 5
+Which weight class has the best average lifted weight?,074_Lift,df.groupby('Weight Class')['Amount Lifted (kg)'].mean().idxmax()
+What is the most common 'Weight Class'?,074_Lift,df['Weight Class'].mode()[0]
+Which type of exercise has the best average lift?,074_Lift,df.groupby('Lift Type')['Amount Lifted (kg)'].mean().idxmax()
+What is the current record in kilograms for maximum weight ever lifted'?,074_Lift,df['Amount Lifted (kg)'].max()
+How many different athletes are there in the dataset?,074_Lift,df['Lifter Name'].nunique()
+How many different men can we find in this dataset?,074_Lift,df['Lifter Name'].nunique()
+How many different women are there in the dataset?,074_Lift,df['Lifter Name'].nunique()
+What's the highest record set by men in the bench press category?,074_Lift,df[df['Lift Type'] == 'Bench Press']['Amount Lifted (kg)'].max()
+What's the best record set by women in the bench press category?,074_Lift,df.loc[df['Lift Type'] == 'Bench Press'].groupby('Lifter Name')['Amount Lifted (kg)'].max().idxmax()
+Who is the woman with the best lifting record?,074_Lift,"df.loc[df.groupby('Lifter Name')['Amount Lifted (kg)'].idxmax(), 'Lifter Name'].iloc[0]"
+What is the total sum of the amounts lifted in a bench press exercise?,074_Lift,df[df['Lift Type'] == 'Bench Press']['Amount Lifted (kg)'].sum()
+What is the least amount of kilos lifted in the weight class that someone who is 55kg would participate in?,074_Lift,df[df['Weight Class'] == '59 kg']['Amount Lifted (kg)'].min()
+What is the difference betweent the highest amount lifted and the lowest?,074_Lift,df['Amount Lifted (kg)'].max() - df['Amount Lifted (kg)'].min()
+How many lifters are in the weight class that people who weight 139 pounds would enter?,074_Lift,df[df['Weight Class'] == '66 kg'].shape[0]
+What are the highest 3 amounts ever lifted by anyone?,074_Lift,df['Amount Lifted (kg)'].nlargest(3).tolist()
+List the 5 smallest amounts ever lifted by anyone.,074_Lift,"df.nsmallest(5, 'Amount Lifted (kg)').iloc[:, [0, 5]].T.tolist()"
+What are the top 5 total lifts by 'Weight Class'?,074_Lift,df.groupby('Weight Class')['Total Lift'].sum().nlargest(5).index.tolist()
+What are the 3 largest age gaps present between lifts for each weight class?,074_Lift,"df.groupby('Weight Class').apply(lambda x: x.nlargest(3, 'Age')['Age'].tolist()).tolist()"
+List the 2 worst lifts in the '105 kg' weight class.,074_Lift,"df[df['Weight Class'] == '105 kg'].nsmallest(2, 'Amount Lifted (kg)')['Lift Type'].tolist()"
+List the top 3 amounts lifted while squatting.,074_Lift,"df[df['Lift Type'] == 'Squat'].nlargest(3, 'Amount Lifted (kg)')['Amount Lifted (kg)'].tolist()"
+List the 5 names of the women lifting in this dataset,074_Lift,df[df['Lift Type'] == 'Bench Press']['Lifter Name'].drop_duplicates().tolist()
+List the 5 men names of men who perform exercises in this dataset,074_Lift,"df[df['Lift Type'] == 'Bench Press'].nsmallest(5, 'Lifter Name')['Lifter Name'].tolist()"
+What are the top 3 'Weight Classes' by total lifts?,074_Lift,df.groupby('Weight Class')['Amount Lifted (kg)'].sum().nlargest(3).index.tolist()
+List 5 lifters from the '74 kg' weight class.,074_Lift,"df[df['Weight Class'] == '74 kg'].nlargest(5, 'Amount Lifted (kg)').iloc[:, 0].tolist()"
+What are the 3 least frequent types of exercise we find in the dataset?,074_Lift,df['Type'].value_counts().nsmallest(3).index.tolist()
+What are the 3 most frequent types of exercise we find in the dataset?,074_Lift,df['Exercise Type'].value_counts().nlargest(3).index.tolist()
+Is there any condition where the mortality rate is more prevalent than a condition with a rate of 300?,075_Mortality,(df['Rate'] > 300).any()
+Are there more cases recorded in cities overall?,075_Mortality,(df['Status'] == 'Urban').all()
+Is the maximum mortality rate in the dataset worse than 250?,075_Mortality,(df['Rate'].max() > 250)
+Does the dataset include any case with an error less than 0.5?,075_Mortality,(df['Rate'] < 0.5).any()
+Are all values associated with the death rate higher than 100?,075_Mortality,(df['Rate'] > 100).all()
+Are all of the most frequent causes of mortality related to the heart?,075_Mortality,"df[(df['Sex'] == 'Male') & (df['Status'] == 'Urban')].nlargest(5, 'Rate')['Rate'].tolist()"
+Does any region appear more than 50 times?,075_Mortality,(df['Region'].value_counts() > 50).any()
+Are there more cases recorded for men than for women?,075_Mortality,df[(df['Sex'] == 'Male') & (df['Rate'] > df[df['Sex'] == 'Female']['Rate'].iloc[0])].shape[0] > 0
+What is the region with the most deaths per capita?,075_Mortality,"df.loc[df.groupby('Region')['Rate'].idxmax(), 'Region'].iloc[0]"
+What cause corresponds to the lowest mortality rate?,075_Mortality,"df.loc[df['Rate'] == df['Rate'].min(), 'Cause'].iloc[0]"
+What gender has the worst average mortality rate?,075_Mortality,df.groupby('Sex')['Rate'].mean().idxmax()
+What is the type of status with the best average ratio?,075_Mortality,df.groupby('Status')['Rate'].mean().idxmax()
+What region has the worst average rate?,075_Mortality,df.groupby('Region')['Rate'].mean().idxmax()
+What is the maximum value in the ratio column?,075_Mortality,df['ratio'].max()
+What is the minimum error present in this dataset?,075_Mortality,df['SE'].min()
+How many cases have a death rate worse than 200?,075_Mortality,df[df['Rate'] > 200].shape[0]
+What is the total sum of all death rate values?,075_Mortality,df['Rate'].sum()
+What is the average error recorded?,075_Mortality,df['Rate'].mean()
+What is the standard deviation of ratio?,075_Mortality,df['ratio'].std()
+How many distinct HHS regions are present?,075_Mortality,df['HHS Region'].nunique()
+What is the range (max-min) that death rates for any cause of death appearing in this dataset can take?,075_Mortality,df['Rate'].max() - df['Rate'].min()
+What are the 5 worst death rates recorded?,075_Mortality,"df.nlargest(5, 'Rate')['Rate'].tolist()"
+What are the lowest 5 values for error deviations recorded for the rates?,075_Mortality,df['SE'].nsmallest(5).tolist()
+List the 5 smallest ratio values that are still greater than 100.,075_Mortality,"df[(df['Rate'] > 100) & (df['Status'] == 'Urban')].nsmallest(5, 'Rate')['Rate'].tolist()"
+List the highest 4 deviations recorded to the expected rate recorded in urban areas.,075_Mortality,"df[df['Status'] == 'Urban'].nlargest(4, 'Rate')['Rate'].tolist()"
+List the 5 smallest deviations from the expected death rate in relation to diseases of the heart.,075_Mortality,"df[df['Cause'] == 'Diseases of the heart'].nsmallest(5, 'Rate')['Rate'].tolist()"
+List the unique causes for death found in the first region of the United States Department of Health and Human Services.,075_Mortality,"df[df['Region'] == 'United States'].nsmallest(5, 'Rate')['Cause'].tolist()"
+What are the 3 regions with the worst average mortality rate?,075_Mortality,df.groupby('Region')['Mortality'].mean().nsmallest(3).index.tolist()
+What are the 2 categories present in the dataset that discriminate if a case happened in a city-like environment or not?,075_Mortality,df['Status'].unique()
+Is there a player with exactly a thousand total points in a given season? Answer True or False,076_NBA,(df['PTS'] == 1000).any()
+Is there a season where any player scored more than 3000 points? Answer True or False,076_NBA,(df.groupby('Season')['PTS'].max() > 3000).any()
+Did any player not miss any free throws in a single season? Answer True or False ,076_NBA,(df['FTA'] == 0).any()
+Is there a team that had a player scoring exactly 2k points in one season? Answer True or False,076_NBA,(df['PTS'] == 2000).any()
+Is there any player with a number of rebounds better than 500 in a single season? Answer True or False,076_NBA,(df['REB'] > 500).any()
+Did any player ever achieve more than 500 assists in one season? Answer True or False,076_NBA,(df['AST'] > 500).any()
+Did any player play in every game of a season? Answer True or False,076_NBA,(df.groupby('year')['GP'].max() == df['G']).any()
+Is there any player with a field goal record for a given season/playoffs better than 9/10?,076_NBA,(df['FG_PCT'] > 9).any()
+Which player scored the most points in the season that finished in 2013?,076_NBA,df[df['year'] == '2013']['PTS'].max()
+Which player scored the most points in the season that started in 2012?,076_NBA,df[df['year'] == '2012']['PTS'].max()
+Which team had the highest total points scored by its players?,076_NBA,df.groupby('TEAM')['PTS'].sum().idxmax()
+What is the player name with the highest yet non-perfect free throw performance in the 2012-2013 year?,076_NBA,"df[df['year'] == '2012-13'].nsmallest(2, 'FT_PCT')['PLAYER'].iloc[-1]"
+Which team had the most rebounds?,076_NBA,"df.loc[df['REB'].idxmax(), 'TEAM']"
+Who led in assists in the regular season that started in 2012?,076_NBA,df[df['year'] > '2012']['AST'].idxmax()
+Which player had the most steals in a given season?,076_NBA,"df.loc[df['STL'].idxmax(), 'PLAYER']"
+What is the highest number of steals in a given season?,076_NBA,df['STL'].max()
+What is the total number of rebounds recorded in the dataset?,076_NBA,df['REB'].sum()
+What is the total number of rebounds recorded in the dataset where the ball didn't change possession?,076_NBA,df[df['TOV'] == 0]['REB'].sum()
+In what percentage of the rebounds recorded in the dataset did the ball remain on the same team? Answer with a number,076_NBA,(df['REB'].eq(df['REB'].shift(1))).mean()
+How many games did the player with the most minutes played in a single season play in that season?,076_NBA,"df.loc[df['MIN'].idxmax(), 'GP']"
+What is the record set for single-season assists within the dataset?,076_NBA,"df.loc[df['AST'].idxmax(), 'GP']"
+How many players played in the 2010-11 season?,076_NBA,df[df['year'] == '2010-11'].shape[0]
+How many players scored exactly 2000 points in a season?,076_NBA,df[df['PTS'] == 2000].shape[0]
+What was the highest number of blocks by any player in a season?,076_NBA,df['BLK'].max()
+List the three highest rebound totals by a single player in one season.,076_NBA,df.groupby('PLAYER')['REB'].sum().nlargest(3).tolist()
+What are the three highest total assist values in one season?,076_NBA,df.groupby('year')['AST'].sum().nlargest(3).tolist()
+List the top 4 total point achieved by a single player in one season.,076_NBA,df.groupby('PLAYER')['PTS'].sum().nlargest(4).tolist()
+List the three highest numbers of steals.,076_NBA,"df.nlargest(3, 'STL')['STL'].tolist()"
+List the top 3 block counts in the dataset.,076_NBA,df['GP'].nlargest(3).tolist()
+List the 5 players with the least games played.,076_NBA,"df.nsmallest(5, 'GP')['PLAYER'].tolist()"
+List the three players with the most rebounds.,076_NBA,"df.nlargest(3, 'REB')['PLAYER'].tolist()"
+List the top 5 of teams with the highest total points overall.,076_NBA,df.groupby('TEAM')['PTS'].sum().nlargest(5).index.tolist()
+List the top 5 of teams with the highest total rebounds overall.,076_NBA,df.groupby('TEAM')['REB'].sum().nlargest(5).index.tolist()
+List the 2 players with the most steals overall.,076_NBA,"df.nlargest(2, 'STL')['PLAYER'].tolist()"
+List the three players with the highest blocks in a single season.,076_NBA,"df.nlargest(3, 'BLK')['PLAYER'].tolist()"
+List the top 4 players by assists in a single given season.,076_NBA,"df.nlargest(4, 'AST')['PLAYER'].tolist()"
+Is there any woman in the dataset with a BMI greater than 30?,077_Gestational,df[(df['Sex'] == 'F') & (df['BMI'] > 30)].any().any()
+Is there any woman younger than 18 years?,077_Gestational,df['Sex'].eq('F').any() and df[df['Sex'].eq('F')]['Age'].lt(18).any()
+Does the dataset contain any woman who has never been pregnant?,077_Gestational,df[(df['Pregnancy No'] == 0) & (df['Sex'] == 'F')].any()
+Are all women in the dataset younger than 40 years?,077_Gestational,(df[df['Heredity'] == 1]['Age'] < 40).all()
+Does every woman in the dataset have an associated height strictly greater than 1.40 meters?,077_Gestational,(df[df['Sex'] == 'F']['Height'] > 140).all()
+Is there at least one woman with heredity marked positively?,077_Gestational,df[(df['Heredity'] == 1) & (df['Prediction'] == 1)].any().any()
+Are all women in the dataset predicted to be free of diabetes? (to have diabetes is associated with the positive label of the model),077_Gestational,(df[df['Heredity'] == 1]['Prediction'] == 0).all()
+How many teen pregnancies are there in this dataset?,077_Gestational,df[(df['Age'] < 20) & (df['Pregnancy No'] > 0)].shape[0]
+Is there a woman with a weight of exactly 50000 grams?,077_Gestational,(df['Sex'] == 'F').any() and (df['Weight'] == 50000).any()
+What is the most value of the status marking hereditary diabetes risk in the dataset?,077_Gestational,df['Heredity'].max()
+What is the age of the woman with the lowest body mass index?,077_Gestational,"df.loc[df['BMI'] == df['BMI'].min(), 'Age'].iloc[0]"
+What is the maximum height amongst the two heaviest women?,077_Gestational,"df.nlargest(2, 'Weight').loc[df['Sex'] == 'Female'].max()['Height']"
+Which number of pregnancies is most common?,077_Gestational,df['Pregnancy No'].mode()[0]
+What is the most frequent BMI value in the dataset?,077_Gestational,df['BMI'].mode()[0]
+How much does the heaviest person in the dataset weight?,077_Gestational,df['Weight'].max()
+How tall is the shortest person in the dataset? Answer with the number of meters.,077_Gestational,df['Height'].min()
+What is the average BMI across all women?,077_Gestational,df['BMI'].mean()
+What is the total number of women in the dataset?,077_Gestational,df[df['Heredity'] == 1].shape[0]
+What is the median age of women in the dataset?,077_Gestational,df['Age'].median()
+How many women weight less than 60 kg?,077_Gestational,df[(df['Weight'] < 60) & (df['Pregnancy No'] == 0)].shape[0]
+What is the range (max-min) of the different heights in meters? Answer with a single number,077_Gestational,df['Height'].max() - df['Height'].min()
+What is the standard deviation found among the BMIs?,077_Gestational,df['BMI'].std()
+List the 3 heights of the 3 tallest women in the dataset (in cm).,077_Gestational,"df.nlargest(3, 'Height')['Height'].tolist()"
+List the different ages (in years) of teenagers found in the dataset.,077_Gestational,df[df['Age'] < 20]['Age'].unique().tolist()
+Provide a list with the unique reported pregnancy numbers of women weighing more (>) than 70000g. If there are none answer with an empty list.,077_Gestational,df[df['Weight'] > 70000]['Pregnancy No'].unique().tolist()
+List the weights of women with a height of exactly 1m and 45cm.,077_Gestational,df[(df['Height'] == 145) & (df['Pregnancy No'] == 0)]['Weight'].tolist()
+List the different labels assigned to heredity statuses.,077_Gestational,df['Heredity'].unique().tolist()
+List the different prediction outcomes for diabetes found in the dataset.,077_Gestational,df['Prediction'].unique().tolist()
+List the unique height values (converted to cm) found among of women with a BMI<18.5.,077_Gestational,df[df['BMI'] < 18.5]['Height'].tolist()
+List the unique pregnancy numbers of women older than 30 years. If there are none answer with an empty list.,077_Gestational,df[df['Age'] > 30]['Pregnancy No'].unique().tolist()
+List the unique ages of the youngest five women who have a diabetes risk associated with their family. If there are less than five answer with all the unique ages that match the criteria.,077_Gestational,"df[df['Heredity'] == 1].nsmallest(5, 'Age')['Age'].unique()"
+Is there any record where the area affected is greater than 50ha?,078_Fires,(df['area'] > 50).any()
+Was there any fire unaffected by wind?,078_Fires,(df['wind'] == 0).any()
+Is the maximum value of 'DMC' less than 200?,078_Fires,df['DMC'].max() < 200
+Are all of the horizontal axis coordinates plotted to the right of the third column?,078_Fires,(df['X'] > df['RETRINOIN_ac1q']).all()
+Are there any entries where the temperature is below freezing level in Celsius?,078_Fires,(df['temp'] < 0).any()
+Is there any measuring that recorded 0% humidity ?,078_Fires,df[df['RH'] == 0].any().any()
+Are there more than 10 unique months in the dataset?,078_Fires,df['month'].nunique() > 10
+Are all months of the year present in the dataset?,078_Fires,(df['month'].nunique() == 12)
+Is the average value of wind speed recorded faster than 3?,078_Fires,df['wind'].mean() > 3
+"If the year starts in January, what is the numeric id of the worst month in terms of number of fires?",078_Fires,df[df['month'] == 1].groupby('month')['num_fires'].sum().idxmin()
+Answer with the numeric ID of the day of the week the hottest temperature was recorded,078_Fires,"df.loc[df['temp'].idxmax(), 'calendar_2']"
+What is the name of the month that recorded the driest day when a fire took place?,078_Fires,"df.loc[df['RH'].idxmin(), 'month_name']"
+What is the label id of the month with the largest area burned?,078_Fires,"df.loc[df['area'].idxmax(), 'month']"
+What is the name of the windiest day on average?,078_Fires,"df.loc[df['wind'].idxmax(), 'calendar_2']"
+What is the name of the month with the smallest average 'DC' value?,078_Fires,df.groupby('month')['DC'].mean().idxmin()
+Which month number corresponds to the highest average 'ISI' value?,078_Fires,df.groupby('month')['ISI'].mean().idxmax()
+Which day was the minimum 'DMC' value recorded? Answer with the day's name,078_Fires,"df.loc[df['DMC'].idxmin(), 'calendar_2']"
+What is the hottest temperature recorded?,078_Fires,df['temp'].max()
+What is the speed of the slowest wind in our records?,078_Fires,df['wind'].min()
+"Assuming fires are always in different terrain, what is the total added area affected by fires in the dataset?",078_Fires,df['aff'].sum()
+How many unique values are there in the vertical axis column?,078_Fires,df['vertical'].nunique()
+What is the mean percentage of relative humidity? Answer with a number,078_Fires,df['RH'].mean()
+What is the range (max - min) of 'DC' values?,078_Fires,df['DC'].max() - df['DC'].min()
+What is the standard deviation of the 'ISI' column?,078_Fires,df['ISI'].std()
+How many fires affected a negligible (zero) amount of terrain?,078_Fires,df[df['RH'] == 0].shape[0]
+What are the 3 hottest temperatures recorded?,078_Fires,df['temp'].nlargest(3).tolist()
+List the 5 smallest values in the 'DC' column.,078_Fires,df['DC'].nsmallest(5).tolist()
+Provide the unique values in the vertical axis of the associated graph from bottom to top.,078_Fires,df['y'].sort_values().tolist()
+What are the 4 recorded humidity percentages of the 4 driest records?,078_Fires,"df.nsmallest(4, 'RH')['RH'].tolist()"
+List the 5 (can be repeated) highest wind speeds recorded.,078_Fires,"df.nlargest(5, 'wind')['wind'].tolist()"
+Provide the size of the top 3 greatest areas a fire affected.,078_Fires,"df.nlargest(3, 'area')['area'].tolist()"
+List the minimum 3 'DMC' values in ascending order.,078_Fires,df['DMC'].nsmallest(3).tolist()
+List the unique full month names when fires were recorded in ascending order.,078_Fires,df['month_name'].drop_duplicates().sort_values().tolist()
+Provide the 3 names of the days when fires were most frequently recorded. ,078_Fires,df['calendar_2'].value_counts().nlargest(3).index.tolist()
+What are the 2 full names of the 2 months the first 2 rows of the database took place in?,078_Fires,"df.loc[df['index'].isin([0, 1])].apply(lambda x: datetime.strptime(f""{x['month']}-1-{x['year']}"", ""%m-%d-%Y"").strftime(""%B""), axis=1).tolist()"
+Provide the name of the days when the 3 highest temperatures were recorded. ,078_Fires,"df.nlargest(3, 'temp')['calendar_2'].tolist()"
+List the unique month names corresponding to the driest 4 percentages of RH.,078_Fires,"df.nsmallest(4, 'RH')['month'].apply(lambda x: calendar.month_name[x]).tolist()"
+Provide the unique day names associated with the highest 5 'DMC' values.,078_Fires,"df.nlargest(5, 'DMC')['calendar_2'].tolist()"
+List the unique full names of the days where wind speed has been faster than 5mph.,078_Fires,df[df['wind'] > 5]['calendar_2'].tolist()
+ Is there a transaction where more than 10 products were sold?,079_Coffee,(df['transaction_qty'] > 10).any()
+ Is 99 an existing id for a store?,079_Coffee,df['store_id'].eq(99).any()
+ Do all rows of this dataset have a different product id?,079_Coffee,df['product_id'].nunique() == len(df)
+Did we ever sell 20 items in the same transaction?,079_Coffee,df['transaction_qty'].eq(20).any()
+Is there any single product with a price greater than 100?,079_Coffee,(df['unit_price'] > 100).any()
+Does the dataset have fewer than 200k rows?,079_Coffee,df['transaction_id'].count() < 200000
+Do we have a separate category for drinking chocolate in our stores?,079_Coffee,df['product_category'].str.contains('Drinking Chocolate').any()
+Is 5 the ID of the store with the most transactions?,079_Coffee,"df.loc[df['transactions'].idxmax(), 'store_id'] == 5"
+What is the location of our most popular store?,079_Coffee,"df.loc[df['transaction_qty'].idxmax(), 'store_location']"
+Which category is associated with the smallest single product price in the database?,079_Coffee,"df.loc[df['unit_price'].idxmin(), 'product_category']"
+Which are the first three letters of day of the week which has worst performance in terms of revenue?,079_Coffee,"df.loc[df['Revenue'].idxmin(), 'Weekday_1'][:3]"
+What is the product type of the transactions with yielded the most money in revenue? Answer with a category.,079_Coffee,"df.loc[df['Revenue'].idxmax(), 'product_type']"
+What are the first three letters of the month that has the highest average products per transaction?,079_Coffee,df.groupby('Month_1')['transaction_qty'].mean().idxmax()[:3]
+Which hour has the lowest number of transactions? Answer with a number from 0 to 23.,079_Coffee,df['Hour'].value_counts().idxmin()
+What is the location of the first purchase row-wise?,079_Coffee,"df.loc[df['transaction_id'].idxmin(), 'store_location']"
+What is the categorization of the first product row-wise?,079_Coffee,"df.loc[0, 'product_category']"
+What is the maximum amount of products that were sold in a single given transaction?,079_Coffee,df['transaction_qty'].max()
+How many unique different products do we sell?,079_Coffee,df['product_id'].nunique()
+What is the total revenue provided by all the transactions in the dataset?,079_Coffee,df['Revenue'].sum()
+Are our stores open on Sunday?,079_Coffee,(df['Weekday_1'] == 'Sun').any()
+What is the average unitary price in our transactions?,079_Coffee,df['unit_price'].mean()
+What is the total number of transactions carried on a Sunday?,079_Coffee,df[df['Weekday_1'] == 'Sun'].shape[0]
+How many active stores do we own according to this dataset?,079_Coffee,df['store_location'].nunique()
+How much revenue did our best single transaction bring?,079_Coffee,"df.loc[df['Revenue'].idxmax(), 'Revenue']"
+How many transactions occurred in the sixth month of the year?,079_Coffee,df[df['Month'] == 6].shape[0]
+List the 3 largest amount of products bought in one transaction? If there are less than 3 list as many as there are.,079_Coffee,df['transaction_qty'].nlargest(3).tolist()
+List the different store ids,079_Coffee,df['store_id'].unique().tolist()
+List the lowest 4 single-product price values,079_Coffee,df['unit_price'].nsmallest(4).tolist()
+List highest 3 different revenues a given transaction has yielded?,079_Coffee,df['Revenue'].nlargest(3).tolist()
+List the unique numerical weekly values present in this dataset,079_Coffee,df['Weekday'].unique().tolist()
+What are the different locations where our business is present?,079_Coffee,df['store_location'].unique().tolist()
+What are the unique product_category names in transactions with transaction_qty > 5? If there are none answer with an empty list,079_Coffee,df[df['transaction_qty'] > 5]['product_category'].unique().tolist()
+What are the 3 most common product_type names?,079_Coffee,df['product_type'].value_counts().nlargest(3).index.tolist()
+What are the abbreviated month names where transactions have been present?,079_Coffee,df['Month_1'].unique()
+Could you list the unique weekday names our transactions are recorded in?,079_Coffee,df['Weekday_1'].unique()
+ List the IDs of our 2 most popular stores in terms of number of purchases,079_Coffee,df.groupby('store_id')['transaction_id'].count().nlargest(2).index.tolist()
+ What are the 2 (non-unique) product types associated with the highest 2 revenues of a single given purchase? Answer with a list with 2 elements.,079_Coffee,"df.loc[df['Revenue'].nlargest(2).index, 'product_type'].tolist()"
+ What is the name of the animal involved in the production of the most expensive coffee-related product that we offer? Answer with a value present in a cell of the database.,079_Coffee,"df.loc[df['unit_price'].idxmax(), 'product_detail']"
+Do we have any book on sale? Answer True or False,080_Books,(df['Stock Status'] == 'In Stock').any()
+Are there any books that are longer than 500 pages? Answer True or False,080_Books,(df['Book Length (Pages)'] > 500).any()
+Did Mr Harari write a book on history? Answer True or False,080_Books,df[(df['Author'] == 'Mr. Harari') & (df['Category'] == 'History')].shape[0] > 0
+Does any book have a rating better than 35? Answer True or False,080_Books,(df['Ratings'] > 35).any()
+Do we still have enough stock of all books? Answer True or False,080_Books,(df['Stock Status'] == 'In Stock').all()
+"A customer asked for a book titled 'The greatest book to ever exist', do we have it in stock? Answer True or False",080_Books,(df['Book Title'] == 'The greatest book to ever exist').any()
+Is there any book published by Harper Collins for India?,080_Books,df[(df['Publication'] == 'Harper Collins') & (df['Wished Users'] > 0)].shape[0] > 0
+Are there any books with fewer than 100 pages?,080_Books,(df['Book Length (Pages)'] < 100).any()
+Which book is considered the best by our clients?,080_Books,"df.loc[df['Ratings'].idxmax(), 'Book Title']"
+"Assuming all books are similar in reading difficulty, which category does the book that would take longest to read belong to?",080_Books,"df.loc[df['Book Length (Pages)'].idxmax(), 'Category']"
+How many suns were there in the title of Hosseinis' novel? Answer with a number,080_Books,df[df['Author'] == 'Hosseinis']['Book Title'].str.count('sun').iloc[0]
+How many books are written by multiple authors? (explicitly mentioned translators and editors count as authors),080_Books,"df[df['Author'].str.contains(',')].shape[0]"
+Who was the book with most reviewed book written by?,080_Books,"df.loc[df['Reviews'].idxmax(), 'Author']"
+"If I wanted to buy the shortest book, how long would be the book that I'd pick?",080_Books,df['Book Length (Pages)'].min()
+What is the publisher of the nineteenth edition of Let Us C?,080_Books,"df.loc[df['Book Title'] == 'Let Us C', 'Edition'].iloc[18]"
+How much stock (in number of books) of Ben Graham's work is there in this store?,080_Books,"df.loc[df['Author'] == 'Ben Graham', 'Copies Left'].sum()"
+Which category does the Quran belong to?,080_Books,"df.loc[df['Book Title'] == 'Quran', 'Category'].iloc[0]"
+"According to this database, how many editions has 'The Intelligent Investor' gone through?",080_Books,df[df['Book Title'] == 'The Intelligent Investor']['Edition'].nunique()
+What is the total number of book pages in our database?,080_Books,df['Book Length (Pages)'].sum()
+"If I can read 200 pages a day and I want to pick a book that I can read in half a day, what is the number of books that I can choose from?",080_Books,df[(df['Book Length (Pages)'] <= 200) & (df['Stock Status'] == 'In Stock')].shape[0]
+What is the average rating of all books?,080_Books,df['Ratings'].mean()
+"If we had 30 copies of the arabic reader this morning, how many have we sold?",080_Books,"df.loc[df['Book Title'] == 'arabic reader', 'Copies Left'].iloc[0]"
+How many pages does Sapiens have?,080_Books,"df.loc[df['Book Title'] == 'Sapiens', 'Book Length (Pages)'].iloc[0]"
+How many books could be said to fall in the islamic category?,080_Books,df[df['Category'] == 'Islamic'].shape[0]
+How many books have been reviewed more than 10 times?,080_Books,(df['Reviews'] > 10).sum()
+What is the total number of books that we are selling below their usual price?,080_Books,df[df['Discount Offer'] == 'Yes'].shape[0]
+List the page counts of the first five books in the dataset?,080_Books,"df.nsmallest(5, 'Book Length (Pages)')['Book Length (Pages)'].tolist()"
+List the page lengths (in numeric form) of the first five books?,080_Books,"df.nsmallest(5, 'Book Length (Pages)')['Book Length (Pages)'].tolist()"
+List the ratings of the top four books with the most reviews?,080_Books,"df.nlargest(4, 'Reviews')['Ratings'].tolist()"
+Provide me with a list containing all the lengths of the books about computer science.,080_Books,"df.loc[df['Category'] == 'Computer Science', 'Book Length (Pages)'].tolist()"
+List the number of copies left for the first five books.,080_Books,"df.nsmallest(5, 'Copies Left')['Copies Left'].tolist()"
+List the ratings of the last five books in the dataset,080_Books,"df.nlargest(5, 'Wished Users')['Ratings'].tolist()"
+List the page counts of books in the 'History and Tradition' category?,080_Books,df[df['Category'] == 'History and Tradition']['Book Length (Pages)'].tolist()
+What is the stock of the book that is closest to running out copies but hasn't yet?.,080_Books,"df.loc[df['Copies Left'].idxmin(), 'Book Title']"
+List the categories of the first five books.,080_Books,df['Category'].head(5).tolist()
+List the authors of books that are not on sale today.,080_Books,df[df['Discount Offer'] == 'No']['Author'].tolist()
+List the titles of books with fewer than 200 pages.,080_Books,df[df['Book Length (Pages)'] < 200]['Book Title'].tolist()
+List the categories of books with ratings above 20.,080_Books,df[df['Ratings'] > 20]['Category'].tolist()
+List the authors of books with more than 10 reviews.,080_Books,df[df['Reviews'] > 10]['Author'].tolist()
+List the 5 categories of the last five books in the dataset.,080_Books,df.loc[df['Book Title'].nlargest(5).index]['Category'].tolist()
+"List the editions of books in the 'Business, Investment and Economics' category.",080_Books,"df[df['Category'] == 'Business, Investment and Economics']['Edition'].tolist()"
