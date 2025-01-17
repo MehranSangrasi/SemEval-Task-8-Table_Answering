@@ -6,7 +6,7 @@ import pandas as pd
 #     dev = json.load(f)
 
 dev_set = pd.read_csv("data/dev_set.csv")
-columns = pd.read_csv("data/updated_columns_with_unique_values.csv")
+columns = pd.read_csv("data/updated_dev_Set_columns.csv")
     
 json_obj = {"conversations": []}
 
@@ -16,9 +16,10 @@ for index, row in dev_set.iterrows():
     conversation = []
     
     question = row['question']
-    dataset_col = columns[columns['dataset_id'] == row['dataset']]['columns']
+    matching_columns = columns.loc[columns['Dataset_ID'] == row['dataset'], 'Columns'].values[0]
+    # print(matching_columns)
     
-    human_prompt = f"Question: {question} \n Dataset Columns:\n{dataset_col}"
+    human_prompt = f"Question: {question} \n Dataset Columns:\n{matching_columns}"
     
     conversation_human = {"from": "human", "value": human_prompt}
     conversation_gpt = {"from": "assistant", "value": ""}
