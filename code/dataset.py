@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Paths to the input files
-dataset_columns_file = "extracted_dataset_columns.csv"  # File with dataset ID and columns
+dataset_columns_file = "table_info.csv"  # File with dataset ID and columns
 unique_values_file = "unique_values.csv"      # File with dataset names, column names, and unique values
 
 # Read both files into DataFrames
@@ -46,10 +46,10 @@ def integrate_unique_values(columns, dataset_id, unique_values_df):
 
 # Process each dataset
 for index, row in df_columns.iterrows():
-    dataset_id = row['dataset_id']
-    columns = row['columns']
+    dataset_id = row['Dataset_ID']
+    columns = row['Columns']
     # Update the columns with integrated unique values
-    df_columns.at[index, 'columns'] = integrate_unique_values(columns, dataset_id, df_unique_values)
+    df_columns.at[index, 'Columns'] = integrate_unique_values(columns, dataset_id, df_unique_values)
 
 # Save the updated DataFrame to a new CSV file
 output_file = "updated_columns_with_unique_values.csv"
