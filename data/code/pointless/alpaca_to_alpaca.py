@@ -16,36 +16,37 @@ with open("data/updated_queries_transformation.json") as f:
 print(len(data))
 print(len(other_data['messages']))
 print(len(final_data))
-    
-system_prompt = """You are Qwen, a helpful assistant designed for coding. You are supposed to generate single line python pandas data-frame executable query for tabular Q/A given a question and its dataset columns with some columns having unique values.
-
-**Examples**:
-
-Question: What are the top 3 most common marital statuses among our employees? \n Dataset Columns: Left (category, unique_values: [Yes, No]), Satisfaction Level (float64), Work Accident (category, unique_values: [Yes, No]), Average Monthly Hours (uint16), Last Evaluation (float64), Years in the Company (uint8, unique_values: [3, 5, 4, 6, 2, 8, 10, 7]), salary (category, unique_values: [low, medium, high]), Department (category), Number of Projects (uint8, unique_values: [2, 5, 4, 6, 7, 3]), Promoted in the last 5 years? (category, unique_values: [Yes, No]), Date Hired (datetime64[ns), UTC], Marital_Status (category, unique_values: [Together, Single, Married])
-
-Query: df.groupby('Marital_Status').size().sort_values(ascending=False).head(3).index.tolist()
-
-Question: Were there any employees hired in 2019? \n Dataset Columns: \nLeft (category, unique_values: [Yes, No]), Satisfaction Level (float64), Work Accident (category, unique_values: [Yes, No]), Average Monthly Hours (uint16), Last Evaluation (float64), Years in the Company (uint8, unique_values: [3, 5, 4, 6, 2, 8, 10, 7]), salary (category, unique_values: [low, medium, high]), Department (category), Number of Projects (uint8, unique_values: [2, 5, 4, 6, 7, 3]), Promoted in the last 5 years? (category, unique_values: [Yes, No]), Date Hired (datetime64[us), UTC]
-
-Query: pd.to_datetime(df['Date Hired']).dt.year.eq(2019).any()
-
-**Now the question:**
-"""
 
 json_obj = []
 
 for item in data:
-    conversations = {"conversations": [], "tools": "[]"}
+    # conversations = []
     input = item['input']
     output = item['output']
     # human_prompt = system_prompt + "\n\n\n" + input
-    human_prompt = input
     assistant_prompt = output
     
-    conversation1 = {'from': 'human', 'value': human_prompt}
-    conversation2 = {'from': 'gpt', 'value': assistant_prompt}
-    conversations["conversations"].append(conversation1)
-    conversations["conversations"].append(conversation2)
+    start_index = input.find("Dataset Columns: ")
+    question = input[:start_index]
+    # print(question)
+    start_index = start_index + len("Dataset Columns: ")
+    
+    dataset_description = input[start_index:]
+    # print(dataset_description)
+    columns = dataset_description.split('), ')
+    formatted_columns = [col + ')' if not col.endswith(')') else col for col in columns]
+
+    # Join the columns with a newline
+    formatted_description = '\n'.join(formatted_columns)
+
+    # Print the formatted description
+    # print(formatted_description)
+    # print("\n\n")
+    
+    human_prompt = question.rstrip()+" \n "+"Dataset Columns:\n"+formatted_description
+    
+    
+    conversations = {"instruction": human_prompt, "input": "", "output": assistant_prompt}
     json_obj.append(conversations)
     
 for item in other_data['messages']:
@@ -60,41 +61,93 @@ for item in other_data['messages']:
     
     for key in ['query2', 'query3', 'query4']:
         if key in item and item[key] is not None:
-            conversations = {"conversations": [], "tools": "[]"}
+            # conversations = []
             output = item[key]
             
-            human_prompt = input
+            # human_prompt = input
             assistant_prompt = output
-            conversation1 = {'from': 'human', 'value': human_prompt}
-            conversation2 = {'from': 'gpt', 'value': assistant_prompt}
-            conversations["conversations"].append(conversation1)
-            conversations["conversations"].append(conversation2)
+            
+            start_index = input.find("Dataset Columns: ")
+            question = input[:start_index]
+            # print(question)
+            start_index = start_index + len("Dataset Columns: ")
+            
+            dataset_description = input[start_index:]
+            # print(dataset_description)
+            columns = dataset_description.split('), ')
+            formatted_columns = [col + ')' if not col.endswith(')') else col for col in columns]
+
+            # Join the columns with a newline
+            formatted_description = '\n'.join(formatted_columns)
+
+            # Print the formatted description
+            # print(formatted_description)
+            # print("\n\n")
+            
+            human_prompt = question.rstrip()+" \n "+"Dataset Columns:\n"+formatted_description
+            
+            conversations = {"instruction": human_prompt, "input": "", "output": assistant_prompt}
             json_obj.append(conversations)
             
 for item in final_data:
-    conversations = {"conversations": [], "tools": "[]"}
+    # conversations = []
     input = item['input']
     output = item['output']
     
+    
     human_prompt = input
     assistant_prompt = output
-    conversation1 = {'from': 'human', 'value': human_prompt}
-    conversation2 = {'from': 'gpt', 'value': assistant_prompt}
-    conversations["conversations"].append(conversation1)
-    conversations["conversations"].append(conversation2)
+    
+    start_index = input.find("Dataset Columns: ")
+    question = input[:start_index]
+            # print(question)
+    start_index = start_index + len("Dataset Columns: ")
+            
+    dataset_description = input[start_index:]
+            # print(dataset_description)
+    columns = dataset_description.split('), ')
+    formatted_columns = [col + ')' if not col.endswith(')') else col for col in columns]
+
+            # Join the columns with a newline
+    formatted_description = '\n'.join(formatted_columns)
+
+            # Print the formatted description
+            # print(formatted_description)
+    # print("\n\n")
+    
+    human_prompt = question.rstrip()+" \n "+"Dataset Columns:\n"+formatted_description
+    
+    
+    
+    conversations = {"instruction": human_prompt, "input": "", "output": assistant_prompt}
     json_obj.append(conversations)
     
     for key in ['query2', 'query3', 'query4']:
         if key in item and item[key] is not None:
-            conversations = {"conversations": [], "tools": "[]"}
+            # conversations = []
             output = item[key]
             
-            human_prompt = system_prompt + "\n\n\n" + input
             assistant_prompt = output
-            conversation1 = {'from': 'human', 'value': human_prompt}
-            conversation2 = {'from': 'gpt', 'value': assistant_prompt}
-            conversations["conversations"].append(conversation1)
-            conversations["conversations"].append(conversation2)
+            
+            start_index = input.find("Dataset Columns: ")
+            question = input[:start_index]
+                    # print(question)
+            start_index = start_index + len("Dataset Columns: ")
+                    
+            dataset_description = input[start_index:]
+                    # print(dataset_description)
+            columns = dataset_description.split('), ')
+            formatted_columns = [col + ')' if not col.endswith(')') else col for col in columns]
+
+                    # Join the columns with a newline
+            formatted_description = '\n'.join(formatted_columns)
+
+                    # Print the formatted description
+                    # print(formatted_description)
+            # print("\n\n")
+            
+            human_prompt = question.rstrip()+" \n "+"Dataset Columns:\n"+formatted_description
+            conversations = {"instruction": human_prompt, "input": "", "output": assistant_prompt}
             json_obj.append(conversations)
             
 # current_data.extend(json_obj)
@@ -103,5 +156,5 @@ random.shuffle(json_obj)
 # print(len(current_data))
 print(len(json_obj))
 
-with open('data/train_transformed.json', 'w') as f:
+with open('train_dev_test/axolotl/transformed/alpaca_trans.json', 'w') as f:
     json.dump(json_obj, f, indent=4)
